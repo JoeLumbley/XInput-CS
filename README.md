@@ -266,7 +266,7 @@ catch (Exception ex)
 
 ### 13. For Each Loop
 
-VB.NET: Uses ```For Each``` .
+VB.NET: The ```For Each``` keyword is used for iteration.
 
 ```vb
 
@@ -274,7 +274,7 @@ For Each Con In ConButtons
 
 ```
 
-C#: Uses ```foreach``` .
+C#: The ```foreach``` keyword is used to iterate through collections.
 
 ```csharp
 
@@ -284,7 +284,7 @@ foreach (var con in ConButtons)
 
 ### 14. Return Statement
 
-VB.NET: Uses ```Return``` .
+VB.NET: The ```Return``` keyword is used to return a value, and ```=``` is used for comparison.
 
 ```vb
 
@@ -292,7 +292,7 @@ Return XInputGetState(controllerNumber, ControllerPosition) = 0
 
 ```
 
-C#: Uses ```return``` .
+C#: The ```return``` keyword is used to return a value from a function, and ```==``` is used for comparison.
 
 ```csharp
 
@@ -302,7 +302,7 @@ return XInputGetState(controllerNumber, ControllerPosition) == 0;
 
 ### 15. String Concatenation
 
-VB.NET: Uses ```&``` for concatenation.
+VB.NET: Strings are concatenated using the ```&``` operator.
 
 ```vb
 
@@ -310,7 +310,7 @@ LabelButtons.Text = "Controller " & ControllerNumber.ToString & " Button: Up"
 
 ```
 
-C#: Uses ```+``` for concatenation.
+C#: Strings are concatenated using the ```+``` operator.
 
 ```csharp
 
