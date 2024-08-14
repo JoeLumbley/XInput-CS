@@ -230,7 +230,7 @@ if (DPadUpPressed && !DPadDownPressed)
 
 ### 12. Try-Catch Block
 
-VB.NET: Uses ```End Try``` to close the block.
+VB.NET: Uses ```Try``` and ```End Try``` to define the block.
 
 ```vb
 
