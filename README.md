@@ -175,7 +175,7 @@ private const short NeutralStart = -16384;
 
 ### 9. Enum Declaration
 
-VB.NET: Uses ```End Enum``` .
+VB.NET: Enums are declared using the ```Enum``` keyword and ```End Enum``` to close the declaration.
 
 ```vb
 
@@ -186,7 +186,7 @@ End Enum
 
 ```
 
-C#: Uses curly braces ```{}``` .
+C#: Enums are declared using the ```enum``` keyword and curly braces ```{}``` to define the body.
 
 ```csharp
 
@@ -201,7 +201,7 @@ public enum BATTERY_TYPE : byte
 
 ### 10. Subroutine Declaration
 
-VB.NET: Uses ```Sub``` for subroutines and includes event handlers with ```Handles``` .
+VB.NET: Subroutines are declared using the ```Sub``` keyword. The ```Handles``` keyword is used to specify the event handler.
 
 ```vb
 
@@ -209,7 +209,7 @@ Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 ```
 
-C#: Uses ```void``` for return types.
+C#: Subroutines (methods that do not return a value) are declared using the ```void``` keyword.
 
 ```csharp
 
