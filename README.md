@@ -277,7 +277,7 @@ foreach (var con in ConButtons)
 
 ### 14. Return Statement
 
-VB.NET: Uses ```Return``` and ```=``` for comparison.
+VB.NET: Uses ```Return``` .
 
 ```vb
 
@@ -285,7 +285,7 @@ Return XInputGetState(controllerNumber, ControllerPosition) = 0
 
 ```
 
-C#: Uses ```return``` , ```==``` for comparison and ends with a semicolon ```;``` .
+C#: Uses ```return``` .
 
 ```csharp
 
@@ -295,7 +295,7 @@ return XInputGetState(controllerNumber, ControllerPosition) == 0;
 
 ### 15. String Concatenation
 
-VB.NET:
+VB.NET: Uses ```&``` for concatenation.
 
 ```vb
 
@@ -303,7 +303,7 @@ LabelButtons.Text = "Controller " & ControllerNumber.ToString & " Button: Up"
 
 ```
 
-C#: and ends with a semicolon ```;``` .
+C#: Uses ```+``` for concatenation.
 
 ```csharp
 
@@ -311,7 +311,6 @@ LabelButtons.Text = "Controller " + ControllerNumber.ToString() + " Button: Up";
 
 ```
 
- C# uses ```+``` , while VB .NET uses ```&``` .
 
 These examples illustrate some of the common syntax differences you'll encounter when converting VB .NET code to C#.
 
