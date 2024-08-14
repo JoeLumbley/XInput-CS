@@ -196,7 +196,7 @@ namespace XInput_CS
         {
             UpdateControllerData();
 
-            // UpdateVibrateTimer()
+            UpdateVibrateTimer();
 
         }
 
@@ -853,6 +853,84 @@ namespace XInput_CS
         {
             InitializeComponent();
         }
+
+        private void ButtonVibrateLeft_Click(object sender, EventArgs e)
+        {
+            VibrateLeft((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
+        }
+
+        private void VibrateLeft(int cid, ushort speed)
+        {
+            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
+            // The left motor is the low-frequency rumble motor.
+
+            // Set left motor speed.
+            Vibration.wLeftMotorSpeed = speed;
+
+            SendVibrationMotorCommand(cid);
+
+            LeftVibrateStart[cid] = DateTime.Now;
+
+            IsLeftVibrating[cid] = true;
+        }
+
+        private void SendVibrationMotorCommand(int controllerID)
+        {
+            // Sends vibration motor speed command to the specified controller.
+
+            try
+            {
+                // Send motor speed command to the specified controller.
+                if (XInputSetState(controllerID, ref Vibration) == 0)
+                {
+                    // The motor speed was set. Success.
+                }
+                else
+                {
+                    // The motor speed was not set. Fail.
+                    // You can log or handle the failure here if needed.
+                    // Example: Console.WriteLine(XInputSetState(controllerID, Vibration).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayError(ex);
+                return; // Exit the method.
+            }
+        }
+
+
+        private void UpdateVibrateTimer()
+        {
+            UpdateLeftVibrateTimer();
+            // UpdateRightVibrateTimer();
+        }
+
+
+        private void UpdateLeftVibrateTimer()
+        {
+            foreach (var isConVibrating in IsLeftVibrating)
+            {
+                int index = Array.IndexOf(IsLeftVibrating, isConVibrating);
+
+                if (index != -1 && isConVibrating)
+                {
+                    TimeSpan elapsedTime = DateTime.Now - LeftVibrateStart[index];
+
+                    if (elapsedTime.TotalSeconds >= 1)
+                    {
+                        IsLeftVibrating[index] = false;
+
+                        // Turn left motor off (set zero speed).
+                        Vibration.wLeftMotorSpeed = 0;
+
+                        SendVibrationMotorCommand(index);
+                    }
+                }
+            }
+        }
+
+
 
     }
 }

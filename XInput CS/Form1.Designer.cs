@@ -37,6 +37,14 @@
             LabelLeftThumbY = new Label();
             LabelRightThumbX = new Label();
             LabelRightThumbY = new Label();
+            NumControllerToVib = new NumericUpDown();
+            ButtonVibrateLeft = new Button();
+            ButtonVibrateRight = new Button();
+            TrackBarSpeed = new TrackBar();
+            label1 = new Label();
+            LabelSpeed = new Label();
+            ((System.ComponentModel.ISupportInitialize)NumControllerToVib).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).BeginInit();
             SuspendLayout();
             // 
             // timer1
@@ -107,11 +115,71 @@
             LabelRightThumbY.TabIndex = 7;
             LabelRightThumbY.Text = "LabelRightThumbY";
             // 
+            // NumControllerToVib
+            // 
+            NumControllerToVib.Location = new Point(197, 147);
+            NumControllerToVib.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
+            NumControllerToVib.Name = "NumControllerToVib";
+            NumControllerToVib.Size = new Size(138, 31);
+            NumControllerToVib.TabIndex = 8;
+            // 
+            // ButtonVibrateLeft
+            // 
+            ButtonVibrateLeft.Location = new Point(14, 194);
+            ButtonVibrateLeft.Name = "ButtonVibrateLeft";
+            ButtonVibrateLeft.Size = new Size(138, 34);
+            ButtonVibrateLeft.TabIndex = 9;
+            ButtonVibrateLeft.Text = "Vibrate Left";
+            ButtonVibrateLeft.UseVisualStyleBackColor = true;
+            ButtonVibrateLeft.Click += ButtonVibrateLeft_Click;
+            // 
+            // ButtonVibrateRight
+            // 
+            ButtonVibrateRight.Location = new Point(389, 194);
+            ButtonVibrateRight.Name = "ButtonVibrateRight";
+            ButtonVibrateRight.Size = new Size(138, 34);
+            ButtonVibrateRight.TabIndex = 10;
+            ButtonVibrateRight.Text = "Vibrate Right";
+            ButtonVibrateRight.UseVisualStyleBackColor = true;
+            // 
+            // TrackBarSpeed
+            // 
+            TrackBarSpeed.Location = new Point(172, 194);
+            TrackBarSpeed.Maximum = 65535;
+            TrackBarSpeed.Name = "TrackBarSpeed";
+            TrackBarSpeed.Size = new Size(180, 69);
+            TrackBarSpeed.TabIndex = 11;
+            TrackBarSpeed.TickFrequency = 5555;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(14, 149);
+            label1.Name = "label1";
+            label1.Size = new Size(177, 25);
+            label1.TabIndex = 12;
+            label1.Text = "Controller to Vibrate:";
+            // 
+            // LabelSpeed
+            // 
+            LabelSpeed.AutoSize = true;
+            LabelSpeed.Location = new Point(182, 238);
+            LabelSpeed.Name = "LabelSpeed";
+            LabelSpeed.Size = new Size(103, 25);
+            LabelSpeed.TabIndex = 13;
+            LabelSpeed.Text = "LabelSpeed";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(LabelSpeed);
+            Controls.Add(label1);
+            Controls.Add(TrackBarSpeed);
+            Controls.Add(ButtonVibrateRight);
+            Controls.Add(ButtonVibrateLeft);
+            Controls.Add(NumControllerToVib);
             Controls.Add(LabelRightThumbY);
             Controls.Add(LabelRightThumbX);
             Controls.Add(LabelLeftThumbY);
@@ -122,6 +190,8 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)NumControllerToVib).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +205,11 @@
         private Label LabelLeftThumbY;
         private Label LabelRightThumbX;
         private Label LabelRightThumbY;
+        private NumericUpDown NumControllerToVib;
+        private Button ButtonVibrateLeft;
+        private Button ButtonVibrateRight;
+        private TrackBar TrackBarSpeed;
+        private Label label1;
+        private Label LabelSpeed;
     }
 }
