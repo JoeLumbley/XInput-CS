@@ -82,7 +82,7 @@ Private Shared Function XInputGetState(dwUserIndex As Integer, ByRef pState As X
 
 ```
 
-C#: ```extern``` keyword is used to indicate external function, ```ref```  to pass the parameter by reference and ends with a semicolon ```;``` .
+C#: ```extern``` keyword is used to indicate external function, ```static``` keyword is used for static methods, ```ref```  to pass the parameter by reference and ends with a semicolon ```;``` .
 
 ```csharp
 
