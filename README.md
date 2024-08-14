@@ -41,7 +41,7 @@ C# Syntax:
 private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
 ```
 
-This example highlights the syntax differences in DLL imports. In C#, attributes are defined using square brackets, while VB .NET uses angle brackets. C# employs extern to indicate external functions, whereas VB .NET uses Shared. The parameter passing also differs: C# uses ref, while VB .NET uses ByRef.
+In C#, attributes are defined using square brackets, while VB .NET uses angle brackets. C# employs extern to indicate external functions, whereas VB .NET uses Shared. The parameter passing also differs: C# uses ref, while VB .NET uses ByRef.
 
 ### 2. Boolean Values:
 
@@ -85,7 +85,7 @@ else
 
 
 
-This example highlights the syntax differences in defining boolean values and using them in conditions. In VB .NET, you use Dim for declaration, while in C#, you declare with the type directly. Additionally, C# requires parentheses around the condition in the if statement.
+In VB .NET, you use Dim for declaration, while in C#, you declare with the type directly. Additionally, C# requires parentheses around the condition in the if statement.
 
 
 
