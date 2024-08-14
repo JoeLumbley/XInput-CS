@@ -139,7 +139,7 @@ public uint dwPacketNumber;
 
 ### 7. Arrays Declaration
 
-VB.NET: Uses parentheses ```()``` and a range ```0 To 3``` .
+VB.NET: Arrays are declared using parentheses ```()``` and using a range ```(0 To 3)``` to define the size.
 
 ```vb
 
@@ -147,7 +147,7 @@ Private ConButtons(0 To 3) As UShort
 
 ```
 
-C#: Uses square brackets ```[]``` , ```new``` and ends with a semicolon ```;``` .
+C#: Arrays are declared using square brackets ```[]``` and initialized with the ```new``` keyword.
 
 ```csharp
 
@@ -157,7 +157,7 @@ private ushort[] ConButtons = new ushort[4];
 
 ### 8. Constants Declaration
 
-VB.NET: Uses ```Const``` and ```As``` to specify the type.
+VB.NET: Constants are declared using the ```Const``` keyword and the ```As``` keyword to specify the type.
 
 ```vb
 
@@ -165,7 +165,7 @@ Private Const NeutralStart As Short = -16384
 
 ```
 
-C#: Uses ```const``` and ends with a semicolon ```;``` .
+C#: Constants are declared using the ```const``` keyword and a semicolon ```;``` at the end.
 
 ```csharp
 
