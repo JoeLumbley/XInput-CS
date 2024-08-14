@@ -74,7 +74,7 @@ C#: Attributes are defined using square brackets ```[]``` .
 
 ### 4. Function Declaration
 
-VB.NET: Uses ```Shared``` to indicate that the function belongs to the class rather than an instance and ```ByRef```  to pass the parameter by reference.
+VB.NET: ```Shared``` keyword is used for static methods and ```ByRef``` is used to pass parameters by reference.
 
 ```vb
 
@@ -82,7 +82,7 @@ Private Shared Function XInputGetState(dwUserIndex As Integer, ByRef pState As X
 
 ```
 
-C#: Uses ```extern``` to indicate external function, ```ref```  to pass the parameter by reference and ends with a semicolon ```;``` .
+C#: ```extern``` keyword is used to indicate external function, ```ref```  to pass the parameter by reference and ends with a semicolon ```;``` .
 
 ```csharp
 
@@ -209,7 +209,7 @@ Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 ```
 
-C#: Subroutines (methods that do not return a value) are declared using the ```void``` keyword.
+C#: Subroutines (methods that do not return a value) are declared using the ```void``` keyword. The ```void``` keyword is used to indicate that a method does not return any value. 
 
 ```csharp
 
