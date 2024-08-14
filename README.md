@@ -15,7 +15,7 @@ I converted XInput from VB .NET to C#.
 
 
 
-## Things to watch out for when converting from VB .NET to C#.
+## Things to watch out for when converting from VB .NET to C#
 
 
 ### 1. DLL Imports:
