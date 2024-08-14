@@ -150,7 +150,7 @@ private ushort[] ConButtons = new ushort[4];
 
 ### 8. Constants Declaration
 
-VB.NET:
+VB.NET: Uses ```Const``` and ```As``` to specify the type.
 
 ```vb
 
@@ -158,7 +158,7 @@ Private Const NeutralStart As Short = -16384
 
 ```
 
-C#:
+C#: Uses ```const``` and ends with a semicolon ```;``` .
 
 ```csharp
 
@@ -168,7 +168,7 @@ private const short NeutralStart = -16384;
 
 ### 9. Enum Declaration
 
-VB.NET:
+VB.NET: Uses ```End Enum``` .
 
 ```vb
 
@@ -179,7 +179,7 @@ End Enum
 
 ```
 
-C#:
+C#: Uses curly braces ```{}``` .
 
 ```csharp
 
@@ -190,6 +190,7 @@ public enum BATTERY_TYPE : byte
 }
 
 ```
+
 
 ### 10. Subroutine Declaration
 
@@ -309,6 +310,8 @@ C#:
 LabelButtons.Text = "Controller " + ControllerNumber.ToString() + " Button: Up";
 
 ```
+
+ C# uses ```+``` , while VB .NET uses ```&``` .
 
 These examples illustrate some of the common syntax differences you'll encounter when converting VB .NET code to C#.
 
