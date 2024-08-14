@@ -92,21 +92,28 @@ private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pStat
 
 ### 5. Structure Declaration
 
-VB.NET: Uses ```Structure``` .
+VB.NET: ```Structure``` keyword is followed by the struct name and its members are defined within ```Structure``` and  ```End Structure``` . 
 
 ```vb
 
 <StructLayout(LayoutKind.Explicit)>
 Public Structure XINPUT_STATE
+    Public dwPacketNumber As Integer
+    Public GamePadState As GamePadState
+End Structure
 
 ```
 
-C#: Uses ```struct``` .
+C#: ```struct``` keyword is followed by the struct name and its members are defined within curly braces ```{}``` . 
 
 ```csharp
 
 [StructLayout(LayoutKind.Explicit)]
 public struct XINPUT_STATE
+{
+    public int dwPacketNumber;
+    public GamePadState GamePadState;
+}
 
 ```
 
