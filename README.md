@@ -31,6 +31,7 @@ VB .NET Syntax:
 <DllImport("XInput1_4.dll")>
 Private Shared Function XInputGetState(dwUserIndex As Integer, ByRef pState As XINPUT_STATE) As Integer
 End Function
+
 ```
 
 C# Syntax:
@@ -39,6 +40,7 @@ C# Syntax:
 
 [DllImport("XInput1_4.dll")]
 private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
+
 ```
 
 In C#, attributes are defined using square brackets, while VB .NET uses angle brackets. C# employs extern to indicate external functions, whereas VB .NET uses Shared. The parameter passing also differs: C# uses ref, while VB .NET uses ByRef.
@@ -60,6 +62,7 @@ If isConnected Then                  ' Using the value in a condition
 Else
     MessageBox.Show("Controller is not connected.")
 End If
+
 ```
 
 
@@ -80,6 +83,7 @@ else
 {
     MessageBox.Show("Controller is not connected.");
 }
+
 ```
 
 
