@@ -13,6 +13,7 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 I converted XInput from VB .NET to C#.
 
+![017](https://github.com/user-attachments/assets/e35bbf94-25a9-4dd9-8270-d2f1d5ec0f95)
 
 
 ## Things to watch out for when converting from VB .NET to C#
@@ -154,6 +155,9 @@ C#: Arrays are declared using square brackets ```[]``` and initialized with the 
 private ushort[] ConButtons = new ushort[4];
 
 ```
+
+![016](https://github.com/user-attachments/assets/79987297-2c32-4b43-8bed-949c6ec9f204)
+
 
 ### 8. Constants Declaration
 
