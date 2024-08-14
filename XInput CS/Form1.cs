@@ -831,23 +831,34 @@ namespace XInput_CS
 
             ClearLabels();
 
-            //TrackBarSpeed.Value = 32767;
+            TrackBarSpeed.Value = 32767;
 
-            //UpdateSpeedLabel();
+            UpdateSpeedLabel();
 
-            //for (int i = 0; i < IsLeftVibrating.Length; i++)
-            //{
-            //    IsLeftVibrating[i] = false;
-            //}
+            for (int i = 0; i < IsLeftVibrating.Length; i++)
+            {
+                IsLeftVibrating[i] = false;
+            }
 
-            //for (int i = 0; i < IsRightVibrating.Length; i++)
-            //{
-            //    IsRightVibrating[i] = false;
-            //}
+            for (int i = 0; i < IsRightVibrating.Length; i++)
+            {
+                IsRightVibrating[i] = false;
+            }
 
             //LabelBatteryLevel.Text = string.Empty;
             //LabelBatteryType.Text = string.Empty;
         }
+
+
+        private void UpdateSpeedLabel()
+        {
+            LabelSpeed.Text = "Vibration Speed: " + TrackBarSpeed.Value;
+        }
+
+
+
+
+
 
         public Form1()
         {
