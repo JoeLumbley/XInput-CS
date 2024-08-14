@@ -914,8 +914,36 @@ namespace XInput_CS
         private void UpdateVibrateTimer()
         {
             UpdateLeftVibrateTimer();
-            // UpdateRightVibrateTimer();
+            UpdateRightVibrateTimer();
         }
+
+
+
+        private void UpdateRightVibrateTimer()
+        {
+            foreach (var isConVibrating in IsRightVibrating)
+            {
+                int index = Array.IndexOf(IsRightVibrating, isConVibrating);
+
+                if (index != -1 && isConVibrating)
+                {
+                    TimeSpan elapsedTime = DateTime.Now - RightVibrateStart[index];
+
+                    if (elapsedTime.TotalSeconds >= 1)
+                    {
+                        IsRightVibrating[index] = false;
+
+                        // Turn right motor off (set zero speed).
+                        Vibration.wRightMotorSpeed = 0;
+
+                        SendVibrationMotorCommand(index);
+                    }
+                }
+            }
+        }
+
+
+
 
 
         private void UpdateLeftVibrateTimer()
@@ -940,6 +968,39 @@ namespace XInput_CS
                 }
             }
         }
+
+        private void ButtonVibrateRight_Click(object sender, EventArgs e)
+        {
+            VibrateRight((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
+        }
+
+
+
+
+
+        private void VibrateRight(int cid, ushort speed)
+        {
+            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
+            // The right motor is the high-frequency rumble motor.
+
+            // Set right motor speed.
+            Vibration.wRightMotorSpeed = speed;
+
+            SendVibrationMotorCommand(cid);
+
+            RightVibrateStart[cid] = DateTime.Now;
+
+            IsRightVibrating[cid] = true;
+        }
+
+        private void TrackBarSpeed_Scroll(object sender, EventArgs e)
+        {
+            UpdateSpeedLabel();
+
+        }
+
+
+
 
 
 

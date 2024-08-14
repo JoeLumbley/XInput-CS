@@ -141,6 +141,7 @@
             ButtonVibrateRight.TabIndex = 10;
             ButtonVibrateRight.Text = "Vibrate Right";
             ButtonVibrateRight.UseVisualStyleBackColor = true;
+            ButtonVibrateRight.Click += ButtonVibrateRight_Click;
             // 
             // TrackBarSpeed
             // 
@@ -150,6 +151,7 @@
             TrackBarSpeed.Size = new Size(180, 69);
             TrackBarSpeed.TabIndex = 11;
             TrackBarSpeed.TickFrequency = 5555;
+            TrackBarSpeed.Scroll += TrackBarSpeed_Scroll;
             // 
             // label1
             // 
