@@ -620,6 +620,7 @@ namespace XInput_CS
 
         private void ClearButtonsLabel()
         {   // Clears the buttons label when all controllers buttons are up.
+
             int ConSum = 0;
 
             foreach (var con in ConButtons)
@@ -817,7 +818,6 @@ namespace XInput_CS
             return XInputGetState(controllerNumber, ref ControllerPosition) == 0; // Returns 0 if connected
         }
 
-
         private void DisplayError(Exception ex)
         {
             MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -854,11 +854,6 @@ namespace XInput_CS
         {
             LabelSpeed.Text = "Vibration Speed: " + TrackBarSpeed.Value;
         }
-
-
-
-
-
 
         public Form1()
         {
@@ -910,14 +905,11 @@ namespace XInput_CS
             }
         }
 
-
         private void UpdateVibrateTimer()
         {
             UpdateLeftVibrateTimer();
             UpdateRightVibrateTimer();
         }
-
-
 
         private void UpdateRightVibrateTimer()
         {
@@ -941,10 +933,6 @@ namespace XInput_CS
                 }
             }
         }
-
-
-
-
 
         private void UpdateLeftVibrateTimer()
         {
@@ -974,10 +962,6 @@ namespace XInput_CS
             VibrateRight((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
         }
 
-
-
-
-
         private void VibrateRight(int cid, ushort speed)
         {
             // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
@@ -998,11 +982,6 @@ namespace XInput_CS
             UpdateSpeedLabel();
 
         }
-
-
-
-
-
 
     }
 }
