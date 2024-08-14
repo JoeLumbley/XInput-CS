@@ -21,14 +21,14 @@ Here are some key syntax differences.
 
 ### 1. Imports and Namespace Declarations
 
-VB.NET:
+VB.NET: Uses ```Imports``` .
 
 ```vb
 
 Imports System.Runtime.InteropServices
 
 ```
-C#:
+C#: Uses ```using``` and ends with a semicolon ```;``` .
 
 ```csharp
 
@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 
 ### 2. Class Declaration
 
-VB.NET:
+VB.NET: Capitalizes ```Public``` .
 
 ```vb
 
@@ -46,7 +46,7 @@ Public Class Form1
 
 ```
 
-C#:
+C#: Uses lowercase ```public``` .
 
 ```csharp
 
@@ -56,7 +56,7 @@ public class Form1
 
 ### 3. Attributes
 
-VB.NET:
+VB.NET: Uses angle brackets ```<>``` .
 
 ```vb
 
@@ -64,7 +64,7 @@ VB.NET:
 
 ```
 
-C#:
+C#: Uses square brackets ```[]``` .
 
 ```csharp
 
@@ -74,7 +74,7 @@ C#:
 
 ### 4. Function Declaration
 
-VB.NET:
+VB.NET: Uses ```Shared``` and ```ByRef``` .
 
 ```vb
 
@@ -82,7 +82,7 @@ Private Shared Function XInputGetState(dwUserIndex As Integer, ByRef pState As X
 
 ```
 
-C#:
+C#: Uses ```extern``` , ```ref``` and ends with a semicolon ```;``` .
 
 ```csharp
 
@@ -92,7 +92,7 @@ private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pStat
 
 ### 5. Structure Declaration
 
-VB.NET:
+VB.NET: Uses ```Structure``` .
 
 ```vb
 
@@ -101,7 +101,7 @@ Public Structure XINPUT_STATE
 
 ```
 
-C#:
+C#: Uses ```struct``` .
 
 ```csharp
 
@@ -112,7 +112,7 @@ public struct XINPUT_STATE
 
 ### 6. Field Declaration
 
-VB.NET:
+VB.NET: Uses ```As``` to specify the type.
 
 ```vb
 
@@ -121,7 +121,7 @@ Public dwPacketNumber As UInteger
 
 ```
 
-C#:
+C#: Ends declarations with a semicolon ```;``` .
 
 ```csharp
 
@@ -132,7 +132,7 @@ public uint dwPacketNumber;
 
 ### 7. Arrays Declaration
 
-VB.NET:
+VB.NET: Uses parentheses ```()``` and a range ```0 To 3``` .
 
 ```vb
 
@@ -140,7 +140,7 @@ Private ConButtons(0 To 3) As UShort
 
 ```
 
-C#:
+C#: Uses square brackets ```[]``` , ```new``` and ends with a semicolon ```;``` .
 
 ```csharp
 
@@ -194,7 +194,7 @@ public enum BATTERY_TYPE : byte
 
 ### 10. Subroutine Declaration
 
-VB.NET:
+VB.NET: Uses ```Sub``` for subroutines and includes event handlers with ```Handles``` .
 
 ```vb
 
@@ -202,7 +202,7 @@ Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 ```
 
-C#:
+C#: Uses ```void``` for return types.
 
 ```csharp
 
@@ -212,7 +212,7 @@ private void Form1_Load(object sender, EventArgs e)
 
 ### 11. If Statement with AndAlso
 
-VB.NET:
+VB.NET: Uses ```AndAlso``` for logical AND and ```=``` for comparisons.
 
 ```vb
 
@@ -220,7 +220,7 @@ If DPadUpPressed = True AndAlso DPadDownPressed = False Then
 
 ```
 
-C#:
+C#: Uses ```&&``` for logical AND and ```!``` for NOT.
 
 ```csharp
 
@@ -230,7 +230,7 @@ if (DPadUpPressed && !DPadDownPressed)
 
 ### 12. Try-Catch Block
 
-VB.NET:
+VB.NET: Uses ```End Try``` to close the block.
 
 ```vb
 
@@ -242,7 +242,7 @@ End Try
 
 ```
 
-C#:
+C#: Uses braces ```{}``` to define the block.
 
 ```csharp
 
@@ -259,7 +259,7 @@ catch (Exception ex)
 
 ### 13. For Each Loop
 
-VB.NET:
+VB.NET: Uses ```For Each``` .
 
 ```vb
 
@@ -267,7 +267,7 @@ For Each Con In ConButtons
 
 ```
 
-C#:
+C#: Uses ```foreach``` .
 
 ```csharp
 
@@ -277,7 +277,7 @@ foreach (var con in ConButtons)
 
 ### 14. Return Statement
 
-VB.NET:
+VB.NET: Uses ```Return``` and ```=``` for comparison.
 
 ```vb
 
@@ -285,7 +285,7 @@ Return XInputGetState(controllerNumber, ControllerPosition) = 0
 
 ```
 
-C#:
+C#: Uses ```return``` , ```==``` for comparison and ends with a semicolon ```;``` .
 
 ```csharp
 
@@ -303,7 +303,7 @@ LabelButtons.Text = "Controller " & ControllerNumber.ToString & " Button: Up"
 
 ```
 
-C#:
+C#: and ends with a semicolon ```;``` .
 
 ```csharp
 
