@@ -21,14 +21,14 @@ Here are some key syntax differences.
 
 ### 1. Imports and Namespace Declarations
 
-VB.NET: Uses ```Imports``` .
+VB.NET: The ```Imports``` statement is used to include namespaces in the file. This allows you to use the classes and methods defined in the ```System.Runtime.InteropServices``` namespace without needing to fully qualify them.
 
 ```vb
 
 Imports System.Runtime.InteropServices
 
 ```
-C#: Uses ```using``` and ends with a semicolon ```;``` .
+C#: The ```using``` directive is used to include namespaces in the file. This allows you to use the classes and methods defined in the ```System.Runtime.InteropServices``` namespace without needing to fully qualify them.
 
 ```csharp
 
@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 
 ### 2. Class Declaration
 
-VB.NET: Capitalizes ```Public``` .
+VB.NET: Classes are declared using the ```Class``` keyword. The visibility modifier ```Public``` is capitalized.
 
 ```vb
 
@@ -46,7 +46,7 @@ Public Class Form1
 
 ```
 
-C#: Uses lowercase ```public``` .
+C#: Classes are declared using the ```class``` keyword. The visibility modifier ```public``` is in lowercase.
 
 ```csharp
 
