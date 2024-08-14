@@ -45,7 +45,48 @@ private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pStat
 
 In C#, attributes are defined using ```[]``` square brackets, while VB .NET uses ```<>``` angle brackets. C# employs ```extern``` to indicate external functions, whereas VB .NET uses ```Shared``` . The parameter passing also differs: C# uses ```ref``` , while VB .NET uses ```ByRef``` .
 
-### 2. Boolean Values:
+
+
+
+### 2. Structs:
+
+Pay attention to the syntax when defining structs in VB .NET and C#.
+
+**Example:**
+
+C# Syntax:
+
+
+```csharp
+
+public struct XINPUT_STATE
+{
+    public int dwPacketNumber;
+    public GamePadState GamePadState;
+}
+
+```
+
+
+
+VB .NET Syntax:
+
+```vb
+
+Public Structure XINPUT_STATE
+    Public dwPacketNumber As Integer
+    Public GamePadState As GamePadState
+End Structure
+
+```
+
+In C#, the ```struct``` keyword is followed by the struct name and its members are defined within curly braces ```{}```. In VB .NET, the ```Structure``` keyword is used, and members are defined with their types following the ```As``` keyword, enclosed within ```End Structure``` . 
+
+
+
+
+
+### 3. Boolean Values:
 
 Pay attention to the syntax when defining and using boolean values in conditions.
 
