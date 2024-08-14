@@ -56,7 +56,7 @@ public class Form1
 
 ### 3. Attributes
 
-VB.NET: Uses angle brackets ```<>``` .
+VB.NET: Attributes are defined using angle brackets ```<>``` .
 
 ```vb
 
@@ -64,7 +64,7 @@ VB.NET: Uses angle brackets ```<>``` .
 
 ```
 
-C#: Uses square brackets ```[]``` .
+C#: Attributes are defined using square brackets ```[]``` .
 
 ```csharp
 
@@ -74,7 +74,7 @@ C#: Uses square brackets ```[]``` .
 
 ### 4. Function Declaration
 
-VB.NET: Uses ```Shared``` and ```ByRef``` .
+VB.NET: Uses ```Shared``` to indicate that the function belongs to the class rather than an instance and ```ByRef```  to pass the parameter by reference.
 
 ```vb
 
@@ -82,7 +82,7 @@ Private Shared Function XInputGetState(dwUserIndex As Integer, ByRef pState As X
 
 ```
 
-C#: Uses ```extern``` , ```ref``` and ends with a semicolon ```;``` .
+C#: Uses ```extern``` to indicate external function, ```ref```  to pass the parameter by reference and ends with a semicolon ```;``` .
 
 ```csharp
 
