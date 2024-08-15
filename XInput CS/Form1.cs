@@ -724,7 +724,9 @@ namespace XInput_CS
                     ConSum = false; // Report the non-neutral thumbstick.
 
                     break; // No need to search further so stop the search.
+
                 }
+
             }
 
             // Are all controllers left thumbsticks on the X-axis in the neutral position?
@@ -732,35 +734,58 @@ namespace XInput_CS
             {   // Yes, all controllers left thumbsticks on the X-axis are in the neutral position.
 
                 LabelLeftThumbX.Text = string.Empty; // Clear label.
+
             }
+
         }
 
         private void ClearRightThumbstickXLabel()
-        {
-            // Clears the right thumbstick X-axis label when all controllers' right thumbsticks on the X-axis are neutral.
+        {   // Clears the right thumbstick X-axis label when all controllers' right thumbsticks on the X-axis are neutral.
+
             bool ConSum = true; // Assume all controllers' right thumbsticks on the X-axis are neutral initially.
+
+            //// Search for a non-neutral right thumbstick on the X-axis.
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    if (Connected[i])
+            //    {
+            //        if (!IsConThumbRXNeutral[i])
+            //        {   // A non-neutral thumbstick was found.
+
+            //            ConSum = false; // Report the non-neutral thumbstick.
+            //            break; // No need to search further, so stop the search.
+            //        }
+            //    }
+            //}
+
 
             // Search for a non-neutral right thumbstick on the X-axis.
             for (int i = 0; i < 4; i++)
             {
-                if (Connected[i])
-                {
-                    if (!IsConThumbRXNeutral[i])
-                    {   // A non-neutral thumbstick was found.
+                if (Connected[i] && !IsConThumbRXNeutral[i])
+                {   // A non-neutral thumbstick was found.
+                    ///if (!IsConThumbRXNeutral[i])
+                    ///{   // A non-neutral thumbstick was found.
 
-                        ConSum = false; // Report the non-neutral thumbstick.
-                        break; // No need to search further, so stop the search.
-                    }
+                    ConSum = false; // Report the non-neutral thumbstick.
+
+                    break; // No need to search further, so stop the search.
+
+                    ///}
                 }
+
             }
 
             // Are all controllers' right thumbsticks in the neutral position?
             if (ConSum)
-            {
-                // Yes, all controllers' right thumbsticks are in the neutral position.
+            { // Yes, all controllers' right thumbsticks are in the neutral position.
+
                 LabelRightThumbX.Text = string.Empty; // Clear label.
+
             }
+
         }
+
 
         private void ClearRightThumbstickYLabel()
         {
