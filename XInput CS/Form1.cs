@@ -561,8 +561,7 @@ namespace XInput_CS
         }
 
         private void UpdateRightThumbstickPosition(int controllerNumber)
-        {
-            // The range on the X-axis is -32,768 through 32,767. Signed 16-bit (2-byte) integer.
+        {   // The range on the X-axis is -32,768 through 32,767. Signed 16-bit (2-byte) integer.
             // The range on the Y-axis is -32,768 through 32,767. Signed 16-bit (2-byte) integer.
 
             // What position is the right thumbstick in on the X-axis?
@@ -570,42 +569,49 @@ namespace XInput_CS
             {   // The right thumbstick is in the left position.
 
                 LabelRightThumbX.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Left";
+
                 IsConThumbRXNeutral[controllerNumber] = false;
             }
             else if (ControllerPosition.Gamepad.RightThumbX >= NeutralEnd)
             {   // The right thumbstick is in the right position.
 
                 LabelRightThumbX.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Right";
+
                 IsConThumbRXNeutral[controllerNumber] = false;
             }
             else
             {   // The right thumbstick is in the neutral position.
 
                 IsConThumbRXNeutral[controllerNumber] = true;
+
             }
 
             ClearRightThumbstickXLabel();
 
             // What position is the right thumbstick in on the Y-axis?
             if (ControllerPosition.Gamepad.RightThumbY <= NeutralStart)
-            {
-                // The right thumbstick is in the up position.
+            {   // The right thumbstick is in the up position.
+
                 LabelRightThumbY.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Down";
+
                 IsConThumbRYNeutral[controllerNumber] = false;
             }
             else if (ControllerPosition.Gamepad.RightThumbY >= NeutralEnd)
-            {
-                // The right thumbstick is in the down position.
+            {   // The right thumbstick is in the down position.
+
                 LabelRightThumbY.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Up";
+
                 IsConThumbRYNeutral[controllerNumber] = false;
             }
             else
-            {
-                // The right thumbstick is in the neutral position.
+            {   // The right thumbstick is in the neutral position.
+
                 IsConThumbRYNeutral[controllerNumber] = true;
+
             }
 
             ClearRightThumbstickYLabel();
+
         }
 
         private void UpdateRightTriggerPosition(int controllerNumber)
