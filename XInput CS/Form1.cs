@@ -318,6 +318,7 @@ namespace XInput_CS
             DoBumperLogic(controllerNumber);
 
             DoStickLogic(controllerNumber);
+
         }
 
         private void DoDPadLogic(int controllerNumber)
