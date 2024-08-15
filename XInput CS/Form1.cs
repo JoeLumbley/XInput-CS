@@ -615,45 +615,49 @@ namespace XInput_CS
         }
 
         private void UpdateRightTriggerPosition(int controllerNumber)
-        {
-            // The range of right trigger is 0 to 255. Unsigned 8-bit (1-byte) integer.
+        {   // The range of right trigger is 0 to 255. Unsigned 8-bit (1-byte) integer.
             // The trigger position must be greater than the trigger threshold to register as pressed.
 
             // What position is the right trigger in?
             if (ControllerPosition.Gamepad.RightTrigger > TriggerThreshold)
-            {
-                // The right trigger is in the down position. Trigger Break. Bang!
+            {   // The right trigger is in the down position. Trigger Break. Bang!
+
                 LabelRightTrigger.Text = "Controller " + controllerNumber.ToString() + " Right Trigger";
+
                 IsConRightTriggerNeutral[controllerNumber] = false;
             }
             else
-            {
-                // The right trigger is in the neutral position. Pre-Travel.
+            {   // The right trigger is in the neutral position. Pre-Travel.
+
                 IsConRightTriggerNeutral[controllerNumber] = true;
+
             }
 
             ClearRightTriggerLabel();
+
         }
 
         private void UpdateLeftTriggerPosition(int controllerNumber)
-        {
-            // The range of left trigger is 0 to 255. Unsigned 8-bit (1-byte) integer.
+        {   // The range of left trigger is 0 to 255. Unsigned 8-bit (1-byte) integer.
             // The trigger position must be greater than the trigger threshold to register as pressed.
 
             // What position is the left trigger in?
             if (ControllerPosition.Gamepad.LeftTrigger > TriggerThreshold)
-            {
-                // The left trigger is in the down position. Trigger Break. Bang!
+            {   // The left trigger is in the down position. Trigger Break. Bang!
+
                 LabelLeftTrigger.Text = "Controller " + controllerNumber.ToString() + " Left Trigger";
+
                 IsConLeftTriggerNeutral[controllerNumber] = false;
             }
             else
-            {
-                // The left trigger is in the neutral position. Pre-Travel.
+            {   // The left trigger is in the neutral position. Pre-Travel.
+
                 IsConLeftTriggerNeutral[controllerNumber] = true;
+
             }
 
             ClearLeftTriggerLabel();
+
         }
 
         private void ClearButtonsLabel()
@@ -664,14 +668,17 @@ namespace XInput_CS
             foreach (var con in ConButtons)
             {
                 ConSum += con;
+
             }
 
             // Are all controllers buttons up?
             if (ConSum == 0)
             {   // Yes, all controller buttons are up.
 
-                LabelButtons.Text = string.Empty;
+                LabelButtons.Text = string.Empty; // Clear label.
+
             }
+
         }
 
         private void ClearLeftThumbstickYLabel()
@@ -684,10 +691,13 @@ namespace XInput_CS
             {
                 if (Connected[i] && !IsConThumbLYNeutral[i])
                 { // A non-neutral thumbstick was found.
+
                     ConSum = false; // Report the non-neutral thumbstick.
 
                     break; // No need to search further so stop the search.
+
                 }
+
             }
 
             // Are all controllers left thumbsticks on the Y-axis in the neutral position?
@@ -695,7 +705,9 @@ namespace XInput_CS
             {   // Yes, all controllers left thumbsticks on the X-axis are in the neutral position.
 
                 LabelLeftThumbY.Text = string.Empty; // Clear label.
+
             }
+
         }
 
         private void ClearLeftThumbstickXLabel()
