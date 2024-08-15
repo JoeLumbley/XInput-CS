@@ -834,15 +834,15 @@ namespace XInput_CS
             // Search for a non-neutral left trigger.
             for (int i = 0; i < 4; i++)
             {
-                if (Connected[i])
+                if (Connected[i] && !IsConLeftTriggerNeutral[i])
                 {
-                    if (!IsConLeftTriggerNeutral[i])
-                    {   // A non-neutral left trigger was found.
+                    //if (!IsConLeftTriggerNeutral[i])
+                    //{   // A non-neutral left trigger was found.
 
-                        ConSum = false; // Report the non-neutral left trigger.
+                    ConSum = false; // Report the non-neutral left trigger.
 
-                        break; // No need to search further, so stop the search.
-                    }
+                    break; // No need to search further, so stop the search.
+                    //}
                 }
             }
 
@@ -851,7 +851,9 @@ namespace XInput_CS
             {   // Yes, all controllers' left triggers are in the neutral position.
 
                 LabelLeftTrigger.Text = string.Empty; // Clear label.
+
             }
+
         }
 
         private void ClearLabels()
