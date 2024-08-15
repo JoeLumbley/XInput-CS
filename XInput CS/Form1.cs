@@ -807,14 +807,13 @@ namespace XInput_CS
             {
                 if (Connected[i] && !IsConRightTriggerNeutral[i])
                 {
-                    //if (!IsConRightTriggerNeutral[i])
-                    //{   // A non-neutral right trigger was found.
 
                     ConSum = false; // Report the non-neutral right trigger.
 
                     break; // No need to search further, so stop the search.
-                    //}
+
                 }
+
             }
 
             // Are all controllers' right triggers in the neutral position?
@@ -822,7 +821,9 @@ namespace XInput_CS
             {   // Yes, all controllers' right triggers are in the neutral position.
 
                 LabelRightTrigger.Text = string.Empty; // Clear label.
+
             }
+
         }
 
         private void ClearLeftTriggerLabel()
