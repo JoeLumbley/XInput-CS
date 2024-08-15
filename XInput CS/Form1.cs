@@ -174,7 +174,6 @@ namespace XInput_CS
 
         private const int BATTERY_DEVTYPE_GAMEPAD = 0;
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             InitializeApp();
@@ -197,6 +196,22 @@ namespace XInput_CS
             UpdateControllerData();
 
             UpdateVibrateTimer();
+
+        }
+
+        private void ButtonVibrateLeft_Click(object sender, EventArgs e)
+        {
+            VibrateLeft((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
+        }
+
+        private void ButtonVibrateRight_Click(object sender, EventArgs e)
+        {
+            VibrateRight((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
+        }
+
+        private void TrackBarSpeed_Scroll(object sender, EventArgs e)
+        {
+            UpdateSpeedLabel();
 
         }
 
@@ -860,10 +875,6 @@ namespace XInput_CS
             InitializeComponent();
         }
 
-        private void ButtonVibrateLeft_Click(object sender, EventArgs e)
-        {
-            VibrateLeft((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
-        }
 
         private void VibrateLeft(int cid, ushort speed)
         {
@@ -957,10 +968,6 @@ namespace XInput_CS
             }
         }
 
-        private void ButtonVibrateRight_Click(object sender, EventArgs e)
-        {
-            VibrateRight((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
-        }
 
         private void VibrateRight(int cid, ushort speed)
         {
@@ -977,11 +984,6 @@ namespace XInput_CS
             IsRightVibrating[cid] = true;
         }
 
-        private void TrackBarSpeed_Scroll(object sender, EventArgs e)
-        {
-            UpdateSpeedLabel();
-
-        }
 
     }
 }
