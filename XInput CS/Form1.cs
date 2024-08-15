@@ -805,15 +805,15 @@ namespace XInput_CS
             // Search for a non-neutral right trigger.
             for (int i = 0; i < 4; i++)
             {
-                if (Connected[i])
+                if (Connected[i] && !IsConRightTriggerNeutral[i])
                 {
-                    if (!IsConRightTriggerNeutral[i])
-                    {   // A non-neutral right trigger was found.
+                    //if (!IsConRightTriggerNeutral[i])
+                    //{   // A non-neutral right trigger was found.
 
-                        ConSum = false; // Report the non-neutral right trigger.
+                    ConSum = false; // Report the non-neutral right trigger.
 
-                        break; // No need to search further, so stop the search.
-                    }
+                    break; // No need to search further, so stop the search.
+                    //}
                 }
             }
 
