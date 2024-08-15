@@ -915,8 +915,7 @@ namespace XInput_CS
         }
 
         private void SendVibrationMotorCommand(int controllerID)
-        {
-            // Sends vibration motor speed command to the specified controller.
+        {   // Sends vibration motor speed command to the specified controller.
 
             try
             {
@@ -935,8 +934,11 @@ namespace XInput_CS
             catch (Exception ex)
             {
                 DisplayError(ex);
+
                 return; // Exit the method.
+
             }
+
         }
 
         private void UpdateVibrateTimer()
@@ -965,9 +967,13 @@ namespace XInput_CS
                         Vibration.wLeftMotorSpeed = 0;
 
                         SendVibrationMotorCommand(index);
+
                     }
+
                 }
+
             }
+
         }
 
         private void UpdateRightVibrateTimer()
@@ -988,9 +994,13 @@ namespace XInput_CS
                         Vibration.wRightMotorSpeed = 0;
 
                         SendVibrationMotorCommand(index);
+
                     }
+
                 }
+
             }
+
         }
 
         private void UpdateSpeedLabel()
