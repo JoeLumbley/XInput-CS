@@ -1,7 +1,8 @@
-// XInput
+// XInput CS
 
 // This is an example application that demonstrates the use of Xbox controllers,
 // including the vibration effect (rumble).
+
 // MIT License
 // Copyright(c) 2023 Joseph W. Lumbley
 
@@ -11,6 +12,7 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, And/Or sell
 // copies of the Software, And to permit persons to whom the Software Is
 // furnished to do so, subject to the following conditions:
+
 // The above copyright notice And this permission notice shall be included In all
 // copies Or substantial portions of the Software.
 
@@ -28,9 +30,9 @@ namespace XInput_CS
 {
     public partial class Form1 : Form
     {
-
         [DllImport("XInput1_4.dll")]
         private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
+
         // XInput1_4.dll seems to be the current version
         // XInput9_1_0.dll is maintained primarily for backward compatibility. 
 
@@ -38,6 +40,7 @@ namespace XInput_CS
         public struct XINPUT_STATE
         {
             public uint PacketNumber; // Unsigned 32-bit (4-byte) integer range 0 through 4,294,967,295.
+
             public Gamepad Gamepad;
         }
 
@@ -835,15 +838,14 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Connected[i] && !IsConLeftTriggerNeutral[i])
-                {
-                    //if (!IsConLeftTriggerNeutral[i])
-                    //{   // A non-neutral left trigger was found.
+                {   // A non-neutral left trigger was found.
 
                     ConSum = false; // Report the non-neutral left trigger.
 
                     break; // No need to search further, so stop the search.
-                    //}
+
                 }
+
             }
 
             // Are all controllers' left triggers in the neutral position?
@@ -871,6 +873,121 @@ namespace XInput_CS
             LabelRightThumbY.Text = string.Empty;
 
             LabelRightTrigger.Text = string.Empty;
+
+        }
+
+        private void VibrateLeft(int cid, ushort speed)
+        {
+            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
+            // The left motor is the low-frequency rumble motor.
+
+            // Set left motor speed.
+            Vibration.wLeftMotorSpeed = speed;
+
+            SendVibrationMotorCommand(cid);
+
+            LeftVibrateStart[cid] = DateTime.Now;
+
+            IsLeftVibrating[cid] = true;
+        }
+
+        private void VibrateRight(int cid, ushort speed)
+        {
+            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
+            // The right motor is the high-frequency rumble motor.
+
+            // Set right motor speed.
+            Vibration.wRightMotorSpeed = speed;
+
+            SendVibrationMotorCommand(cid);
+
+            RightVibrateStart[cid] = DateTime.Now;
+
+            IsRightVibrating[cid] = true;
+        }
+
+        private void SendVibrationMotorCommand(int controllerID)
+        {
+            // Sends vibration motor speed command to the specified controller.
+
+            try
+            {
+                // Send motor speed command to the specified controller.
+                if (XInputSetState(controllerID, ref Vibration) == 0)
+                {
+                    // The motor speed was set. Success.
+                }
+                else
+                {
+                    // The motor speed was not set. Fail.
+                    // You can log or handle the failure here if needed.
+                    // Example: Console.WriteLine(XInputSetState(controllerID, Vibration).ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayError(ex);
+                return; // Exit the method.
+            }
+        }
+
+        private void UpdateVibrateTimer()
+        {
+            UpdateLeftVibrateTimer();
+
+            UpdateRightVibrateTimer();
+
+        }
+
+        private void UpdateLeftVibrateTimer()
+        {
+            foreach (var isConVibrating in IsLeftVibrating)
+            {
+                int index = Array.IndexOf(IsLeftVibrating, isConVibrating);
+
+                if (index != -1 && isConVibrating)
+                {
+                    TimeSpan elapsedTime = DateTime.Now - LeftVibrateStart[index];
+
+                    if (elapsedTime.TotalSeconds >= 1)
+                    {
+                        IsLeftVibrating[index] = false;
+
+                        // Turn left motor off (set zero speed).
+                        Vibration.wLeftMotorSpeed = 0;
+
+                        SendVibrationMotorCommand(index);
+                    }
+                }
+            }
+        }
+
+        private void UpdateRightVibrateTimer()
+        {
+            foreach (var isConVibrating in IsRightVibrating)
+            {
+                int index = Array.IndexOf(IsRightVibrating, isConVibrating);
+
+                if (index != -1 && isConVibrating)
+                {
+                    TimeSpan elapsedTime = DateTime.Now - RightVibrateStart[index];
+
+                    if (elapsedTime.TotalSeconds >= 1)
+                    {
+                        IsRightVibrating[index] = false;
+
+                        // Turn right motor off (set zero speed).
+                        Vibration.wRightMotorSpeed = 0;
+
+                        SendVibrationMotorCommand(index);
+                    }
+                }
+            }
+        }
+
+        private void UpdateSpeedLabel()
+        {
+            LabelSpeed.Text = "Vibration Speed: " + TrackBarSpeed.Value;
         }
 
         private bool IsControllerConnected(int controllerNumber)
@@ -909,124 +1026,9 @@ namespace XInput_CS
             //LabelBatteryType.Text = string.Empty;
         }
 
-
-        private void UpdateSpeedLabel()
-        {
-            LabelSpeed.Text = "Vibration Speed: " + TrackBarSpeed.Value;
-        }
-
         public Form1()
         {
             InitializeComponent();
-        }
-
-
-        private void VibrateLeft(int cid, ushort speed)
-        {
-            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
-            // The left motor is the low-frequency rumble motor.
-
-            // Set left motor speed.
-            Vibration.wLeftMotorSpeed = speed;
-
-            SendVibrationMotorCommand(cid);
-
-            LeftVibrateStart[cid] = DateTime.Now;
-
-            IsLeftVibrating[cid] = true;
-        }
-
-        private void SendVibrationMotorCommand(int controllerID)
-        {
-            // Sends vibration motor speed command to the specified controller.
-
-            try
-            {
-                // Send motor speed command to the specified controller.
-                if (XInputSetState(controllerID, ref Vibration) == 0)
-                {
-                    // The motor speed was set. Success.
-                }
-                else
-                {
-                    // The motor speed was not set. Fail.
-                    // You can log or handle the failure here if needed.
-                    // Example: Console.WriteLine(XInputSetState(controllerID, Vibration).ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayError(ex);
-                return; // Exit the method.
-            }
-        }
-
-        private void UpdateVibrateTimer()
-        {
-            UpdateLeftVibrateTimer();
-            UpdateRightVibrateTimer();
-        }
-
-        private void UpdateRightVibrateTimer()
-        {
-            foreach (var isConVibrating in IsRightVibrating)
-            {
-                int index = Array.IndexOf(IsRightVibrating, isConVibrating);
-
-                if (index != -1 && isConVibrating)
-                {
-                    TimeSpan elapsedTime = DateTime.Now - RightVibrateStart[index];
-
-                    if (elapsedTime.TotalSeconds >= 1)
-                    {
-                        IsRightVibrating[index] = false;
-
-                        // Turn right motor off (set zero speed).
-                        Vibration.wRightMotorSpeed = 0;
-
-                        SendVibrationMotorCommand(index);
-                    }
-                }
-            }
-        }
-
-        private void UpdateLeftVibrateTimer()
-        {
-            foreach (var isConVibrating in IsLeftVibrating)
-            {
-                int index = Array.IndexOf(IsLeftVibrating, isConVibrating);
-
-                if (index != -1 && isConVibrating)
-                {
-                    TimeSpan elapsedTime = DateTime.Now - LeftVibrateStart[index];
-
-                    if (elapsedTime.TotalSeconds >= 1)
-                    {
-                        IsLeftVibrating[index] = false;
-
-                        // Turn left motor off (set zero speed).
-                        Vibration.wLeftMotorSpeed = 0;
-
-                        SendVibrationMotorCommand(index);
-                    }
-                }
-            }
-        }
-
-
-        private void VibrateRight(int cid, ushort speed)
-        {
-            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
-            // The right motor is the high-frequency rumble motor.
-
-            // Set right motor speed.
-            Vibration.wRightMotorSpeed = speed;
-
-            SendVibrationMotorCommand(cid);
-
-            RightVibrateStart[cid] = DateTime.Now;
-
-            IsRightVibrating[cid] = true;
         }
 
 
