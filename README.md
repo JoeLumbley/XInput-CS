@@ -323,6 +323,24 @@ LabelButtons.Text = "Controller " + ControllerNumber.ToString() + " Button: Up";
 ```
 
 
+### 16. DateTime Handling:
+
+VB: Uses ```Now``` to get the current date and time.
+
+```vb
+
+Dim currentTime As DateTime = Now
+
+```
+
+C#: Uses ```DateTime.Now``` to get the current date and time.
+
+```csharp
+
+DateTime currentTime = DateTime.Now;
+
+```
+
 These examples illustrate some of the common syntax differences you'll encounter when converting VB .NET code to C#.
 
 
