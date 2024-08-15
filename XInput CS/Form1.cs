@@ -517,7 +517,6 @@ namespace XInput_CS
                 LabelLeftThumbX.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Left";
 
                 IsConThumbLXNeutral[ControllerNumber] = false;
-
             }
             else if (ControllerPosition.Gamepad.LeftThumbX >= NeutralEnd)
             {   // The left thumbstick is in the right position.
@@ -525,7 +524,6 @@ namespace XInput_CS
                 LabelLeftThumbX.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Right";
 
                 IsConThumbLXNeutral[ControllerNumber] = false;
-
             }
             else
             {   // The left thumbstick is in the neutral position.
@@ -555,9 +553,11 @@ namespace XInput_CS
             {   // The left thumbstick is in the neutral position.
 
                 IsConThumbLYNeutral[ControllerNumber] = true;
+
             }
 
             ClearLeftThumbstickYLabel();
+
         }
 
         private void UpdateRightThumbstickPosition(int controllerNumber)
