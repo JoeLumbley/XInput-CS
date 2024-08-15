@@ -179,6 +179,7 @@ namespace XInput_CS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             InitializeApp();
         }
 
@@ -204,18 +205,20 @@ namespace XInput_CS
 
         private void ButtonVibrateLeft_Click(object sender, EventArgs e)
         {
+
             VibrateLeft((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
         }
 
         private void ButtonVibrateRight_Click(object sender, EventArgs e)
         {
+
             VibrateRight((int)NumControllerToVib.Value, (ushort)TrackBarSpeed.Value);
         }
 
         private void TrackBarSpeed_Scroll(object sender, EventArgs e)
         {
-            UpdateSpeedLabel();
 
+            UpdateSpeedLabel();
         }
 
         private void UpdateControllerData()
@@ -226,13 +229,13 @@ namespace XInput_CS
                 {
                     if (IsControllerConnected(controllerNumber))
                     {
-
                         UpdateControllerState(controllerNumber);
 
                         Connected[controllerNumber] = true;
                     }
                     else
                     {
+
                         Connected[controllerNumber] = false;
                     }
                 }
@@ -242,8 +245,13 @@ namespace XInput_CS
                     DisplayError(ex);
 
                     return; // Exit the method on error
+
                 }
+
             }
+
+            // UpdateBatteryInfo()
+
         }
 
         private void UpdateControllerState(int controllerNumber)
@@ -258,13 +266,11 @@ namespace XInput_CS
             UpdateLeftTriggerPosition(controllerNumber);
 
             UpdateRightTriggerPosition(controllerNumber);
-
         }
 
         private void UpdateButtonPosition(int controllerNumber)
-        {
+        {   // The range of buttons is 0 to 65,535. Unsigned 16-bit (2-byte) integer.
 
-            // Update button states based on the current button state
             DPadUpPressed = (ControllerPosition.Gamepad.Buttons & DPadUp) != 0;
 
             DPadDownPressed = (ControllerPosition.Gamepad.Buttons & DPadDown) != 0;
@@ -298,6 +304,7 @@ namespace XInput_CS
             ClearButtonsLabel();
 
             DoButtonLogic(controllerNumber);
+
         }
 
         private void DoButtonLogic(int controllerNumber)
