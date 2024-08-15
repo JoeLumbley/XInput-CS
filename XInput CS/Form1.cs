@@ -37,7 +37,7 @@ namespace XInput_CS
         [StructLayout(LayoutKind.Sequential)]
         public struct XINPUT_STATE
         {
-            public int PacketNumber; // Unsigned 32-bit (4-byte) integer range 0 through 4,294,967,295.
+            public uint PacketNumber; // Unsigned 32-bit (4-byte) integer range 0 through 4,294,967,295.
             public Gamepad Gamepad;
         }
 
