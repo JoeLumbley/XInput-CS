@@ -13,7 +13,7 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 I converted XInput from VB to C#.
 
-![017](https://github.com/user-attachments/assets/e35bbf94-25a9-4dd9-8270-d2f1d5ec0f95)
+![018](https://github.com/user-attachments/assets/af90ef23-4f37-458f-91f4-198703d6c08b)
 
 
 ## Things to watch out for when converting from VB .NET to C#
