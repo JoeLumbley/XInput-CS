@@ -256,7 +256,6 @@ namespace XInput_CS
 
         private void UpdateControllerState(int controllerNumber)
         {
-
             UpdateButtonPosition(controllerNumber);
 
             UpdateLeftThumbstickPosition(controllerNumber);
@@ -266,6 +265,7 @@ namespace XInput_CS
             UpdateLeftTriggerPosition(controllerNumber);
 
             UpdateRightTriggerPosition(controllerNumber);
+
         }
 
         private void UpdateButtonPosition(int controllerNumber)
