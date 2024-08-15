@@ -769,22 +769,22 @@ namespace XInput_CS
         }
 
         private void ClearRightThumbstickYLabel()
-        {
-            // Clears the right thumbstick Y-axis label when all controllers' right thumbsticks on the Y-axis are neutral.
+        {   // Clears the right thumbstick Y-axis label when all controllers' right thumbsticks on the Y-axis are neutral.
+
             bool ConSum = true; // Assume all controllers' right thumbsticks on the Y-axis are neutral initially.
 
             // Search for a non-neutral right thumbstick on the Y-axis.
             for (int i = 0; i < 4; i++)
             {
-                if (Connected[i])
+                if (Connected[i] && !IsConThumbRYNeutral[i])
                 {
-                    if (!IsConThumbRYNeutral[i])
-                    {   // A non-neutral thumbstick was found.
+                    //if (!IsConThumbRYNeutral[i])
+                    //{   // A non-neutral thumbstick was found.
 
-                        ConSum = false; // Report the non-neutral thumbstick.
+                    ConSum = false; // Report the non-neutral thumbstick.
 
-                        break; // No need to search further, so stop the search.
-                    }
+                    break; // No need to search further, so stop the search.
+                    //}
                 }
             }
 
