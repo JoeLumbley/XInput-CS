@@ -11,7 +11,7 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 
 
-I converted XInput from VB .NET to C#.
+I converted XInput from VB to C#.
 
 ![017](https://github.com/user-attachments/assets/e35bbf94-25a9-4dd9-8270-d2f1d5ec0f95)
 
@@ -22,7 +22,7 @@ Here are some key syntax differences.
 
 ### 1. Imports and Namespace Declarations
 
-VB.NET: The ```Imports``` statement is used to include namespaces in the file. This allows you to use the classes and methods defined in the ```System.Runtime.InteropServices``` namespace without needing to fully qualify them.
+VB: The ```Imports``` statement is used to include namespaces in the file. This allows you to use the classes and methods defined in the ```System.Runtime.InteropServices``` namespace without needing to fully qualify them.
 
 ```vb
 
@@ -39,7 +39,7 @@ using System.Runtime.InteropServices;
 
 ### 2. Class Declaration
 
-VB.NET: Classes are declared using the ```Class``` keyword. The visibility modifier ```Public``` is capitalized.
+VB: Classes are declared using the ```Class``` keyword. The visibility modifier ```Public``` is capitalized.
 
 ```vb
 
@@ -57,7 +57,7 @@ public class Form1
 
 ### 3. Attributes
 
-VB.NET: Attributes are defined using angle brackets ```<>``` .
+VB: Attributes are defined using angle brackets ```<>``` .
 
 ```vb
 
@@ -75,7 +75,7 @@ C#: Attributes are defined using square brackets ```[]``` .
 
 ### 4. Function Declaration
 
-VB.NET: ```Shared``` keyword is used for static methods and ```ByRef``` is used to pass parameters by reference.
+VB: ```Shared``` keyword is used for static methods and ```ByRef``` is used to pass parameters by reference.
 
 ```vb
 
@@ -93,7 +93,7 @@ private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pStat
 
 ### 5. Structure Declaration
 
-VB.NET: ```Structure``` keyword is followed by the struct name and its members are defined within ```Structure``` and  ```End Structure``` . 
+VB: ```Structure``` keyword is followed by the struct name and its members are defined within ```Structure``` and  ```End Structure``` . 
 
 ```vb
 
@@ -120,7 +120,7 @@ public struct XINPUT_STATE
 
 ### 6. Field Declaration
 
-VB.NET: Uses ```As``` to specify the type. Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure.
+VB: Uses ```As``` to specify the type. Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure.
 
 ```vb
 
@@ -140,7 +140,7 @@ public uint dwPacketNumber;
 
 ### 7. Arrays Declaration
 
-VB.NET: Arrays are declared using parentheses ```()``` and using a range ```(0 To 3)``` to define the size.
+VB: Arrays are declared using parentheses ```()``` and using a range ```(0 To 3)``` to define the size.
 
 ```vb
 
@@ -161,7 +161,7 @@ private ushort[] ConButtons = new ushort[4];
 
 ### 8. Constants Declaration
 
-VB.NET: Constants are declared using the ```Const``` keyword and the ```As``` keyword to specify the type.
+VB: Constants are declared using the ```Const``` keyword and the ```As``` keyword to specify the type.
 
 ```vb
 
@@ -179,7 +179,7 @@ private const short NeutralStart = -16384;
 
 ### 9. Enum Declaration
 
-VB.NET: Enums are declared using the ```Enum``` keyword and ```End Enum``` to close the declaration.
+VB: Enums are declared using the ```Enum``` keyword and ```End Enum``` to close the declaration.
 
 ```vb
 
@@ -205,7 +205,7 @@ public enum BATTERY_TYPE : byte
 
 ### 10. Subroutine Declaration
 
-VB.NET: Subroutines are declared using the ```Sub``` keyword. The ```Handles``` keyword is used to specify the event handler.
+VB: Subroutines are declared using the ```Sub``` keyword. The ```Handles``` keyword is used to specify the event handler.
 
 ```vb
 
@@ -223,7 +223,7 @@ private void Form1_Load(object sender, EventArgs e)
 
 ### 11. If Statement with AndAlso
 
-VB.NET: Uses ```AndAlso``` for logical AND and ```=``` for comparisons.
+VB: Uses ```AndAlso``` for logical AND and ```=``` for comparisons.
 
 ```vb
 
@@ -241,7 +241,7 @@ if (DPadUpPressed && !DPadDownPressed)
 
 ### 12. Try-Catch Block
 
-VB.NET: Uses ```Try``` and ```End Try``` to define the block.
+VB: Uses ```Try``` and ```End Try``` to define the block.
 
 ```vb
 
@@ -270,7 +270,7 @@ catch (Exception ex)
 
 ### 13. For Each Loop
 
-VB.NET: The ```For Each``` keyword is used for iteration.
+VB: The ```For Each``` keyword is used for iteration.
 
 ```vb
 
@@ -288,7 +288,7 @@ foreach (var con in ConButtons)
 
 ### 14. Return Statement
 
-VB.NET: The ```Return``` keyword is used to return a value, and ```=``` is used for comparison.
+VB: The ```Return``` keyword is used to return a value, and ```=``` is used for comparison.
 
 ```vb
 
@@ -306,7 +306,7 @@ return XInputGetState(controllerNumber, ControllerPosition) == 0;
 
 ### 15. String Concatenation
 
-VB.NET: Strings are concatenated using the ```&``` operator.
+VB: Strings are concatenated using the ```&``` operator.
 
 ```vb
 
