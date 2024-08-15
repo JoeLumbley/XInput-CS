@@ -702,7 +702,7 @@ namespace XInput_CS
 
             // Are all controllers left thumbsticks on the Y-axis in the neutral position?
             if (ConSum)
-            {   // Yes, all controllers left thumbsticks on the X-axis are in the neutral position.
+            {   // Yes, all controllers left thumbsticks on the Y-axis are in the neutral position.
 
                 LabelLeftThumbY.Text = string.Empty; // Clear label.
 
@@ -758,9 +758,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' right thumbsticks in the neutral position?
+            // Are all controllers' right thumbsticks on the X-axis in the neutral position?
             if (ConSum)
-            { // Yes, all controllers' right thumbsticks are in the neutral position.
+            { // Yes, all controllers' right thumbsticks on the X-axis are in the neutral position.
 
                 LabelRightThumbX.Text = string.Empty; // Clear label.
 
