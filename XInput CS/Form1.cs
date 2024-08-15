@@ -778,14 +778,13 @@ namespace XInput_CS
             {
                 if (Connected[i] && !IsConThumbRYNeutral[i])
                 {
-                    //if (!IsConThumbRYNeutral[i])
-                    //{   // A non-neutral thumbstick was found.
 
                     ConSum = false; // Report the non-neutral thumbstick.
 
                     break; // No need to search further, so stop the search.
-                    //}
+
                 }
+
             }
 
             // Are all controllers' right thumbsticks on the Y-axis in the neutral position?
@@ -793,7 +792,9 @@ namespace XInput_CS
             {   // Yes, all controllers' right thumbsticks on the Y-axis are in the neutral position.
 
                 LabelRightThumbY.Text = string.Empty; // Clear label.
+
             }
+
         }
 
         private void ClearRightTriggerLabel()
