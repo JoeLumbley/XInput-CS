@@ -10,10 +10,10 @@
 With a clean and well-commented codebase, this project serves as an invaluable resource for developers looking to harness the power of XInput in their Windows applications. Whether you're a seasoned developer or just getting started, the XInput app provides a solid foundation for building immersive gaming experiences and beyond.
 
 
+![063](https://github.com/user-attachments/assets/a8d75d93-acac-4071-9e8c-fb60a82f4636)
 
 I converted XInput from VB to C#.
 
-![018](https://github.com/user-attachments/assets/af90ef23-4f37-458f-91f4-198703d6c08b)
 
 
 ## Things to watch out for when converting from VB .NET to C#
@@ -36,6 +36,7 @@ C#: The ```using``` directive is used to include namespaces in the file. This al
 using System.Runtime.InteropServices;
 
 ```
+![018](https://github.com/user-attachments/assets/af90ef23-4f37-458f-91f4-198703d6c08b)
 
 ### 2. Class Declaration
 
