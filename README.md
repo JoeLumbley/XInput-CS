@@ -10,10 +10,10 @@
 With a clean and well-commented codebase, this project serves as an invaluable resource for developers looking to harness the power of XInput in their Windows applications. Whether you're a seasoned developer or just getting started, the XInput app provides a solid foundation for building immersive gaming experiences and beyond.
 
 
+![063](https://github.com/user-attachments/assets/a8d75d93-acac-4071-9e8c-fb60a82f4636)
 
 I converted XInput from VB to C#.
 
-![017](https://github.com/user-attachments/assets/e35bbf94-25a9-4dd9-8270-d2f1d5ec0f95)
 
 
 ## Things to watch out for when converting from VB .NET to C#
@@ -36,6 +36,7 @@ C#: The ```using``` directive is used to include namespaces in the file. This al
 using System.Runtime.InteropServices;
 
 ```
+![018](https://github.com/user-attachments/assets/af90ef23-4f37-458f-91f4-198703d6c08b)
 
 ### 2. Class Declaration
 
@@ -323,7 +324,7 @@ LabelButtons.Text = "Controller " + ControllerNumber.ToString() + " Button: Up";
 ```
 
 
-### 16. DateTime Handling:
+### 16. DateTime Handling
 
 VB: Uses ```Now``` to get the current date and time.
 
@@ -341,7 +342,7 @@ DateTime currentTime = DateTime.Now;
 
 ```
 
-These examples illustrate some of the common syntax differences you'll encounter when converting VB .NET code to C#.
+These examples illustrate some of the common syntax differences you'll encounter when converting VB code to C#.
 
 
 
