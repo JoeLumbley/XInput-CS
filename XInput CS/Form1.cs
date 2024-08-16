@@ -25,6 +25,7 @@
 // SOFTWARE.
 
 using System.Runtime.InteropServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace XInput_CS
 {
@@ -187,7 +188,7 @@ namespace XInput_CS
         {
             //The tick frequency in milliseconds.
             //Also called the polling frequency.
-            timer1.Interval = 100; // 1000/60 = 16.67 ms
+            timer1.Interval = 15; // 1000/60 = 16.67 ms
             //To get 60 FPS (Frames Per Second) in milliseconds.
             //We divide 1000 (the number of milliseconds in a second) by 60 the FPS.
 
@@ -1048,10 +1049,96 @@ namespace XInput_CS
         {
             InitializeComponent();
         }
-
-
     }
 }
 
+
+
+// Consuming Unmanaged DLL Functions
+
+// Consuming unmanaged DLL functions refers to the process of using functions that are defined in a
+// DLL (Dynamic Link Library) which is written in a language like C or C++. This involves using
+// Platform Invocation Services(P / Invoke) to call functions in the unmanaged DLL from your managed
+// C# code. To consume unmanaged DLL functions, use the DllImport attribute to declare the external
+// functions from the DLL.
+
+// https://learn.microsoft.com/en-us/dotnet/framework/interop/consuming-unmanaged-dll-functions
+
+
+// Passing Structures
+
+// Passing structures refers to the process of sending structured data as a parameter to a function
+// or method. Structures, also known as structs, allow you to group related data together under a
+// single name. When passing structures as parameters, you are essentially sending a block of data
+// that contains multiple fields or members. This can be useful for organizing related data and
+// passing them around your program efficiently.
+
+// https://learn.microsoft.com/en-us/dotnet/framework/interop/passing-structures
+
+
+// XInputGetState Function
+
+// The XInputGetState function is used to retrieve the current state of an Xbox controller.
+
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/nf-xinput-xinputgetstate
+
+
+// XINPUT_STATE Structure
+
+// The XINPUT_STATE structure is used to hold the current state of an Xbox controller.
+
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/ns-xinput-xinput_state
+
+
+// XINPUT_GAMEPAD Structure
+
+// The XINPUT_GAMEPAD structure represents the state of the gamepad (Xbox controller) input,
+// including information about button presses, trigger values, and thumbstick positions.
+
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/ns-xinput-xinput_gamepad
+
+
+// XInputSetState Function
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/nf-xinput-xinputsetstate
+
+
+// XINPUT_VIBRATION Structure
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/ns-xinput-xinput_vibration
+
+
+// XInputGetBatteryInformation Function
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/nf-xinput-xinputgetbatteryinformation
+
+
+// XINPUT_BATTERY_INFORMATION Structure
+// https://learn.microsoft.com/en-us/windows/win32/api/xinput/ns-xinput-xinput_battery_information
+
+
+// Getting Started with XInput in Windows Applications
+// https://learn.microsoft.com/en-us/windows/win32/xinput/getting-started-with-xinput
+
+
+// XInput Game Controller APIs
+// https://learn.microsoft.com/en-us/windows/win32/api/_xinput/
+
+
+// XInput Versions
+// https://learn.microsoft.com/en-us/windows/win32/xinput/xinput-versions
+
+
+// Comparison of XInput and DirectInput Features
+// https://learn.microsoft.com/en-us/windows/win32/xinput/xinput-and-directinput
+
+
+// Built-in types (C# reference)
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types
+
+
+// Monica is our an AI assistant.
+// https://monica.im/
+
+
+// I also make coding videos on my YouTube channel.
+// https://www.youtube.com/@codewithjoe6074
 
 
