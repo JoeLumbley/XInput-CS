@@ -25,7 +25,6 @@
 // SOFTWARE.
 
 using System.Runtime.InteropServices;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace XInput_CS
 {
@@ -34,27 +33,27 @@ namespace XInput_CS
         [DllImport("XInput1_4.dll")]
         private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
 
-        // XInput1_4.dll seems to be the current version
-        // XInput9_1_0.dll is maintained primarily for backward compatibility. 
-
-        [StructLayout(LayoutKind.Sequential)]
+        //// XInput1_4.dll seems to be the current version
+        //// XInput9_1_0.dll is maintained primarily for backward compatibility. 
+        [StructLayout(LayoutKind.Explicit)]
         public struct XINPUT_STATE
         {
-            public uint PacketNumber; // Unsigned 32-bit (4-byte) integer range 0 through 4,294,967,295.
-
-            public Gamepad Gamepad;
+            [FieldOffset(0)]
+            public uint dwPacketNumber; // Unsigned 32-bit (4-byte) integer range 0 through 4,294,967,295.
+            [FieldOffset(4)]
+            public XINPUT_GAMEPAD Gamepad;
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct Gamepad
+        public struct XINPUT_GAMEPAD
         {
-            public ushort Buttons; // Unsigned 16-bit (2-byte) integer range 0 through 65,535.
-            public byte LeftTrigger; // Unsigned 8-bit (1-byte) integer range 0 through 255.
-            public byte RightTrigger;
-            public short LeftThumbX; // Signed 16-bit (2-byte) integer range -32,768 through 32,767.
-            public short LeftThumbY;
-            public short RightThumbX;
-            public short RightThumbY;
+            public ushort wButtons; // Unsigned 16-bit (2-byte) integer range 0 through 65,535.
+            public byte bLeftTrigger; // Unsigned 8-bit (1-byte) integer range 0 through 255.
+            public byte bRightTrigger;
+            public short sThumbLX; // Signed 16-bit (2-byte) integer range -32,768 through 32,767.
+            public short sThumbLY;
+            public short sThumbRX;
+            public short sThumbRY;
         }
 
         private ushort[] ConButtons = new ushort[4];
@@ -272,35 +271,35 @@ namespace XInput_CS
         private void UpdateButtonPosition(int controllerNumber)
         {   // The range of buttons is 0 to 65,535. Unsigned 16-bit (2-byte) integer.
 
-            DPadUpPressed = (ControllerPosition.Gamepad.Buttons & DPadUp) != 0;
+            DPadUpPressed = (ControllerPosition.Gamepad.wButtons & DPadUp) != 0;
 
-            DPadDownPressed = (ControllerPosition.Gamepad.Buttons & DPadDown) != 0;
+            DPadDownPressed = (ControllerPosition.Gamepad.wButtons & DPadDown) != 0;
 
-            DPadLeftPressed = (ControllerPosition.Gamepad.Buttons & DPadLeft) != 0;
+            DPadLeftPressed = (ControllerPosition.Gamepad.wButtons & DPadLeft) != 0;
 
-            DPadRightPressed = (ControllerPosition.Gamepad.Buttons & DPadRight) != 0;
+            DPadRightPressed = (ControllerPosition.Gamepad.wButtons & DPadRight) != 0;
 
-            StartButtonPressed = (ControllerPosition.Gamepad.Buttons & StartButton) != 0;
+            StartButtonPressed = (ControllerPosition.Gamepad.wButtons & StartButton) != 0;
 
-            BackButtonPressed = (ControllerPosition.Gamepad.Buttons & BackButton) != 0;
+            BackButtonPressed = (ControllerPosition.Gamepad.wButtons & BackButton) != 0;
 
-            LeftStickButtonPressed = (ControllerPosition.Gamepad.Buttons & LeftStickButton) != 0;
+            LeftStickButtonPressed = (ControllerPosition.Gamepad.wButtons & LeftStickButton) != 0;
 
-            RightStickButtonPressed = (ControllerPosition.Gamepad.Buttons & RightStickButton) != 0;
+            RightStickButtonPressed = (ControllerPosition.Gamepad.wButtons & RightStickButton) != 0;
 
-            LeftBumperButtonPressed = (ControllerPosition.Gamepad.Buttons & LeftBumperButton) != 0;
+            LeftBumperButtonPressed = (ControllerPosition.Gamepad.wButtons & LeftBumperButton) != 0;
 
-            RightBumperButtonPressed = (ControllerPosition.Gamepad.Buttons & RightBumperButton) != 0;
+            RightBumperButtonPressed = (ControllerPosition.Gamepad.wButtons & RightBumperButton) != 0;
 
-            AButtonPressed = (ControllerPosition.Gamepad.Buttons & AButton) != 0;
+            AButtonPressed = (ControllerPosition.Gamepad.wButtons & AButton) != 0;
 
-            BButtonPressed = (ControllerPosition.Gamepad.Buttons & BButton) != 0;
+            BButtonPressed = (ControllerPosition.Gamepad.wButtons & BButton) != 0;
 
-            XButtonPressed = (ControllerPosition.Gamepad.Buttons & XButton) != 0;
+            XButtonPressed = (ControllerPosition.Gamepad.wButtons & XButton) != 0;
 
-            YButtonPressed = (ControllerPosition.Gamepad.Buttons & YButton) != 0;
+            YButtonPressed = (ControllerPosition.Gamepad.wButtons & YButton) != 0;
 
-            ConButtons[controllerNumber] = ControllerPosition.Gamepad.Buttons;
+            ConButtons[controllerNumber] = ControllerPosition.Gamepad.wButtons;
 
             ClearButtonsLabel();
 
@@ -523,14 +522,14 @@ namespace XInput_CS
             // The range on the Y-axis is -32,768 through 32,767. Signed 16-bit (2-byte) integer.
 
             // What position is the left thumbstick in on the X-axis?
-            if (ControllerPosition.Gamepad.LeftThumbX <= NeutralStart)
+            if (ControllerPosition.Gamepad.sThumbLX <= NeutralStart)
             {   // The left thumbstick is in the left position.
 
                 LabelLeftThumbX.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Left";
 
                 IsConThumbLXNeutral[ControllerNumber] = false;
             }
-            else if (ControllerPosition.Gamepad.LeftThumbX >= NeutralEnd)
+            else if (ControllerPosition.Gamepad.sThumbLX >= NeutralEnd)
             {   // The left thumbstick is in the right position.
 
                 LabelLeftThumbX.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Right";
@@ -547,14 +546,14 @@ namespace XInput_CS
             ClearLeftThumbstickXLabel();
 
             // What position is the left thumbstick in on the Y-axis?
-            if (ControllerPosition.Gamepad.LeftThumbY <= NeutralStart)
+            if (ControllerPosition.Gamepad.sThumbLY <= NeutralStart)
             {   // The left thumbstick is in the down position.
 
                 LabelLeftThumbY.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Down";
 
                 IsConThumbLYNeutral[ControllerNumber] = false;
             }
-            else if (ControllerPosition.Gamepad.LeftThumbY >= NeutralEnd)
+            else if (ControllerPosition.Gamepad.sThumbLY >= NeutralEnd)
             {   // The left thumbstick is in the up position.
 
                 LabelLeftThumbY.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Up";
@@ -577,14 +576,14 @@ namespace XInput_CS
             // The range on the Y-axis is -32,768 through 32,767. Signed 16-bit (2-byte) integer.
 
             // What position is the right thumbstick in on the X-axis?
-            if (ControllerPosition.Gamepad.RightThumbX <= NeutralStart)
+            if (ControllerPosition.Gamepad.sThumbRX <= NeutralStart)
             {   // The right thumbstick is in the left position.
 
                 LabelRightThumbX.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Left";
 
                 IsConThumbRXNeutral[controllerNumber] = false;
             }
-            else if (ControllerPosition.Gamepad.RightThumbX >= NeutralEnd)
+            else if (ControllerPosition.Gamepad.sThumbRX >= NeutralEnd)
             {   // The right thumbstick is in the right position.
 
                 LabelRightThumbX.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Right";
@@ -601,14 +600,14 @@ namespace XInput_CS
             ClearRightThumbstickXLabel();
 
             // What position is the right thumbstick in on the Y-axis?
-            if (ControllerPosition.Gamepad.RightThumbY <= NeutralStart)
+            if (ControllerPosition.Gamepad.sThumbRY <= NeutralStart)
             {   // The right thumbstick is in the up position.
 
                 LabelRightThumbY.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Down";
 
                 IsConThumbRYNeutral[controllerNumber] = false;
             }
-            else if (ControllerPosition.Gamepad.RightThumbY >= NeutralEnd)
+            else if (ControllerPosition.Gamepad.sThumbRY >= NeutralEnd)
             {   // The right thumbstick is in the down position.
 
                 LabelRightThumbY.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Up";
@@ -631,7 +630,7 @@ namespace XInput_CS
             // The trigger position must be greater than the trigger threshold to register as pressed.
 
             // What position is the right trigger in?
-            if (ControllerPosition.Gamepad.RightTrigger > TriggerThreshold)
+            if (ControllerPosition.Gamepad.bRightTrigger > TriggerThreshold)
             {   // The right trigger is in the down position. Trigger Break. Bang!
 
                 LabelRightTrigger.Text = "Controller " + controllerNumber.ToString() + " Right Trigger";
@@ -654,7 +653,7 @@ namespace XInput_CS
             // The trigger position must be greater than the trigger threshold to register as pressed.
 
             // What position is the left trigger in?
-            if (ControllerPosition.Gamepad.LeftTrigger > TriggerThreshold)
+            if (ControllerPosition.Gamepad.bLeftTrigger > TriggerThreshold)
             {   // The left trigger is in the down position. Trigger Break. Bang!
 
                 LabelLeftTrigger.Text = "Controller " + controllerNumber.ToString() + " Left Trigger";
