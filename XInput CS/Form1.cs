@@ -187,7 +187,7 @@ namespace XInput_CS
         {
             //The tick frequency in milliseconds.
             //Also called the polling frequency.
-            timer1.Interval = 15; // 1000/60 = 16.67 ms
+            timer1.Interval = 100; // 1000/60 = 16.67 ms
             //To get 60 FPS (Frames Per Second) in milliseconds.
             //We divide 1000 (the number of milliseconds in a second) by 60 the FPS.
 
@@ -1020,7 +1020,7 @@ namespace XInput_CS
 
         private void InitializeApp()
         {
-            Text = "XInput - Code with Joe";
+            Text = "XInput C# - Code with Joe";
 
             InitializeTimer1();
 
