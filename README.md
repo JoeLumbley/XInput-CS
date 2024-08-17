@@ -16,7 +16,7 @@ I converted XInput from VB to C#.
 
 
 
-## Things to watch out for when converting from VB .NET to C#
+## Things to watch out for when converting from VB.NET to C#
 
 Here are some key syntax differences.
 
