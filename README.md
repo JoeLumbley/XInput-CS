@@ -124,7 +124,7 @@ public struct XINPUT_STATE
 
 ### 6. Field Declaration
 
-VB: Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure.
+VB: Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure. Attributes are defined using angle brackets ```<>``` .
 
 ```vb
 
@@ -133,7 +133,7 @@ Public dwPacketNumber As UInteger
 
 ```
 
-C#: Fields are declared with a semicolon ```;``` at the end. The ```FieldOffset``` attribute specifies the position of the field within the structure.
+C#: Fields are declared with a semicolon ```;``` at the end. The ```FieldOffset``` attribute specifies the position of the field within the structure. Attributes are defined using square brackets ```[]``` .
 
 ```csharp
 
