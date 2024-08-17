@@ -124,7 +124,7 @@ public struct XINPUT_STATE
 
 ### 6. Field Declaration
 
-VB: Uses ```As``` to specify the type. Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure.
+VB: Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure.
 
 ```vb
 
