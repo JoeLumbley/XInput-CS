@@ -97,11 +97,12 @@ private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pStat
 VB: ```Structure``` keyword is followed by the struct name and its members are defined within ```Structure``` and  ```End Structure``` . 
 
 ```vb
-
 <StructLayout(LayoutKind.Explicit)>
 Public Structure XINPUT_STATE
-    Public dwPacketNumber As Integer
-    Public GamePadState As GamePadState
+    <FieldOffset(0)>
+    Public dwPacketNumber As UInteger
+    <FieldOffset(4)>
+    Public Gamepad As XINPUT_GAMEPAD
 End Structure
 
 ```
@@ -113,8 +114,10 @@ C#: ```struct``` keyword is followed by the struct name and its members are defi
 [StructLayout(LayoutKind.Explicit)]
 public struct XINPUT_STATE
 {
-    public int dwPacketNumber;
-    public GamePadState GamePadState;
+    [FieldOffset(0)]
+    public uint dwPacketNumber;
+    [FieldOffset(4)]
+    public XINPUT_GAMEPAD Gamepad;
 }
 
 ```
