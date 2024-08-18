@@ -370,7 +370,9 @@ namespace XInput_CS
             if (!string.IsNullOrEmpty(buttonText))
             {
                 LabelButtons.Text = buttonText;
+
             }
+
         }
 
         private string GetButtonText(int controllerNumber)
@@ -378,119 +380,22 @@ namespace XInput_CS
             var buttons = new List<string>();
 
             if (AButtonPressed) buttons.Add("A");
+
             if (BButtonPressed) buttons.Add("B");
+
             if (XButtonPressed) buttons.Add("X");
+
             if (YButtonPressed) buttons.Add("Y");
 
             if (buttons.Count > 0)
             {
                 return $"Controller {controllerNumber} Buttons: {string.Join("+", buttons)}";
+
             }
 
             return string.Empty; // Return an empty string if no buttons are pressed
+
         }
-
-
-
-        //private void DoLetterButtonLogic(int controllerNumber)
-        //{
-        //    if (AButtonPressed)
-        //    {
-        //        if (BButtonPressed)
-        //        {
-        //            if (XButtonPressed)
-        //            {
-        //                if (YButtonPressed)
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+X+Y";
-        //                }
-        //                else
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+X";
-
-        //                }
-        //            }
-        //            else
-        //            {
-        //                if (YButtonPressed)
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+Y";
-        //                }
-        //                else
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B";
-
-        //                }
-
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (XButtonPressed)
-        //            {
-        //                if (YButtonPressed)
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+X+Y";
-        //                }
-        //                else
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+X";
-        //                }
-        //            }
-        //            else
-        //            {
-        //                if (YButtonPressed)
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+Y";
-        //                }
-        //                else
-        //                {
-        //                    LabelButtons.Text = $"Controller {controllerNumber} Button: A";
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else if (BButtonPressed)
-        //    {
-        //        if (XButtonPressed)
-        //        {
-        //            if (YButtonPressed)
-        //            {
-        //                LabelButtons.Text = $"Controller {controllerNumber} Buttons: B+X+Y";
-        //            }
-        //            else
-        //            {
-        //                LabelButtons.Text = $"Controller {controllerNumber} Buttons: B+X";
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (YButtonPressed)
-        //            {
-        //                LabelButtons.Text = $"Controller {controllerNumber} Buttons: B+Y";
-        //            }
-        //            else
-        //            {
-        //                LabelButtons.Text = $"Controller {controllerNumber} Button: B";
-        //            }
-        //        }
-        //    }
-        //    else if (XButtonPressed)
-        //    {
-        //        if (YButtonPressed)
-        //        {
-        //            LabelButtons.Text = $"Controller {controllerNumber} Buttons: X+Y";
-        //        }
-        //        else
-        //        {
-        //            LabelButtons.Text = $"Controller {controllerNumber} Button: X";
-        //        }
-        //    }
-        //    else if (YButtonPressed)
-        //    {
-        //        LabelButtons.Text = $"Controller {controllerNumber} Button: Y";
-        //    }
-        //}
 
         private void DoStartBackLogic(int controllerNumber)
         {
@@ -503,12 +408,15 @@ namespace XInput_CS
                 else
                 {
                     LabelButtons.Text = $"Controller {controllerNumber} Buttons: Start";
+
                 }
             }
             else if (BackButtonPressed)
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Buttons: Back";
+
             }
+
         }
 
         private void DoBumperLogic(int controllerNumber)
