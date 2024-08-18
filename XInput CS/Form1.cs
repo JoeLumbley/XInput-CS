@@ -328,6 +328,7 @@ namespace XInput_CS
             if (direction != "NONE")
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Button: {direction}";
+
             }
 
         }
@@ -341,7 +342,9 @@ namespace XInput_CS
                 if (DPadRightPressed) return "Right+Up";
 
                 return "Up";
+
             }
+
             if (DPadDownPressed)
             {
                 if (DPadLeftPressed) return "Left+Down";
@@ -349,7 +352,9 @@ namespace XInput_CS
                 if (DPadRightPressed) return "Right+Down";
 
                 return "Down";
+
             }
+
             if (DPadLeftPressed) return "Left";
 
             if (DPadRightPressed) return "Right";
