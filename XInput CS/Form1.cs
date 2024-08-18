@@ -323,53 +323,94 @@ namespace XInput_CS
 
         private void DoDPadLogic(int controllerNumber)
         {
+
+            string direction = GetDPadDirection();
+
+            if (direction != "NONE")
+            {
+                LabelButtons.Text = $"Controller {controllerNumber} Button: {direction}";
+            }
+
+
+
+
+
+
+
+
+            //if (DPadUpPressed)
+            //{
+            //    if (DPadLeftPressed)
+            //    {
+            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Up";
+            //    }
+            //    else if (DPadRightPressed)
+            //    {
+            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Up";
+            //    }
+            //    else
+            //    {
+            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Up";
+
+            //    }
+
+            //}
+
+            //else if (DPadDownPressed)
+            //{
+            //    if (DPadLeftPressed)
+            //    {
+            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Down";
+            //    }
+            //    else if (DPadRightPressed)
+            //    {
+            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Down";
+            //    }
+            //    else
+            //    {
+            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Down";
+
+            //    }
+
+            //}
+
+            //else if (DPadLeftPressed && !DPadDownPressed && !DPadUpPressed)
+            //{
+            //    LabelButtons.Text = $"Controller {controllerNumber} Button: Left";
+
+            //}
+
+            //else if (DPadRightPressed && !DPadDownPressed && !DPadUpPressed)
+            //{
+            //    LabelButtons.Text = $"Controller {controllerNumber} Button: Right";
+
+            //}
+
+        }
+
+        private string GetDPadDirection()
+        {
             if (DPadUpPressed)
             {
-                if (DPadLeftPressed)
-                {
-                    LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Up";
-                }
-                else if (DPadRightPressed)
-                {
-                    LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Up";
-                }
-                else
-                {
-                    LabelButtons.Text = $"Controller {controllerNumber} Button: Up";
+                if (DPadLeftPressed) return "Left+Up";
 
-                }
+                if (DPadRightPressed) return "Right+Up";
 
+                return "Up";
             }
-
-            else if (DPadDownPressed)
+            if (DPadDownPressed)
             {
-                if (DPadLeftPressed)
-                {
-                    LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Down";
-                }
-                else if (DPadRightPressed)
-                {
-                    LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Down";
-                }
-                else
-                {
-                    LabelButtons.Text = $"Controller {controllerNumber} Button: Down";
+                if (DPadLeftPressed) return "Left+Down";
 
-                }
+                if (DPadRightPressed) return "Right+Down";
 
+                return "Down";
             }
+            if (DPadLeftPressed) return "Left";
 
-            else if (DPadLeftPressed && !DPadDownPressed && !DPadUpPressed)
-            {
-                LabelButtons.Text = $"Controller {controllerNumber} Button: Left";
+            if (DPadRightPressed) return "Right";
 
-            }
-
-            else if (DPadRightPressed && !DPadDownPressed && !DPadUpPressed)
-            {
-                LabelButtons.Text = $"Controller {controllerNumber} Button: Right";
-
-            }
+            return "NONE"; // or any default value if no button is pressed
 
         }
 
@@ -388,6 +429,7 @@ namespace XInput_CS
                         else
                         {
                             LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+X";
+
                         }
                     }
                     else
@@ -399,7 +441,9 @@ namespace XInput_CS
                         else
                         {
                             LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B";
+
                         }
+
                     }
                 }
                 else
@@ -423,7 +467,7 @@ namespace XInput_CS
                         }
                         else
                         {
-                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A";
+                            LabelButtons.Text = $"Controller {controllerNumber} Button: A";
                         }
                     }
                 }
@@ -449,7 +493,7 @@ namespace XInput_CS
                     }
                     else
                     {
-                        LabelButtons.Text = $"Controller {controllerNumber} Buttons: B";
+                        LabelButtons.Text = $"Controller {controllerNumber} Button: B";
                     }
                 }
             }
@@ -461,12 +505,12 @@ namespace XInput_CS
                 }
                 else
                 {
-                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: X";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: X";
                 }
             }
             else if (YButtonPressed)
             {
-                LabelButtons.Text = $"Controller {controllerNumber} Buttons: Y";
+                LabelButtons.Text = $"Controller {controllerNumber} Button: Y";
             }
         }
 
