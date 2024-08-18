@@ -325,8 +325,10 @@ namespace XInput_CS
         {
             string direction = GetDPadDirection();
 
+            // Are any DPad buttons pressed?
             if (!string.IsNullOrEmpty(direction))
-            {
+            {   // Yes, DPad buttons are pressed.
+
                 LabelButtons.Text = $"Controller {controllerNumber} Button: {direction}";
 
             }
@@ -359,7 +361,7 @@ namespace XInput_CS
 
             if (DPadRightPressed) return "Right";
 
-            return String.Empty; // Return an empty string if no buttons are pressed.
+            return string.Empty; // Return an empty string if no buttons are pressed.
 
         }
 
@@ -367,8 +369,10 @@ namespace XInput_CS
         {
             string buttonText = GetButtonText(controllerNumber);
 
+            // Are any letter buttons pressed?
             if (!string.IsNullOrEmpty(buttonText))
-            {
+            {   // Yes, letter buttons are pressed.
+
                 LabelButtons.Text = buttonText;
 
             }
