@@ -327,39 +327,39 @@ namespace XInput_CS
             {
                 if (DPadLeftPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Button: Left+Up";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Up";
                 }
                 else if (DPadRightPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Button: Right+Up";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Up";
                 }
                 else
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Button: Up";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: Up";
                 }
             }
             else if (DPadDownPressed)
             {
                 if (DPadLeftPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Button: Left+Down";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Down";
                 }
                 else if (DPadRightPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Button: Right+Down";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Down";
                 }
                 else
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Button: Down";
+                    LabelButtons.Text = $"Controller {controllerNumber} Button: Down";
                 }
             }
             else if (DPadLeftPressed && !DPadDownPressed && !DPadUpPressed)
             {
-                LabelButtons.Text = "Controller " + controllerNumber + " Button: Left";
+                LabelButtons.Text = $"Controller {controllerNumber} Button: Left";
             }
             else if (DPadRightPressed && !DPadDownPressed && !DPadUpPressed)
             {
-                LabelButtons.Text = "Controller " + controllerNumber + " Button: Right";
+                LabelButtons.Text = $"Controller {controllerNumber} Button: Right";
             }
         }
 
@@ -373,22 +373,22 @@ namespace XInput_CS
                     {
                         if (YButtonPressed)
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+B+X+Y";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+X+Y";
                         }
                         else
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+B+X";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+X";
                         }
                     }
                     else
                     {
                         if (YButtonPressed)
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+B+Y";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B+Y";
                         }
                         else
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+B";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+B";
                         }
                     }
                 }
@@ -398,22 +398,22 @@ namespace XInput_CS
                     {
                         if (YButtonPressed)
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+X+Y";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+X+Y";
                         }
                         else
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+X";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+X";
                         }
                     }
                     else
                     {
                         if (YButtonPressed)
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A+Y";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A+Y";
                         }
                         else
                         {
-                            LabelButtons.Text = "Controller " + controllerNumber + " Buttons: A";
+                            LabelButtons.Text = $"Controller {controllerNumber} Buttons: A";
                         }
                     }
                 }
@@ -424,22 +424,22 @@ namespace XInput_CS
                 {
                     if (YButtonPressed)
                     {
-                        LabelButtons.Text = "Controller " + controllerNumber + " Buttons: B+X+Y";
+                        LabelButtons.Text = $"Controller {controllerNumber} Buttons: B+X+Y";
                     }
                     else
                     {
-                        LabelButtons.Text = "Controller " + controllerNumber + " Buttons: B+X";
+                        LabelButtons.Text = $"Controller {controllerNumber} Buttons: B+X";
                     }
                 }
                 else
                 {
                     if (YButtonPressed)
                     {
-                        LabelButtons.Text = "Controller " + controllerNumber + " Buttons: B+Y";
+                        LabelButtons.Text = $"Controller {controllerNumber} Buttons: B+Y";
                     }
                     else
                     {
-                        LabelButtons.Text = "Controller " + controllerNumber + " Buttons: B";
+                        LabelButtons.Text = $"Controller {controllerNumber} Buttons: B";
                     }
                 }
             }
@@ -447,16 +447,16 @@ namespace XInput_CS
             {
                 if (YButtonPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: X+Y";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: X+Y";
                 }
                 else
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: X";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: X";
                 }
             }
             else if (YButtonPressed)
             {
-                LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Y";
+                LabelButtons.Text = $"Controller {controllerNumber} Buttons: Y";
             }
         }
 
@@ -466,16 +466,16 @@ namespace XInput_CS
             {
                 if (BackButtonPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Start+Back";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Start+Back";
                 }
                 else
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Start";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Start";
                 }
             }
             else if (BackButtonPressed)
             {
-                LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Back";
+                LabelButtons.Text = $"Controller {controllerNumber} Buttons: Back";
             }
         }
 
@@ -485,16 +485,16 @@ namespace XInput_CS
             {
                 if (RightBumperButtonPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Left Bumper+Right Bumper";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Bumper+Right Bumper";
                 }
                 else
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Left Bumper";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Bumper";
                 }
             }
             else if (RightBumperButtonPressed)
             {
-                LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Right Bumper";
+                LabelButtons.Text = $"Controller {controllerNumber} Buttons: Right Bumper";
             }
         }
 
@@ -504,16 +504,16 @@ namespace XInput_CS
             {
                 if (RightStickButtonPressed)
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Left Stick+Right Stick";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Stick+Right Stick";
                 }
                 else
                 {
-                    LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Left Stick";
+                    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Stick";
                 }
             }
             else if (RightStickButtonPressed)
             {
-                LabelButtons.Text = "Controller " + controllerNumber + " Buttons: Right Stick";
+                LabelButtons.Text = $"Controller {controllerNumber} Buttons: Right Stick";
             }
         }
 
@@ -525,14 +525,14 @@ namespace XInput_CS
             if (ControllerPosition.Gamepad.sThumbLX <= NeutralStart)
             {   // The left thumbstick is in the left position.
 
-                LabelLeftThumbX.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Left";
+                LabelLeftThumbX.Text = $"Controller {ControllerNumber} Left Thumbstick: Left";
 
                 IsConThumbLXNeutral[ControllerNumber] = false;
             }
             else if (ControllerPosition.Gamepad.sThumbLX >= NeutralEnd)
             {   // The left thumbstick is in the right position.
 
-                LabelLeftThumbX.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Right";
+                LabelLeftThumbX.Text = $"Controller {ControllerNumber} Left Thumbstick: Right";
 
                 IsConThumbLXNeutral[ControllerNumber] = false;
             }
@@ -549,14 +549,14 @@ namespace XInput_CS
             if (ControllerPosition.Gamepad.sThumbLY <= NeutralStart)
             {   // The left thumbstick is in the down position.
 
-                LabelLeftThumbY.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Down";
+                LabelLeftThumbY.Text = $"Controller {ControllerNumber} Left Thumbstick: Down";
 
                 IsConThumbLYNeutral[ControllerNumber] = false;
             }
             else if (ControllerPosition.Gamepad.sThumbLY >= NeutralEnd)
             {   // The left thumbstick is in the up position.
 
-                LabelLeftThumbY.Text = "Controller " + ControllerNumber.ToString() + " Left Thumbstick: Up";
+                LabelLeftThumbY.Text = $"Controller {ControllerNumber} Left Thumbstick: Up";
 
                 IsConThumbLYNeutral[ControllerNumber] = false;
             }
@@ -579,14 +579,14 @@ namespace XInput_CS
             if (ControllerPosition.Gamepad.sThumbRX <= NeutralStart)
             {   // The right thumbstick is in the left position.
 
-                LabelRightThumbX.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Left";
+                LabelRightThumbX.Text = $"Controller {controllerNumber} Right Thumbstick: Left";
 
                 IsConThumbRXNeutral[controllerNumber] = false;
             }
             else if (ControllerPosition.Gamepad.sThumbRX >= NeutralEnd)
             {   // The right thumbstick is in the right position.
 
-                LabelRightThumbX.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Right";
+                LabelRightThumbX.Text = $"Controller {controllerNumber} Right Thumbstick: Right";
 
                 IsConThumbRXNeutral[controllerNumber] = false;
             }
@@ -603,14 +603,14 @@ namespace XInput_CS
             if (ControllerPosition.Gamepad.sThumbRY <= NeutralStart)
             {   // The right thumbstick is in the up position.
 
-                LabelRightThumbY.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Down";
+                LabelRightThumbY.Text = $"Controller {controllerNumber} Right Thumbstick: Down";
 
                 IsConThumbRYNeutral[controllerNumber] = false;
             }
             else if (ControllerPosition.Gamepad.sThumbRY >= NeutralEnd)
             {   // The right thumbstick is in the down position.
 
-                LabelRightThumbY.Text = "Controller " + controllerNumber.ToString() + " Right Thumbstick: Up";
+                LabelRightThumbY.Text = $"Controller {controllerNumber} Right Thumbstick: Up";
 
                 IsConThumbRYNeutral[controllerNumber] = false;
             }
@@ -633,7 +633,7 @@ namespace XInput_CS
             if (ControllerPosition.Gamepad.bRightTrigger > TriggerThreshold)
             {   // The right trigger is in the down position. Trigger Break. Bang!
 
-                LabelRightTrigger.Text = "Controller " + controllerNumber.ToString() + " Right Trigger";
+                LabelRightTrigger.Text = $"Controller {controllerNumber} Right Trigger";
 
                 IsConRightTriggerNeutral[controllerNumber] = false;
             }
@@ -656,7 +656,7 @@ namespace XInput_CS
             if (ControllerPosition.Gamepad.bLeftTrigger > TriggerThreshold)
             {   // The left trigger is in the down position. Trigger Break. Bang!
 
-                LabelLeftTrigger.Text = "Controller " + controllerNumber.ToString() + " Left Trigger";
+                LabelLeftTrigger.Text = $"Controller {controllerNumber} Left Trigger";
 
                 IsConLeftTriggerNeutral[controllerNumber] = false;
             }
@@ -1005,7 +1005,7 @@ namespace XInput_CS
 
         private void UpdateSpeedLabel()
         {
-            LabelSpeed.Text = "Vibration Speed: " + TrackBarSpeed.Value;
+            LabelSpeed.Text = $"Vibration Speed: {TrackBarSpeed.Value}";
         }
 
         private bool IsControllerConnected(int controllerNumber)
