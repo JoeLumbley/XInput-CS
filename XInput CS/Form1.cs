@@ -336,8 +336,11 @@ namespace XInput_CS
                 else
                 {
                     LabelButtons.Text = $"Controller {controllerNumber} Button: Up";
+
                 }
+
             }
+
             else if (DPadDownPressed)
             {
                 if (DPadLeftPressed)
@@ -351,16 +354,23 @@ namespace XInput_CS
                 else
                 {
                     LabelButtons.Text = $"Controller {controllerNumber} Button: Down";
+
                 }
+
             }
+
             else if (DPadLeftPressed && !DPadDownPressed && !DPadUpPressed)
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Button: Left";
+
             }
+
             else if (DPadRightPressed && !DPadDownPressed && !DPadUpPressed)
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Button: Right";
+
             }
+
         }
 
         private void DoLetterButtonLogic(int controllerNumber)
