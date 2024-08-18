@@ -430,12 +430,15 @@ namespace XInput_CS
                 else
                 {
                     LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Bumper";
+
                 }
             }
             else if (RightBumperButtonPressed)
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Buttons: Right Bumper";
+
             }
+
         }
 
         private void DoStickLogic(int controllerNumber)
@@ -449,12 +452,15 @@ namespace XInput_CS
                 else
                 {
                     LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Stick";
+
                 }
             }
             else if (RightStickButtonPressed)
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Buttons: Right Stick";
+
             }
+
         }
 
         private void UpdateLeftThumbstickPosition(int ControllerNumber)
