@@ -323,68 +323,12 @@ namespace XInput_CS
 
         private void DoDPadLogic(int controllerNumber)
         {
-
             string direction = GetDPadDirection();
 
             if (direction != "NONE")
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Button: {direction}";
             }
-
-
-
-
-
-
-
-
-            //if (DPadUpPressed)
-            //{
-            //    if (DPadLeftPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Up";
-            //    }
-            //    else if (DPadRightPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Up";
-            //    }
-            //    else
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Up";
-
-            //    }
-
-            //}
-
-            //else if (DPadDownPressed)
-            //{
-            //    if (DPadLeftPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Left+Down";
-            //    }
-            //    else if (DPadRightPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Right+Down";
-            //    }
-            //    else
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Button: Down";
-
-            //    }
-
-            //}
-
-            //else if (DPadLeftPressed && !DPadDownPressed && !DPadUpPressed)
-            //{
-            //    LabelButtons.Text = $"Controller {controllerNumber} Button: Left";
-
-            //}
-
-            //else if (DPadRightPressed && !DPadDownPressed && !DPadUpPressed)
-            //{
-            //    LabelButtons.Text = $"Controller {controllerNumber} Button: Right";
-
-            //}
 
         }
 
@@ -410,7 +354,7 @@ namespace XInput_CS
 
             if (DPadRightPressed) return "Right";
 
-            return "NONE"; // or any default value if no button is pressed
+            return "NONE";
 
         }
 
