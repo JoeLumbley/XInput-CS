@@ -325,7 +325,7 @@ namespace XInput_CS
         {
             string direction = GetDPadDirection();
 
-            if (direction != "NONE")
+            if (!string.IsNullOrEmpty(direction))
             {
                 LabelButtons.Text = $"Controller {controllerNumber} Button: {direction}";
 
@@ -359,7 +359,7 @@ namespace XInput_CS
 
             if (DPadRightPressed) return "Right";
 
-            return "NONE";
+            return String.Empty; // Return an empty string if no buttons are pressed.
 
         }
 
