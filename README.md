@@ -16,7 +16,7 @@ I converted XInput from VB to C#.
 
 
 
-## Things to watch out for when converting from VB .NET to C#
+## Things to watch out for when converting from VB.NET to C#
 
 Here are some key syntax differences.
 
@@ -97,11 +97,12 @@ private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pStat
 VB: ```Structure``` keyword is followed by the struct name and its members are defined within ```Structure``` and  ```End Structure``` . 
 
 ```vb
-
 <StructLayout(LayoutKind.Explicit)>
 Public Structure XINPUT_STATE
-    Public dwPacketNumber As Integer
-    Public GamePadState As GamePadState
+    <FieldOffset(0)>
+    Public dwPacketNumber As UInteger
+    <FieldOffset(4)>
+    Public Gamepad As XINPUT_GAMEPAD
 End Structure
 
 ```
@@ -113,15 +114,17 @@ C#: ```struct``` keyword is followed by the struct name and its members are defi
 [StructLayout(LayoutKind.Explicit)]
 public struct XINPUT_STATE
 {
-    public int dwPacketNumber;
-    public GamePadState GamePadState;
+    [FieldOffset(0)]
+    public uint dwPacketNumber;
+    [FieldOffset(4)]
+    public XINPUT_GAMEPAD Gamepad;
 }
 
 ```
 
 ### 6. Field Declaration
 
-VB: Uses ```As``` to specify the type. Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure.
+VB: Fields are declared using the ```As``` keyword to specify the type. The ```FieldOffset``` attribute specifies the position of the field within the structure. Attributes are defined using angle brackets ```<>``` .
 
 ```vb
 
@@ -130,7 +133,7 @@ Public dwPacketNumber As UInteger
 
 ```
 
-C#: Fields are declared with a semicolon ```;``` at the end. The ```FieldOffset``` attribute specifies the position of the field within the structure.
+C#: Fields are declared with a semicolon ```;``` at the end. The ```FieldOffset``` attribute specifies the position of the field within the structure. Attributes are defined using square brackets ```[]``` .
 
 ```csharp
 
