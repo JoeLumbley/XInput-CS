@@ -52,10 +52,16 @@
             LabelBack = new Label();
             LabelStart = new Label();
             groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            LabelController3Status = new Label();
+            LabelController2Status = new Label();
+            LabelController1Status = new Label();
+            LabelController0Status = new Label();
             ((System.ComponentModel.ISupportInitialize)NumControllerToVib).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // timer1
@@ -171,9 +177,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(29, 33);
             label1.Name = "label1";
-            label1.Size = new Size(94, 25);
+            label1.Size = new Size(90, 25);
             label1.TabIndex = 12;
-            label1.Text = "Controller:";
+            label1.Text = "Controller";
             // 
             // LabelSpeed
             // 
@@ -285,11 +291,61 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Monitor - Press any button your controller.";
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(LabelController3Status);
+            groupBox3.Controls.Add(LabelController2Status);
+            groupBox3.Controls.Add(LabelController1Status);
+            groupBox3.Controls.Add(LabelController0Status);
+            groupBox3.Location = new Point(603, 219);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(357, 162);
+            groupBox3.TabIndex = 23;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Status";
+            // 
+            // LabelController3Status
+            // 
+            LabelController3Status.AutoSize = true;
+            LabelController3Status.Location = new Point(23, 113);
+            LabelController3Status.Name = "LabelController3Status";
+            LabelController3Status.Size = new Size(189, 25);
+            LabelController3Status.TabIndex = 24;
+            LabelController3Status.Text = "LabelController3Status";
+            // 
+            // LabelController2Status
+            // 
+            LabelController2Status.AutoSize = true;
+            LabelController2Status.Location = new Point(23, 88);
+            LabelController2Status.Name = "LabelController2Status";
+            LabelController2Status.Size = new Size(189, 25);
+            LabelController2Status.TabIndex = 24;
+            LabelController2Status.Text = "LabelController2Status";
+            // 
+            // LabelController1Status
+            // 
+            LabelController1Status.AutoSize = true;
+            LabelController1Status.Location = new Point(23, 61);
+            LabelController1Status.Name = "LabelController1Status";
+            LabelController1Status.Size = new Size(189, 25);
+            LabelController1Status.TabIndex = 24;
+            LabelController1Status.Text = "LabelController1Status";
+            // 
+            // LabelController0Status
+            // 
+            LabelController0Status.AutoSize = true;
+            LabelController0Status.Location = new Point(23, 36);
+            LabelController0Status.Name = "LabelController0Status";
+            LabelController0Status.Size = new Size(189, 25);
+            LabelController0Status.TabIndex = 24;
+            LabelController0Status.Text = "LabelController0Status";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(980, 399);
+            ClientSize = new Size(980, 398);
+            Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
@@ -302,6 +358,8 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -329,5 +387,10 @@
         private Label LabelBack;
         private Label LabelStart;
         private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private Label LabelController0Status;
+        private Label LabelController1Status;
+        private Label LabelController2Status;
+        private Label LabelController3Status;
     }
 }

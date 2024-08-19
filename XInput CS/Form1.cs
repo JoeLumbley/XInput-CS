@@ -255,10 +255,51 @@ namespace XInput_CS
                     if (IsControllerConnected(ControllerNumber))
                     {
                         Connected[ControllerNumber] = true;
+
+                        if (ControllerNumber == 0)
+                        {
+                            LabelController0Status.Text = $"Controller {ControllerNumber} Connected";
+                        }
+
+                        if (ControllerNumber == 1)
+                        {
+                            LabelController1Status.Text = $"Controller {ControllerNumber} Connected";
+                        }
+
+                        if (ControllerNumber == 2)
+                        {
+                            LabelController2Status.Text = $"Controller {ControllerNumber} Connected";
+                        }
+
+                        if (ControllerNumber == 3)
+                        {
+                            LabelController3Status.Text = $"Controller {ControllerNumber} Connected";
+                        }
+
                     }
                     else
                     {
                         Connected[ControllerNumber] = false;
+
+                        if (ControllerNumber == 0)
+                        {
+                            LabelController0Status.Text = $"Controller {ControllerNumber} Not Connected";
+                        }
+
+                        if (ControllerNumber == 1)
+                        {
+                            LabelController1Status.Text = $"Controller {ControllerNumber} Not Connected";
+                        }
+
+                        if (ControllerNumber == 2)
+                        {
+                            LabelController2Status.Text = $"Controller {ControllerNumber} Not Connected";
+                        }
+
+                        if (ControllerNumber == 3)
+                        {
+                            LabelController3Status.Text = $"Controller {ControllerNumber} Not Connected";
+                        }
 
                     }
 
