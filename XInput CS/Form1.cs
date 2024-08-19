@@ -261,56 +261,6 @@ namespace XInput_CS
 
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //for (int controllerNumber = 0; controllerNumber < 4; controllerNumber++) // Up to 4 controllers
-            //{
-            //    try
-            //    {
-            //        if (IsControllerConnected(controllerNumber))
-            //        {
-            //            UpdateControllerState(controllerNumber);
-
-            //            Connected[controllerNumber] = true;
-            //        }
-            //        else
-            //        {
-
-            //            Connected[controllerNumber] = false;
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {   // Something went wrong (An exception occurred).
-
-            //        DisplayError(ex);
-
-            //        return; // Exit the method on error
-
-            //    }
-
-            //}
-
-            // UpdateBatteryInfo()
-
         }
 
         private void UpdateControllerState(int controllerNumber)
@@ -1015,16 +965,31 @@ namespace XInput_CS
         private void UpdateSpeedLabel()
         {
             LabelSpeed.Text = $"Speed: {TrackBarSpeed.Value}";
+
         }
 
         private bool IsControllerConnected(int controllerNumber)
         {
-            return XInputGetState(controllerNumber, ref ControllerPosition) == 0; // Returns 0 if connected
+            try
+            {
+                return XInputGetState(controllerNumber, ref ControllerPosition) == 0; // 0 means the controller is connected.
+                // Anything else (a non-zero value) means the controller is not connected.
+            }
+            catch (Exception ex)
+            {   // Something went wrong (An exception occurred).
+
+                DisplayError(ex);
+
+                return false;
+
+            }
+
         }
 
         private void DisplayError(Exception ex)
         {
             MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void InitializeApp()
