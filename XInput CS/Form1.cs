@@ -253,8 +253,6 @@ namespace XInput_CS
             {
                 if (Connected[ControllerNumber] == true)
                 {
-                    IsControllerConnected(ControllerNumber);
-
                     UpdateControllerState(ControllerNumber);
 
                 }
@@ -265,15 +263,26 @@ namespace XInput_CS
 
         private void UpdateControllerState(int controllerNumber)
         {
-            UpdateButtonPosition(controllerNumber);
+            try
+            {
+                XInputGetState(controllerNumber, ref ControllerPosition);
 
-            UpdateLeftThumbstickPosition(controllerNumber);
+                UpdateButtonPosition(controllerNumber);
 
-            UpdateRightThumbstickPosition(controllerNumber);
+                UpdateLeftThumbstickPosition(controllerNumber);
 
-            UpdateLeftTriggerPosition(controllerNumber);
+                UpdateRightThumbstickPosition(controllerNumber);
 
-            UpdateRightTriggerPosition(controllerNumber);
+                UpdateLeftTriggerPosition(controllerNumber);
+
+                UpdateRightTriggerPosition(controllerNumber);
+            }
+            catch (Exception ex)
+            {   // Something went wrong (An exception occurred).
+
+                DisplayError(ex);
+
+            }
 
         }
 
