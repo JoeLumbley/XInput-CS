@@ -89,6 +89,8 @@ namespace XInput_CS
 
         private readonly bool[] Connected = new bool[4];
 
+        private DateTime ConnectionStart = DateTime.Now;
+
         private const int DPadUp = 1;
         private const int DPadDown = 2;
 
@@ -223,32 +225,89 @@ namespace XInput_CS
 
         private void UpdateControllerData()
         {
-            for (int controllerNumber = 0; controllerNumber < 4; controllerNumber++) // Up to 4 controllers
-            {
-                try
-                {
-                    if (IsControllerConnected(controllerNumber))
-                    {
-                        UpdateControllerState(controllerNumber);
+            TimeSpan ElapsedTime = DateTime.Now - ConnectionStart;
 
-                        Connected[controllerNumber] = true;
+            // Every second
+            if (ElapsedTime.TotalSeconds >= 1)
+            {   // Check for connected controllers.
+
+                for (int ControllerNumber = 0; ControllerNumber <= 3; ControllerNumber++) // Up to 4 controllers
+                {
+                    if (IsControllerConnected(ControllerNumber))
+                    {
+                        Connected[ControllerNumber] = true;
                     }
                     else
                     {
+                        Connected[ControllerNumber] = false;
 
-                        Connected[controllerNumber] = false;
                     }
+
                 }
-                catch (Exception ex)
-                {   // Something went wrong (An exception occurred).
 
-                    DisplayError(ex);
+                ConnectionStart = DateTime.Now;
 
-                    return; // Exit the method on error
+            }
+
+            for (int ControllerNumber = 0; ControllerNumber <= 3; ControllerNumber++) // Up to 4 controllers
+            {
+                if (Connected[ControllerNumber] == true)
+                {
+                    IsControllerConnected(ControllerNumber);
+
+                    UpdateControllerState(ControllerNumber);
 
                 }
 
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //for (int controllerNumber = 0; controllerNumber < 4; controllerNumber++) // Up to 4 controllers
+            //{
+            //    try
+            //    {
+            //        if (IsControllerConnected(controllerNumber))
+            //        {
+            //            UpdateControllerState(controllerNumber);
+
+            //            Connected[controllerNumber] = true;
+            //        }
+            //        else
+            //        {
+
+            //            Connected[controllerNumber] = false;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {   // Something went wrong (An exception occurred).
+
+            //        DisplayError(ex);
+
+            //        return; // Exit the method on error
+
+            //    }
+
+            //}
 
             // UpdateBatteryInfo()
 
@@ -955,7 +1014,7 @@ namespace XInput_CS
 
         private void UpdateSpeedLabel()
         {
-            LabelSpeed.Text = $"Vibration Speed: {TrackBarSpeed.Value}";
+            LabelSpeed.Text = $"Speed: {TrackBarSpeed.Value}";
         }
 
         private bool IsControllerConnected(int controllerNumber)
@@ -998,6 +1057,7 @@ namespace XInput_CS
         {
             InitializeComponent();
         }
+
     }
 }
 
