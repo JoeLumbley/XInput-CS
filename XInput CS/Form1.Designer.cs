@@ -51,9 +51,11 @@
             LabelRightThumbButton = new Label();
             LabelBack = new Label();
             LabelStart = new Label();
+            groupBox2 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)NumControllerToVib).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // timer1
@@ -64,7 +66,7 @@
             // LabelButtons
             // 
             LabelButtons.AutoSize = true;
-            LabelButtons.Location = new Point(616, 57);
+            LabelButtons.Location = new Point(620, 86);
             LabelButtons.Name = "LabelButtons";
             LabelButtons.Size = new Size(114, 25);
             LabelButtons.TabIndex = 1;
@@ -73,7 +75,7 @@
             // LabelLeftTrigger
             // 
             LabelLeftTrigger.AutoSize = true;
-            LabelLeftTrigger.Location = new Point(12, 9);
+            LabelLeftTrigger.Location = new Point(16, 38);
             LabelLeftTrigger.Name = "LabelLeftTrigger";
             LabelLeftTrigger.Size = new Size(136, 25);
             LabelLeftTrigger.TabIndex = 2;
@@ -82,7 +84,7 @@
             // LabelRightTrigger
             // 
             LabelRightTrigger.AutoSize = true;
-            LabelRightTrigger.Location = new Point(616, 9);
+            LabelRightTrigger.Location = new Point(620, 38);
             LabelRightTrigger.Name = "LabelRightTrigger";
             LabelRightTrigger.Size = new Size(149, 25);
             LabelRightTrigger.TabIndex = 3;
@@ -91,7 +93,7 @@
             // LabelLeftThumbX
             // 
             LabelLeftThumbX.AutoSize = true;
-            LabelLeftThumbX.Location = new Point(12, 57);
+            LabelLeftThumbX.Location = new Point(16, 86);
             LabelLeftThumbX.Name = "LabelLeftThumbX";
             LabelLeftThumbX.Size = new Size(149, 25);
             LabelLeftThumbX.TabIndex = 4;
@@ -100,7 +102,7 @@
             // LabelLeftThumbY
             // 
             LabelLeftThumbY.AutoSize = true;
-            LabelLeftThumbY.Location = new Point(12, 82);
+            LabelLeftThumbY.Location = new Point(16, 111);
             LabelLeftThumbY.Name = "LabelLeftThumbY";
             LabelLeftThumbY.Size = new Size(148, 25);
             LabelLeftThumbY.TabIndex = 5;
@@ -109,7 +111,7 @@
             // LabelRightThumbX
             // 
             LabelRightThumbX.AutoSize = true;
-            LabelRightThumbX.Location = new Point(616, 82);
+            LabelRightThumbX.Location = new Point(620, 111);
             LabelRightThumbX.Name = "LabelRightThumbX";
             LabelRightThumbX.Size = new Size(162, 25);
             LabelRightThumbX.TabIndex = 6;
@@ -118,7 +120,7 @@
             // LabelRightThumbY
             // 
             LabelRightThumbY.AutoSize = true;
-            LabelRightThumbY.Location = new Point(616, 107);
+            LabelRightThumbY.Location = new Point(620, 136);
             LabelRightThumbY.Name = "LabelRightThumbY";
             LabelRightThumbY.Size = new Size(161, 25);
             LabelRightThumbY.TabIndex = 7;
@@ -190,7 +192,7 @@
             groupBox1.Controls.Add(ButtonVibrateLeft);
             groupBox1.Controls.Add(TrackBarSpeed);
             groupBox1.Controls.Add(ButtonVibrateRight);
-            groupBox1.Location = new Point(17, 194);
+            groupBox1.Location = new Point(17, 218);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(566, 163);
             groupBox1.TabIndex = 14;
@@ -200,7 +202,7 @@
             // LabelDPad
             // 
             LabelDPad.AutoSize = true;
-            LabelDPad.Location = new Point(12, 132);
+            LabelDPad.Location = new Point(16, 161);
             LabelDPad.Name = "LabelDPad";
             LabelDPad.Size = new Size(95, 25);
             LabelDPad.TabIndex = 15;
@@ -209,7 +211,7 @@
             // LabelLeftBumper
             // 
             LabelLeftBumper.AutoSize = true;
-            LabelLeftBumper.Location = new Point(12, 34);
+            LabelLeftBumper.Location = new Point(16, 63);
             LabelLeftBumper.Name = "LabelLeftBumper";
             LabelLeftBumper.Size = new Size(144, 25);
             LabelLeftBumper.TabIndex = 16;
@@ -218,7 +220,7 @@
             // LabelRightBumper
             // 
             LabelRightBumper.AutoSize = true;
-            LabelRightBumper.Location = new Point(616, 34);
+            LabelRightBumper.Location = new Point(620, 63);
             LabelRightBumper.Name = "LabelRightBumper";
             LabelRightBumper.Size = new Size(157, 25);
             LabelRightBumper.TabIndex = 17;
@@ -227,7 +229,7 @@
             // LabelLeftThumbButton
             // 
             LabelLeftThumbButton.AutoSize = true;
-            LabelLeftThumbButton.Location = new Point(12, 107);
+            LabelLeftThumbButton.Location = new Point(16, 136);
             LabelLeftThumbButton.Name = "LabelLeftThumbButton";
             LabelLeftThumbButton.Size = new Size(191, 25);
             LabelLeftThumbButton.TabIndex = 18;
@@ -236,7 +238,7 @@
             // LabelRightThumbButton
             // 
             LabelRightThumbButton.AutoSize = true;
-            LabelRightThumbButton.Location = new Point(616, 132);
+            LabelRightThumbButton.Location = new Point(620, 161);
             LabelRightThumbButton.Name = "LabelRightThumbButton";
             LabelRightThumbButton.Size = new Size(204, 25);
             LabelRightThumbButton.TabIndex = 19;
@@ -245,7 +247,7 @@
             // LabelBack
             // 
             LabelBack.AutoSize = true;
-            LabelBack.Location = new Point(302, 57);
+            LabelBack.Location = new Point(306, 86);
             LabelBack.Name = "LabelBack";
             LabelBack.Size = new Size(89, 25);
             LabelBack.TabIndex = 20;
@@ -254,41 +256,53 @@
             // LabelStart
             // 
             LabelStart.AutoSize = true;
-            LabelStart.Location = new Point(458, 57);
+            LabelStart.Location = new Point(462, 86);
             LabelStart.Name = "LabelStart";
             LabelStart.Size = new Size(89, 25);
             LabelStart.TabIndex = 21;
             LabelStart.Text = "LabelStart";
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(LabelStart);
+            groupBox2.Controls.Add(LabelButtons);
+            groupBox2.Controls.Add(LabelBack);
+            groupBox2.Controls.Add(LabelLeftTrigger);
+            groupBox2.Controls.Add(LabelRightThumbButton);
+            groupBox2.Controls.Add(LabelRightTrigger);
+            groupBox2.Controls.Add(LabelLeftThumbButton);
+            groupBox2.Controls.Add(LabelLeftThumbX);
+            groupBox2.Controls.Add(LabelRightBumper);
+            groupBox2.Controls.Add(LabelLeftThumbY);
+            groupBox2.Controls.Add(LabelLeftBumper);
+            groupBox2.Controls.Add(LabelRightThumbX);
+            groupBox2.Controls.Add(LabelDPad);
+            groupBox2.Controls.Add(LabelRightThumbY);
+            groupBox2.Location = new Point(17, 8);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(943, 203);
+            groupBox2.TabIndex = 22;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Monitor - Press any button your controller.";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(961, 450);
-            Controls.Add(LabelStart);
-            Controls.Add(LabelBack);
-            Controls.Add(LabelRightThumbButton);
-            Controls.Add(LabelLeftThumbButton);
-            Controls.Add(LabelRightBumper);
-            Controls.Add(LabelLeftBumper);
-            Controls.Add(LabelDPad);
+            ClientSize = new Size(980, 399);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(LabelRightThumbY);
-            Controls.Add(LabelRightThumbX);
-            Controls.Add(LabelLeftThumbY);
-            Controls.Add(LabelLeftThumbX);
-            Controls.Add(LabelRightTrigger);
-            Controls.Add(LabelLeftTrigger);
-            Controls.Add(LabelButtons);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)NumControllerToVib).EndInit();
             ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -314,5 +328,6 @@
         private Label LabelRightThumbButton;
         private Label LabelBack;
         private Label LabelStart;
+        private GroupBox groupBox2;
     }
 }

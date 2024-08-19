@@ -730,7 +730,7 @@ namespace XInput_CS
             if (LeftStickButtonPressed)
             {
 
-                LabelLeftThumbButton.Text = $"Controller {controllerNumber} Left Stick Button";
+                LabelLeftThumbButton.Text = $"Controller {controllerNumber} Left Thumbstick Button";
 
                 IsLeftStickButtonsNeutral[controllerNumber] = false;
             }
@@ -746,7 +746,7 @@ namespace XInput_CS
             if (RightStickButtonPressed)
             {
 
-                LabelRightThumbButton.Text = $"Controller {controllerNumber} Right Stick Button";
+                LabelRightThumbButton.Text = $"Controller {controllerNumber} Right Thumbstick Button";
 
                 IsRightStickButtonsNeutral[controllerNumber] = false;
 
