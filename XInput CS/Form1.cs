@@ -1016,15 +1016,19 @@ namespace XInput_CS
             for (int i = 0; i < IsLeftVibrating.Length; i++)
             {
                 IsLeftVibrating[i] = false;
+
             }
 
             for (int i = 0; i < IsRightVibrating.Length; i++)
             {
                 IsRightVibrating[i] = false;
+
             }
 
             //LabelBatteryLevel.Text = string.Empty;
+
             //LabelBatteryType.Text = string.Empty;
+
         }
 
         public Form1()
