@@ -289,7 +289,7 @@
             groupBox2.Size = new Size(943, 203);
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Monitor - Press any button your controller.";
+            groupBox2.Text = "Monitor - Press any button on your controller";
             // 
             // groupBox3
             // 
