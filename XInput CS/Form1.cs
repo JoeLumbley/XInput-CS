@@ -450,8 +450,6 @@ namespace XInput_CS
 
         }
 
-
-
         private string GetDPadDirection()
         {
             if (DPadUpPressed)
@@ -562,28 +560,6 @@ namespace XInput_CS
 
             ClearBackLabel();
 
-
-
-
-
-            //if (StartButtonPressed)
-            //{
-            //    if (BackButtonPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Buttons: Start+Back";
-            //    }
-            //    else
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Buttons: Start";
-
-            //    }
-            //}
-            //else if (BackButtonPressed)
-            //{
-            //    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Back";
-
-            //}
-
         }
 
 
@@ -646,30 +622,8 @@ namespace XInput_CS
 
         }
 
-
-
-
-
         private void DoBumperLogic(int controllerNumber)
         {
-            //if (LeftBumperButtonPressed)
-            //{
-            //    if (RightBumperButtonPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Bumper+Right Bumper";
-            //    }
-            //    else
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Bumper";
-
-            //    }
-            //}
-            //else if (RightBumperButtonPressed)
-            //{
-            //LabelButtons.Text = $"Controller {controllerNumber} Buttons: Right Bumper";
-
-            //}
-
             if (LeftBumperButtonPressed)
             {
 
@@ -762,7 +716,6 @@ namespace XInput_CS
 
         }
 
-
         private void DoStickLogic(int controllerNumber)
         {
 
@@ -797,24 +750,6 @@ namespace XInput_CS
             }
 
             ClearRightThumbButtonLabel();
-
-
-            //if (LeftStickButtonPressed)
-            //{
-            //    if (RightStickButtonPressed)
-            //    {
-            //        LabelButtons.Text = $"Controller {controllerNumber} Buttons: Left Stick+Right Stick";
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
-            //else if (RightStickButtonPressed)
-            //{
-            //    LabelButtons.Text = $"Controller {controllerNumber} Buttons: Right Stick";
-
-            //}
 
         }
 
@@ -1056,24 +991,6 @@ namespace XInput_CS
                 LabelButtons.Text = string.Empty; // Clear label.
 
             }
-
-
-
-            //int ConSum = 0;
-
-            //foreach (var con in ConButtons)
-            //{
-            //    ConSum += con;
-
-            //}
-
-            //// Are all controllers buttons up?
-            //if (ConSum == 0)
-            //{   // Yes, all controller buttons are up.
-
-            //    LabelButtons.Text = string.Empty; // Clear label.
-
-            //}
 
         }
 
