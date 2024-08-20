@@ -134,7 +134,7 @@
             // 
             // NumControllerToVib
             // 
-            NumControllerToVib.Location = new Point(132, 31);
+            NumControllerToVib.Location = new Point(119, 35);
             NumControllerToVib.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             NumControllerToVib.Name = "NumControllerToVib";
             NumControllerToVib.Size = new Size(93, 31);
@@ -142,7 +142,7 @@
             // 
             // ButtonVibrateLeft
             // 
-            ButtonVibrateLeft.Location = new Point(14, 80);
+            ButtonVibrateLeft.Location = new Point(16, 80);
             ButtonVibrateLeft.Name = "ButtonVibrateLeft";
             ButtonVibrateLeft.Size = new Size(138, 34);
             ButtonVibrateLeft.TabIndex = 9;
@@ -152,7 +152,7 @@
             // 
             // ButtonVibrateRight
             // 
-            ButtonVibrateRight.Location = new Point(413, 80);
+            ButtonVibrateRight.Location = new Point(440, 80);
             ButtonVibrateRight.Name = "ButtonVibrateRight";
             ButtonVibrateRight.Size = new Size(138, 34);
             ButtonVibrateRight.TabIndex = 10;
@@ -163,7 +163,7 @@
             // TrackBarSpeed
             // 
             TrackBarSpeed.LargeChange = 16384;
-            TrackBarSpeed.Location = new Point(158, 83);
+            TrackBarSpeed.Location = new Point(173, 83);
             TrackBarSpeed.Maximum = 65535;
             TrackBarSpeed.Name = "TrackBarSpeed";
             TrackBarSpeed.Size = new Size(250, 69);
@@ -175,7 +175,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(29, 33);
+            label1.Location = new Point(16, 37);
             label1.Name = "label1";
             label1.Size = new Size(90, 25);
             label1.TabIndex = 12;
@@ -184,7 +184,7 @@
             // LabelSpeed
             // 
             LabelSpeed.AutoSize = true;
-            LabelSpeed.Location = new Point(223, 121);
+            LabelSpeed.Location = new Point(238, 121);
             LabelSpeed.Name = "LabelSpeed";
             LabelSpeed.Size = new Size(103, 25);
             LabelSpeed.TabIndex = 13;
@@ -200,7 +200,7 @@
             groupBox1.Controls.Add(ButtonVibrateRight);
             groupBox1.Location = new Point(17, 218);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(566, 163);
+            groupBox1.Size = new Size(607, 163);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Rumble";
@@ -297,9 +297,9 @@
             groupBox3.Controls.Add(LabelController2Status);
             groupBox3.Controls.Add(LabelController1Status);
             groupBox3.Controls.Add(LabelController0Status);
-            groupBox3.Location = new Point(603, 219);
+            groupBox3.Location = new Point(648, 219);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(357, 162);
+            groupBox3.Size = new Size(312, 162);
             groupBox3.TabIndex = 23;
             groupBox3.TabStop = false;
             groupBox3.Text = "Status";
