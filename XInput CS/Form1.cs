@@ -88,8 +88,6 @@ namespace XInput_CS
 
         private bool[] IsRightStickButtonsNeutral = new bool[4];
 
-
-
         private XINPUT_STATE ControllerPosition;
 
         // Set the start of the thumbstick neutral zone to 1/2 over.
