@@ -421,65 +421,6 @@ namespace XInput_CS
 
         }
 
-        private void ClearDPadLabel()
-        {   // Clears the DPad label when all controllers' DPad are neutral.
-
-            bool ConSum = true; // Assume all controllers' DPad are neutral initially.
-
-            // Search for a non-neutral DPad.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsDPadNeutral[i])
-                {   // A non-neutral DPad was found.
-
-                    ConSum = false; // Report the non-neutral DPad.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' DPad in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' DPad are in the neutral position.
-
-                LabelDPad.Text = string.Empty; // Clear label.
-
-            }
-
-        }
-
-        private string GetDPadDirection()
-        {
-            if (DPadUpPressed)
-            {
-                if (DPadLeftPressed) return "Left+Up";
-
-                if (DPadRightPressed) return "Right+Up";
-
-                return "Up";
-
-            }
-
-            if (DPadDownPressed)
-            {
-                if (DPadLeftPressed) return "Left+Down";
-
-                if (DPadRightPressed) return "Right+Down";
-
-                return "Down";
-
-            }
-
-            if (DPadLeftPressed) return "Left";
-
-            if (DPadRightPressed) return "Right";
-
-            return string.Empty; // Return an empty string if no buttons are pressed.
-
-        }
-
         private void DoLetterButtonLogic(int controllerNumber)
         {
             string buttonText = GetButtonText(controllerNumber);
@@ -501,28 +442,6 @@ namespace XInput_CS
             }
 
             ClearLetterButtonsLabel();
-
-        }
-
-        private string GetButtonText(int controllerNumber)
-        {
-            var buttons = new List<string>();
-
-            if (AButtonPressed) buttons.Add("A");
-
-            if (BButtonPressed) buttons.Add("B");
-
-            if (XButtonPressed) buttons.Add("X");
-
-            if (YButtonPressed) buttons.Add("Y");
-
-            if (buttons.Count > 0)
-            {
-                return $"Controller {controllerNumber} {string.Join("+", buttons)}";
-
-            }
-
-            return string.Empty; // Return an empty string if no buttons are pressed
 
         }
 
@@ -562,66 +481,6 @@ namespace XInput_CS
 
         }
 
-
-        private void ClearStartLabel()
-        {   // Clears the left trigger label when all controllers' left triggers are neutral.
-
-            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
-
-            // Search for a non-neutral left trigger.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsStartButtonsNeutral[i])
-                {   // A non-neutral left trigger was found.
-
-                    ConSum = false; // Report the non-neutral left trigger.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' left triggers in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' left triggers are in the neutral position.
-
-                LabelStart.Text = string.Empty; // Clear label.
-
-            }
-
-        }
-
-
-        private void ClearBackLabel()
-        {   // Clears the left trigger label when all controllers' left triggers are neutral.
-
-            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
-
-            // Search for a non-neutral left trigger.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsBackButtonsNeutral[i])
-                {   // A non-neutral left trigger was found.
-
-                    ConSum = false; // Report the non-neutral left trigger.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' left triggers in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' left triggers are in the neutral position.
-
-                LabelBack.Text = string.Empty; // Clear label.
-
-            }
-
-        }
-
         private void DoBumperLogic(int controllerNumber)
         {
             if (LeftBumperButtonPressed)
@@ -655,64 +514,6 @@ namespace XInput_CS
             }
 
             ClearRightBumperLabel();
-
-        }
-
-        private void ClearLeftBumperLabel()
-        {   // Clears the left bumper label when all controllers' left bumper are neutral.
-
-            bool ConSum = true; // Assume all controllers' left bumper are neutral initially.
-
-            // Search for a non-neutral left bumper.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsLeftBumperNeutral[i])
-                {   // A non-neutral left bumper was found.
-
-                    ConSum = false; // Report the non-neutral left bumper.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' left bumper in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' left bumper are in the neutral position.
-
-                LabelLeftBumper.Text = string.Empty; // Clear label.
-
-            }
-
-        }
-
-        private void ClearRightBumperLabel()
-        {   // Clears the right bumper label when all controllers' right bumper are neutral.
-
-            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
-
-            // Search for a non-neutral right bumper.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsRightBumperNeutral[i])
-                {   // A non-neutral right bumper was found.
-
-                    ConSum = false; // Report the non-neutral right bumper.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' right bumper in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' right bumper are in the neutral position.
-
-                LabelRightBumper.Text = string.Empty; // Clear label.
-
-            }
 
         }
 
@@ -750,64 +551,6 @@ namespace XInput_CS
             }
 
             ClearRightThumbButtonLabel();
-
-        }
-
-        private void ClearLeftThumbButtonLabel()
-        {   // Clears the right bumper label when all controllers' right bumper are neutral.
-
-            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
-
-            // Search for a non-neutral right bumper.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsLeftStickButtonsNeutral[i])
-                {   // A non-neutral right bumper was found.
-
-                    ConSum = false; // Report the non-neutral right bumper.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' right bumper in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' right bumper are in the neutral position.
-
-                LabelLeftThumbButton.Text = string.Empty; // Clear label.
-
-            }
-
-        }
-
-        private void ClearRightThumbButtonLabel()
-        {   // Clears the right bumper label when all controllers' right bumper are neutral.
-
-            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
-
-            // Search for a non-neutral right bumper.
-            for (int i = 0; i < 4; i++)
-            {
-                if (Connected[i] && !IsRightStickButtonsNeutral[i])
-                {   // A non-neutral right bumper was found.
-
-                    ConSum = false; // Report the non-neutral right bumper.
-
-                    break; // No need to search further, so stop the search.
-
-                }
-
-            }
-
-            // Are all controllers' right bumper in the neutral position?
-            if (ConSum)
-            {   // Yes, all controllers' right bumper are in the neutral position.
-
-                LabelRightThumbButton.Text = string.Empty; // Clear label.
-
-            }
 
         }
 
@@ -1183,6 +926,263 @@ namespace XInput_CS
             LabelRightThumbY.Text = string.Empty;
 
             LabelRightTrigger.Text = string.Empty;
+
+        }
+
+        private void ClearDPadLabel()
+        {   // Clears the DPad label when all controllers' DPad are neutral.
+
+            bool ConSum = true; // Assume all controllers' DPad are neutral initially.
+
+            // Search for a non-neutral DPad.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsDPadNeutral[i])
+                {   // A non-neutral DPad was found.
+
+                    ConSum = false; // Report the non-neutral DPad.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' DPad in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' DPad are in the neutral position.
+
+                LabelDPad.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+        private void ClearStartLabel()
+        {   // Clears the left trigger label when all controllers' left triggers are neutral.
+
+            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
+
+            // Search for a non-neutral left trigger.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsStartButtonsNeutral[i])
+                {   // A non-neutral left trigger was found.
+
+                    ConSum = false; // Report the non-neutral left trigger.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' left triggers in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' left triggers are in the neutral position.
+
+                LabelStart.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+        private void ClearBackLabel()
+        {   // Clears the left trigger label when all controllers' left triggers are neutral.
+
+            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
+
+            // Search for a non-neutral left trigger.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsBackButtonsNeutral[i])
+                {   // A non-neutral left trigger was found.
+
+                    ConSum = false; // Report the non-neutral left trigger.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' left triggers in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' left triggers are in the neutral position.
+
+                LabelBack.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+        private void ClearLeftBumperLabel()
+        {   // Clears the left bumper label when all controllers' left bumper are neutral.
+
+            bool ConSum = true; // Assume all controllers' left bumper are neutral initially.
+
+            // Search for a non-neutral left bumper.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsLeftBumperNeutral[i])
+                {   // A non-neutral left bumper was found.
+
+                    ConSum = false; // Report the non-neutral left bumper.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' left bumper in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' left bumper are in the neutral position.
+
+                LabelLeftBumper.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+        private void ClearRightBumperLabel()
+        {   // Clears the right bumper label when all controllers' right bumper are neutral.
+
+            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
+
+            // Search for a non-neutral right bumper.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsRightBumperNeutral[i])
+                {   // A non-neutral right bumper was found.
+
+                    ConSum = false; // Report the non-neutral right bumper.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' right bumper in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' right bumper are in the neutral position.
+
+                LabelRightBumper.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+        private void ClearLeftThumbButtonLabel()
+        {   // Clears the right bumper label when all controllers' right bumper are neutral.
+
+            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
+
+            // Search for a non-neutral right bumper.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsLeftStickButtonsNeutral[i])
+                {   // A non-neutral right bumper was found.
+
+                    ConSum = false; // Report the non-neutral right bumper.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' right bumper in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' right bumper are in the neutral position.
+
+                LabelLeftThumbButton.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+
+
+        private void ClearRightThumbButtonLabel()
+        {   // Clears the right bumper label when all controllers' right bumper are neutral.
+
+            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
+
+            // Search for a non-neutral right bumper.
+            for (int i = 0; i < 4; i++)
+            {
+                if (Connected[i] && !IsRightStickButtonsNeutral[i])
+                {   // A non-neutral right bumper was found.
+
+                    ConSum = false; // Report the non-neutral right bumper.
+
+                    break; // No need to search further, so stop the search.
+
+                }
+
+            }
+
+            // Are all controllers' right bumper in the neutral position?
+            if (ConSum)
+            {   // Yes, all controllers' right bumper are in the neutral position.
+
+                LabelRightThumbButton.Text = string.Empty; // Clear label.
+
+            }
+
+        }
+
+        private string GetDPadDirection()
+        {
+            if (DPadUpPressed)
+            {
+                if (DPadLeftPressed) return "Left+Up";
+
+                if (DPadRightPressed) return "Right+Up";
+
+                return "Up";
+
+            }
+
+            if (DPadDownPressed)
+            {
+                if (DPadLeftPressed) return "Left+Down";
+
+                if (DPadRightPressed) return "Right+Down";
+
+                return "Down";
+
+            }
+
+            if (DPadLeftPressed) return "Left";
+
+            if (DPadRightPressed) return "Right";
+
+            return string.Empty; // Return an empty string if no buttons are pressed.
+
+        }
+
+        private string GetButtonText(int controllerNumber)
+        {
+            var buttons = new List<string>();
+
+            if (AButtonPressed) buttons.Add("A");
+
+            if (BButtonPressed) buttons.Add("B");
+
+            if (XButtonPressed) buttons.Add("X");
+
+            if (YButtonPressed) buttons.Add("Y");
+
+            if (buttons.Count > 0)
+            {
+                return $"Controller {controllerNumber} {string.Join("+", buttons)}";
+
+            }
+
+            return string.Empty; // Return an empty string if no buttons are pressed
 
         }
 
