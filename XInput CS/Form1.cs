@@ -24,7 +24,6 @@
 // OUT OF Or IN CONNECTION WITH THE SOFTWARE Or THE USE Or OTHER DEALINGS IN THE
 // SOFTWARE.
 
-using System.Diagnostics.Eventing.Reader;
 using System.Runtime.InteropServices;
 
 namespace XInput_CS
@@ -183,7 +182,6 @@ namespace XInput_CS
             NIMH = 3,
             UNKNOWN = 4
         }
-
         public enum BatteryLevel : byte
         {
             EMPTY = 0,
@@ -273,7 +271,6 @@ namespace XInput_CS
                         {
                             LabelController3Status.Text = $"Controller {ControllerNumber} Connected";
                         }
-
                     }
                     else
                     {
