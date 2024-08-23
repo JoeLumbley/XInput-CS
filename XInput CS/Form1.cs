@@ -506,17 +506,14 @@ namespace XInput_CS
 
         private void DoStickLogic(int controllerNumber)
         {
-
             if (LeftStickButtonPressed)
             {
-
                 LabelLeftThumbButton.Text = $"Controller {controllerNumber} Left Thumbstick Button";
 
                 IsLeftStickButtonsNeutral[controllerNumber] = false;
             }
             else
             {
-
                 IsLeftStickButtonsNeutral[controllerNumber] = true;
 
             }
@@ -525,11 +522,9 @@ namespace XInput_CS
 
             if (RightStickButtonPressed)
             {
-
                 LabelRightThumbButton.Text = $"Controller {controllerNumber} Right Thumbstick Button";
 
                 IsRightStickButtonsNeutral[controllerNumber] = false;
-
             }
             else
             {
@@ -1090,8 +1085,6 @@ namespace XInput_CS
 
         }
 
-
-
         private void ClearRightThumbButtonLabel()
         {   // Clears the right bumper label when all controllers' right bumper are neutral.
 
@@ -1174,8 +1167,7 @@ namespace XInput_CS
         }
 
         private void VibrateLeft(int cid, ushort speed)
-        {
-            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
+        {   // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
             // The left motor is the low-frequency rumble motor.
 
             // Set left motor speed.
@@ -1186,11 +1178,11 @@ namespace XInput_CS
             LeftVibrateStart[cid] = DateTime.Now;
 
             IsLeftVibrating[cid] = true;
+
         }
 
         private void VibrateRight(int cid, ushort speed)
-        {
-            // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
+        {   // The range of speed is 0 through 65,535. Unsigned 16-bit (2-byte) integer.
             // The right motor is the high-frequency rumble motor.
 
             // Set right motor speed.
@@ -1201,6 +1193,7 @@ namespace XInput_CS
             RightVibrateStart[cid] = DateTime.Now;
 
             IsRightVibrating[cid] = true;
+
         }
 
         private void SendVibrationMotorCommand(int controllerID)
@@ -1210,8 +1203,7 @@ namespace XInput_CS
             {
                 // Send motor speed command to the specified controller.
                 if (XInputSetState(controllerID, ref Vibration) == 0)
-                {
-                    // The motor speed was set. Success.
+                {   // The motor speed was set. Success.
                 }
                 else
                 {
