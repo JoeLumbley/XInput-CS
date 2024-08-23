@@ -242,17 +242,16 @@ namespace XInput_CS
         {
             TimeSpan ElapsedTime = DateTime.Now - ConnectionStart;
 
-            // Every second
+            // Every second check for connected controllers.
             if (ElapsedTime.TotalSeconds >= 1)
             {
                 for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++) // Up to 4 controllers
                 {
-                    bool isConnected = IsControllerConnected(controllerNumber);
+                    // bool isConnected = IsControllerConnected(controllerNumber);
 
-                    Connected[controllerNumber] = isConnected;
+                    Connected[controllerNumber] = IsControllerConnected(controllerNumber);
 
-                    // Update the status label based on connection state
-                    UpdateControllerStatusLabel(controllerNumber, isConnected);
+                    UpdateControllerStatusLabel(controllerNumber);
 
                 }
 
@@ -260,7 +259,7 @@ namespace XInput_CS
 
             }
 
-            for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++) // Up to 4 controllers
+            for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++)
             {
                 if (Connected[controllerNumber])
                 {
@@ -344,9 +343,10 @@ namespace XInput_CS
 
         }
 
-        private void UpdateControllerStatusLabel(int controllerNumber, bool isConnected)
-        {
-            string status = isConnected ? "Connected" : "Not Connected";
+        private void UpdateControllerStatusLabel(int controllerNumber)
+        {   // Update the status label based on connection state.
+
+            string status = Connected[controllerNumber] ? "Connected" : "Not Connected";
 
             string labelText = $"Controller {controllerNumber} {status}";
 
