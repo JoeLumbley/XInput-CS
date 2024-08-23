@@ -941,17 +941,17 @@ namespace XInput_CS
         }
 
         private void ClearStartLabel()
-        {   // Clears the left trigger label when all controllers' left triggers are neutral.
+        {   // Clears the start label when all controllers' start buttons are neutral.
 
-            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
+            bool ConSum = true; // Assume all controllers' start buttons are neutral initially.
 
-            // Search for a non-neutral left trigger.
+            // Search for a non-neutral start buttons.
             for (int i = 0; i < 4; i++)
             {
                 if (Connected[i] && !IsStartButtonsNeutral[i])
-                {   // A non-neutral left trigger was found.
+                {   // A non-neutral start buttons was found.
 
-                    ConSum = false; // Report the non-neutral left trigger.
+                    ConSum = false; // Report the non-neutral start buttons.
 
                     break; // No need to search further, so stop the search.
 
@@ -959,9 +959,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' left triggers in the neutral position?
+            // Are all controllers' start buttons in the neutral position?
             if (ConSum)
-            {   // Yes, all controllers' left triggers are in the neutral position.
+            {   // Yes, all controllers' start buttons are in the neutral position.
 
                 LabelStart.Text = string.Empty; // Clear label.
 
@@ -970,17 +970,17 @@ namespace XInput_CS
         }
 
         private void ClearBackLabel()
-        {   // Clears the left trigger label when all controllers' left triggers are neutral.
+        {   // Clears the back buttons label when all controllers' back buttons are neutral.
 
-            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
+            bool ConSum = true; // Assume all controllers' back buttons are neutral initially.
 
-            // Search for a non-neutral left trigger.
+            // Search for a non-neutral back buttons.
             for (int i = 0; i < 4; i++)
             {
                 if (Connected[i] && !IsBackButtonsNeutral[i])
-                {   // A non-neutral left trigger was found.
+                {   // A non-neutral back buttons was found.
 
-                    ConSum = false; // Report the non-neutral left trigger.
+                    ConSum = false; // Report the non-neutral back buttons.
 
                     break; // No need to search further, so stop the search.
 
@@ -988,9 +988,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' left triggers in the neutral position?
+            // Are all controllers' back buttons in the neutral position?
             if (ConSum)
-            {   // Yes, all controllers' left triggers are in the neutral position.
+            {   // Yes, all controllers' back buttons are in the neutral position.
 
                 LabelBack.Text = string.Empty; // Clear label.
 
@@ -1057,17 +1057,17 @@ namespace XInput_CS
         }
 
         private void ClearLeftThumbButtonLabel()
-        {   // Clears the right bumper label when all controllers' right bumper are neutral.
+        {   // Clears the left thumbstick button label when all controllers' left thumbstick buttons are neutral.
 
-            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
+            bool ConSum = true; // Assume all controllers' left thumbstick buttons are neutral initially.
 
-            // Search for a non-neutral right bumper.
+            // Search for a non-neutral left thumbstick buttons.
             for (int i = 0; i < 4; i++)
             {
                 if (Connected[i] && !IsLeftStickButtonsNeutral[i])
-                {   // A non-neutral right bumper was found.
+                {   // A non-neutral left thumbstick buttons was found.
 
-                    ConSum = false; // Report the non-neutral right bumper.
+                    ConSum = false; // Report the non-neutral left thumbstick buttons.
 
                     break; // No need to search further, so stop the search.
 
@@ -1075,9 +1075,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' right bumper in the neutral position?
+            // Are all controllers' left thumbstick buttons in the neutral position?
             if (ConSum)
-            {   // Yes, all controllers' right bumper are in the neutral position.
+            {   // Yes, all controllers' left thumbstick buttons are in the neutral position.
 
                 LabelLeftThumbButton.Text = string.Empty; // Clear label.
 
@@ -1086,17 +1086,17 @@ namespace XInput_CS
         }
 
         private void ClearRightThumbButtonLabel()
-        {   // Clears the right bumper label when all controllers' right bumper are neutral.
+        {   // Clears the right thumbstick button label when all controllers'right thumbstick buttons are neutral.
 
-            bool ConSum = true; // Assume all controllers' right bumper are neutral initially.
+            bool ConSum = true; // Assume all controllers' right thumbstick buttons are neutral initially.
 
-            // Search for a non-neutral right bumper.
+            // Search for a non-neutral right thumbstick buttons.
             for (int i = 0; i < 4; i++)
             {
                 if (Connected[i] && !IsRightStickButtonsNeutral[i])
-                {   // A non-neutral right bumper was found.
+                {   // A non-neutral right thumbstick buttons was found.
 
-                    ConSum = false; // Report the non-neutral right bumper.
+                    ConSum = false; // Report the non-neutral right thumbstick buttons.
 
                     break; // No need to search further, so stop the search.
 
@@ -1104,9 +1104,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' right bumper in the neutral position?
+            // Are all controllers' right thumbstick buttons in the neutral position?
             if (ConSum)
-            {   // Yes, all controllers' right bumper are in the neutral position.
+            {   // Yes, all controllers' right thumbstick buttons are in the neutral position.
 
                 LabelRightThumbButton.Text = string.Empty; // Clear label.
 
