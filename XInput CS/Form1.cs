@@ -405,7 +405,6 @@ namespace XInput_CS
                 LabelDPad.Text = $"Controller {controllerNumber} DPad {direction}";
 
                 IsDPadNeutral[controllerNumber] = false;
-
             }
             else
             {   // Yes, all DPad buttons are up.
@@ -429,7 +428,6 @@ namespace XInput_CS
                 LabelButtons.Text = buttonText;
 
                 IsLetterButtonsNeutral[controllerNumber] = false;
-
             }
             else
             {   // No, letter buttons are not pressed.
@@ -446,14 +444,12 @@ namespace XInput_CS
         {
             if (StartButtonPressed)
             {
-
                 LabelStart.Text = $"Controller {controllerNumber} Start";
 
                 IsStartButtonsNeutral[controllerNumber] = false;
             }
             else
             {
-
                 IsStartButtonsNeutral[controllerNumber] = true;
 
             }
@@ -462,11 +458,9 @@ namespace XInput_CS
 
             if (BackButtonPressed)
             {
-
                 LabelBack.Text = $"Controller {controllerNumber} Back";
 
                 IsBackButtonsNeutral[controllerNumber] = false;
-
             }
             else
             {
@@ -482,14 +476,12 @@ namespace XInput_CS
         {
             if (LeftBumperButtonPressed)
             {
-
                 LabelLeftBumper.Text = $"Controller {controllerNumber} Left Bumper";
 
                 IsLeftBumperNeutral[controllerNumber] = false;
             }
             else
             {
-
                 IsLeftBumperNeutral[controllerNumber] = true;
 
             }
@@ -498,11 +490,9 @@ namespace XInput_CS
 
             if (RightBumperButtonPressed)
             {
-
                 LabelRightBumper.Text = $"Controller {controllerNumber} Right Bumper";
 
                 IsRightBumperNeutral[controllerNumber] = false;
-
             }
             else
             {
@@ -708,15 +698,15 @@ namespace XInput_CS
         private void ClearLetterButtonsLabel()
         {   // Clears the letter buttons label when all controllers letter buttons are up.
 
-            bool ConSum = true; // Assume all controllers' left triggers are neutral initially.
+            bool ConSum = true; // Assume all controllers' letter buttons neutral initially.
 
-            // Search for a non-neutral left trigger.
+            // Search for a non-neutral letter button.
             for (int i = 0; i < 4; i++)
             {
                 if (Connected[i] && !IsLetterButtonsNeutral[i])
-                {   // A non-neutral left trigger was found.
+                {   // A non-neutral letter button was found.
 
-                    ConSum = false; // Report the non-neutral left trigger.
+                    ConSum = false; // Report the non-neutral letter button.
 
                     break; // No need to search further, so stop the search.
 
@@ -724,9 +714,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' left triggers in the neutral position?
+            // Are all controllers' letter buttons in the neutral position?
             if (ConSum)
-            {   // Yes, all controllers' left triggers are in the neutral position.
+            {   // Yes, all controllers' letter buttons are in the neutral position.
 
                 LabelButtons.Text = string.Empty; // Clear label.
 
