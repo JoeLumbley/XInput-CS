@@ -244,59 +244,15 @@ namespace XInput_CS
 
             // Every second
             if (ElapsedTime.TotalSeconds >= 1)
-            {   // Check for connected controllers.
-
-                for (int ControllerNumber = 0; ControllerNumber <= 3; ControllerNumber++) // Up to 4 controllers
+            {
+                for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++) // Up to 4 controllers
                 {
-                    if (IsControllerConnected(ControllerNumber))
-                    {
-                        Connected[ControllerNumber] = true;
+                    bool isConnected = IsControllerConnected(controllerNumber);
 
-                        if (ControllerNumber == 0)
-                        {
-                            LabelController0Status.Text = $"Controller {ControllerNumber} Connected";
-                        }
+                    Connected[controllerNumber] = isConnected;
 
-                        if (ControllerNumber == 1)
-                        {
-                            LabelController1Status.Text = $"Controller {ControllerNumber} Connected";
-                        }
-
-                        if (ControllerNumber == 2)
-                        {
-                            LabelController2Status.Text = $"Controller {ControllerNumber} Connected";
-                        }
-
-                        if (ControllerNumber == 3)
-                        {
-                            LabelController3Status.Text = $"Controller {ControllerNumber} Connected";
-                        }
-                    }
-                    else
-                    {
-                        Connected[ControllerNumber] = false;
-
-                        if (ControllerNumber == 0)
-                        {
-                            LabelController0Status.Text = $"Controller {ControllerNumber} Not Connected";
-                        }
-
-                        if (ControllerNumber == 1)
-                        {
-                            LabelController1Status.Text = $"Controller {ControllerNumber} Not Connected";
-                        }
-
-                        if (ControllerNumber == 2)
-                        {
-                            LabelController2Status.Text = $"Controller {ControllerNumber} Not Connected";
-                        }
-
-                        if (ControllerNumber == 3)
-                        {
-                            LabelController3Status.Text = $"Controller {ControllerNumber} Not Connected";
-                        }
-
-                    }
+                    // Update the status label based on connection state
+                    UpdateControllerStatusLabel(controllerNumber, isConnected);
 
                 }
 
@@ -304,13 +260,121 @@ namespace XInput_CS
 
             }
 
-            for (int ControllerNumber = 0; ControllerNumber <= 3; ControllerNumber++) // Up to 4 controllers
+            for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++) // Up to 4 controllers
             {
-                if (Connected[ControllerNumber] == true)
+                if (Connected[controllerNumber])
                 {
-                    UpdateControllerState(ControllerNumber);
+                    UpdateControllerState(controllerNumber);
 
                 }
+
+            }
+
+            //// Every second
+            //if (ElapsedTime.TotalSeconds >= 1)
+            //{   // Check for connected controllers.
+
+            //    for (int ControllerNumber = 0; ControllerNumber <= 3; ControllerNumber++) // Up to 4 controllers
+            //    {
+            //        if (IsControllerConnected(ControllerNumber))
+            //        {
+            //            Connected[ControllerNumber] = true;
+
+            //            if (ControllerNumber == 0)
+            //            {
+            //                LabelController0Status.Text = $"Controller {ControllerNumber} Connected";
+            //            }
+
+            //            if (ControllerNumber == 1)
+            //            {
+            //                LabelController1Status.Text = $"Controller {ControllerNumber} Connected";
+            //            }
+
+            //            if (ControllerNumber == 2)
+            //            {
+            //                LabelController2Status.Text = $"Controller {ControllerNumber} Connected";
+            //            }
+
+            //            if (ControllerNumber == 3)
+            //            {
+            //                LabelController3Status.Text = $"Controller {ControllerNumber} Connected";
+            //            }
+            //        }
+            //        else
+            //        {
+            //            Connected[ControllerNumber] = false;
+
+            //            if (ControllerNumber == 0)
+            //            {
+            //                LabelController0Status.Text = $"Controller {ControllerNumber} Not Connected";
+            //            }
+
+            //            if (ControllerNumber == 1)
+            //            {
+            //                LabelController1Status.Text = $"Controller {ControllerNumber} Not Connected";
+            //            }
+
+            //            if (ControllerNumber == 2)
+            //            {
+            //                LabelController2Status.Text = $"Controller {ControllerNumber} Not Connected";
+            //            }
+
+            //            if (ControllerNumber == 3)
+            //            {
+            //                LabelController3Status.Text = $"Controller {ControllerNumber} Not Connected";
+            //            }
+
+            //        }
+
+            //    }
+
+            //    ConnectionStart = DateTime.Now;
+
+            //}
+
+            //for (int ControllerNumber = 0; ControllerNumber <= 3; ControllerNumber++) // Up to 4 controllers
+            //{
+            //    if (Connected[ControllerNumber] == true)
+            //    {
+            //        UpdateControllerState(ControllerNumber);
+
+            //    }
+
+            //}
+
+        }
+
+        private void UpdateControllerStatusLabel(int controllerNumber, bool isConnected)
+        {
+            string status = isConnected ? "Connected" : "Not Connected";
+
+            string labelText = $"Controller {controllerNumber} {status}";
+
+            switch (controllerNumber)
+            {
+                case 0:
+
+                    LabelController0Status.Text = labelText;
+
+                    break;
+
+                case 1:
+
+                    LabelController1Status.Text = labelText;
+
+                    break;
+
+                case 2:
+
+                    LabelController2Status.Text = labelText;
+
+                    break;
+
+                case 3:
+
+                    LabelController3Status.Text = labelText;
+
+                    break;
 
             }
 
