@@ -1,11 +1,11 @@
-XInput
+XInput CS
 
 This is an example application that demonstrates the use of Xbox controllers,
 including the vibration effect (rumble).
 
 MIT License
 
-Copyright(c) 2023 Joseph W. Lumbley
+Copyright(c) 2024 Joseph W. Lumbley
 
 Permission Is hereby granted, free Of charge, to any person obtaining a copy
 of this software And associated documentation files (the "Software"), to deal
