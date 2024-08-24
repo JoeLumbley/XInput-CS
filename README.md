@@ -14,9 +14,9 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 
 
-🚀 XInput Transitioning from VB to C#! 🚀
+🚀 XInput Porting from VB to C#! 🚀
 
-Hi GitHub community! I’m thrilled to share my recent journey of converting my VB app, "XInput," into its new C# counterpart, "XInput CS." This experience has been both challenging and rewarding, and I’d love to share some insights that might help others considering a similar transition.
+Hi GitHub community! I’m thrilled to share my recent journey of porting my VB app, "XInput," into its new C# counterpart, "XInput CS." This experience has been both challenging and rewarding, and I’d love to share some insights that might help others considering a similar transition.
 
 
 
