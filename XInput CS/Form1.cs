@@ -247,8 +247,6 @@ namespace XInput_CS
             {
                 for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++) // Up to 4 controllers
                 {
-                    // bool isConnected = IsControllerConnected(controllerNumber);
-
                     Connected[controllerNumber] = IsControllerConnected(controllerNumber);
 
                     UpdateControllerStatusLabel(controllerNumber);
