@@ -354,4 +354,16 @@ These examples illustrate some of the common syntax differences you'll encounter
 
 
 
+## A Funny Thing Happened on the Way to Porting My App
+
+So, I embarked on a journey to port my app, XInput , from VB to C# with the help of my AI assistant, Monica. Let me tell you, Monica is a game changer!
+
+She zipped through converting the VB code to C# at lightning speed, as AI assistants do. But where she really shines is in her suggestions. Every time I asked for C# code, she’d nudge me with ideas like, “How about a function?” And I’d be like, “Oh yeah! That does look better. Maybe I should use more functions?”
+
+Monica was really pushing me ahead, keeping my code clean and efficient. Thanks, Monica! I guess? 😄
+
+In the midst of all this, I got a little carried away and redesigned the app’s interface. Now, I have to go back and redo the original app’s interface to match! Because, you know, I’m that type of guy. They need to look good side by side!
+
+
+
 
