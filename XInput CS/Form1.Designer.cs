@@ -57,11 +57,14 @@
             LabelController2Status = new Label();
             LabelController1Status = new Label();
             LabelController0Status = new Label();
+            NumericUpDownTimeToVib = new NumericUpDown();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)NumControllerToVib).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownTimeToVib).BeginInit();
             SuspendLayout();
             // 
             // timer1
@@ -192,6 +195,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(NumericUpDownTimeToVib);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(LabelSpeed);
             groupBox1.Controls.Add(NumControllerToVib);
@@ -340,6 +345,26 @@
             LabelController0Status.TabIndex = 24;
             LabelController0Status.Text = "LabelController0Status";
             // 
+            // NumericUpDownTimeToVib
+            // 
+            NumericUpDownTimeToVib.Increment = new decimal(new int[] { 25, 0, 0, 0 });
+            NumericUpDownTimeToVib.Location = new Point(398, 35);
+            NumericUpDownTimeToVib.Maximum = new decimal(new int[] { 4000, 0, 0, 0 });
+            NumericUpDownTimeToVib.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            NumericUpDownTimeToVib.Name = "NumericUpDownTimeToVib";
+            NumericUpDownTimeToVib.Size = new Size(180, 31);
+            NumericUpDownTimeToVib.TabIndex = 14;
+            NumericUpDownTimeToVib.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(306, 37);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 25);
+            label2.TabIndex = 15;
+            label2.Text = "Time ms";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -360,6 +385,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownTimeToVib).EndInit();
             ResumeLayout(false);
         }
 
@@ -392,5 +418,7 @@
         private Label LabelController1Status;
         private Label LabelController2Status;
         private Label LabelController3Status;
+        private Label label2;
+        private NumericUpDown NumericUpDownTimeToVib;
     }
 }

@@ -1230,7 +1230,7 @@ namespace XInput_CS
                 {
                     TimeSpan elapsedTime = DateTime.Now - LeftVibrateStart[index];
 
-                    if (elapsedTime.TotalSeconds >= 1)
+                    if (elapsedTime.TotalMilliseconds >= (double)NumericUpDownTimeToVib.Value)
                     {
                         IsLeftVibrating[index] = false;
 
@@ -1257,7 +1257,7 @@ namespace XInput_CS
                 {
                     TimeSpan elapsedTime = DateTime.Now - RightVibrateStart[index];
 
-                    if (elapsedTime.TotalSeconds >= 1)
+                    if (elapsedTime.TotalMilliseconds >= (double)NumericUpDownTimeToVib.Value)
                     {
                         IsRightVibrating[index] = false;
 
