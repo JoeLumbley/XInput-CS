@@ -1,6 +1,6 @@
 # XInput C#
 
-🎮 Welcome to XInput C#, your go-to solution for integrating Xbox controller support into your applications! This feature-rich application showcases the seamless integration of Xbox controllers, complete with vibration effects and real-time controller state monitoring.
+🎮 Welcome to XInput C#, your go-to solution for integrating Xbox controller support into your applications! This feature-rich application showcases the seamless integration of controllers, complete with vibration effects and real-time controller state monitoring.
 
 ![019](https://github.com/user-attachments/assets/5bfb4c74-f2c3-420c-a387-da0690bc71bb)
 
@@ -41,7 +41,14 @@ C#: The ```using``` directive is used to include namespaces in the file. This al
 using System.Runtime.InteropServices;
 
 ```
-![018](https://github.com/user-attachments/assets/af90ef23-4f37-458f-91f4-198703d6c08b)
+
+
+
+![022](https://github.com/user-attachments/assets/afc2aced-e8eb-4156-95db-548bb54d4eba)
+
+
+
+
 
 ### 2. Class Declaration
 
@@ -165,7 +172,14 @@ private ushort[] ConButtons = new ushort[4];
 
 ```
 
-![016](https://github.com/user-attachments/assets/79987297-2c32-4b43-8bed-949c6ec9f204)
+
+
+
+
+
+
+
+
 
 
 ### 8. Constants Declaration
@@ -363,6 +377,9 @@ She zipped through converting the VB code to C# at lightning speed, as AI assist
 Monica was really pushing me ahead, keeping my code clean and efficient. Thanks, Monica! I guess? 😄
 
 In the midst of all this, I got a little carried away and redesigned the app’s interface. Now, I have to go back and redo the original app’s interface to match! Because, you know, I’m that type of guy. They need to look good side by side!
+
+![023](https://github.com/user-attachments/assets/fde768e4-e891-4da7-abb3-5b364e2233b5)
+
 
 
 
