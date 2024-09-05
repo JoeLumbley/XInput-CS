@@ -27,17 +27,16 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 # Code Walkthrough
 ### Imports and DLL Function Declarations
-At the beginning of the ```Form1.vb``` file, we import necessary libraries and declare functions from the XInput DLL.
+At the beginning of the ```Form1.cs``` file, we import necessary libraries and declare functions from the XInput DLL.
 
-``` vbnet
-Imports System.Runtime.InteropServices
+``` csharp
+using System.Runtime.InteropServices;
 
-<DllImport("XInput1_4.dll")>
-Private Shared Function XInputGetState(dwUserIndex As Integer, ByRef pState As XINPUT_STATE) As Integer
-End Function
+[DllImport("XInput1_4.dll")]
+private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
 ```
 
-**Imports System.Runtime.InteropServices:** This line allows us to use features that let managed code (like our VB.NET code) interact with unmanaged code (like the XInput DLL).
+**Imports System.Runtime.InteropServices:** This line allows us to use features that let managed code (like our C# code) interact with unmanaged code (like the XInput DLL).
 
 **DllImport:** This attribute tells the program that we want to use a function from an external library (the XInput DLL) to get the state of the Xbox controller.
 
@@ -47,14 +46,16 @@ End Function
 
 Next, we define structures that represent the controller's state and input.
 
-``` vbnet
-<StructLayout(LayoutKind.Explicit)>
-Public Structure XINPUT_STATE
-    <FieldOffset(0)>
-    Public dwPacketNumber As UInteger
-    <FieldOffset(4)>
-    Public Gamepad As XINPUT_GAMEPAD
-End Structure
+``` csharp
+[StructLayout(LayoutKind.Explicit)]
+public struct XINPUT_STATE
+{
+    [FieldOffset(0)]
+    public uint dwPacketNumber;
+
+    [FieldOffset(4)]
+    public XINPUT_GAMEPAD Gamepad;
+}
 ```
 **StructLayout:** This attribute specifies how the fields of the structure are laid out in memory.
 
