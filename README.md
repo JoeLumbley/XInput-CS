@@ -36,7 +36,7 @@ using System.Runtime.InteropServices;
 private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
 ```
 
-**Imports System.Runtime.InteropServices:** This line allows us to use features that let managed code (like our C# code) interact with unmanaged code (like the XInput DLL).
+**Using System.Runtime.InteropServices:** This line allows us to use features that let managed code (like our C# code) interact with unmanaged code (like the XInput DLL).
 
 **DllImport:** This attribute tells the program that we want to use a function from an external library (the XInput DLL) to get the state of the Xbox controller.
 
