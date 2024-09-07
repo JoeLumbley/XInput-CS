@@ -2,9 +2,9 @@
 
 🎮 Welcome to XInput C#, your go-to solution for integrating Xbox controller support into your applications! This feature-rich application showcases the seamless integration of controllers, complete with vibration effects and real-time controller state monitoring.
 
-![019](https://github.com/user-attachments/assets/5bfb4c74-f2c3-420c-a387-da0690bc71bb)
 
 
+![025](https://github.com/user-attachments/assets/1c3e7e36-4070-4c47-8eea-23a77d317cee)
 
 
 With a clean and well-commented codebase, this project serves as an invaluable resource for developers looking to harness the power of XInput in their Windows applications. Whether you're a seasoned developer or just getting started, the XInput app provides a solid foundation for building immersive gaming experiences and beyond.
@@ -14,14 +14,224 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 
 
-🚀 XInput Porting from VB to C#! 🚀
+
+
+
+
+
+
+
+
+
+
+
+# Code Walkthrough
+### Imports and DLL Function Declarations
+At the beginning of the ```Form1.cs``` file, we import necessary libraries and declare functions from the XInput DLL.
+
+``` csharp
+using System.Runtime.InteropServices;
+
+[DllImport("XInput1_4.dll")]
+private static extern int XInputGetState(int dwUserIndex, ref XINPUT_STATE pState);
+```
+
+**Using System.Runtime.InteropServices:** This line allows us to use features that let managed code (like our C# code) interact with unmanaged code (like the XInput DLL).
+
+**DllImport:** This attribute tells the program that we want to use a function from an external library (the XInput DLL) to get the state of the Xbox controller.
+
+
+
+### Defining Structures
+
+Next, we define structures that represent the controller's state and input.
+
+``` csharp
+[StructLayout(LayoutKind.Explicit)]
+public struct XINPUT_STATE
+{
+    [FieldOffset(0)]
+    public uint dwPacketNumber;
+
+    [FieldOffset(4)]
+    public XINPUT_GAMEPAD Gamepad;
+}
+```
+**StructLayout:** This attribute specifies how the fields of the structure are laid out in memory.
+
+**XINPUT_STATE:** This structure holds the state of the controller, including a packet number (used to track changes) and the gamepad data.
+
+``` csharp
+[StructLayout(LayoutKind.Sequential)]
+public struct XINPUT_GAMEPAD
+{
+    public ushort wButtons;
+    public byte bLeftTrigger;
+    public byte bRightTrigger;
+    public short sThumbLX;
+    public short sThumbLY;
+    public short sThumbRX;
+    public short sThumbRY;
+}
+```
+
+**XINPUT_GAMEPAD:** This structure contains information about the buttons pressed and the positions of the thumbsticks and triggers.
+
+
+### Initializing the Application
+
+
+When the form loads, we initialize the application.
+
+``` csharp
+private void Form1_Load(object sender, EventArgs e)
+{
+    InitializeApp();
+}
+```
+
+**Form1_Load:** This is an event handler that runs when the form is loaded. It calls the ```InitializeApp()``` method, which sets up the application.
+
+
+### Timer for Polling Controller State
+
+We use a timer to regularly check the controller's state.
+
+``` csharp
+private void InitializeTimer1()
+{
+    Timer1.Interval = 15; // Set the timer to tick every 15 milliseconds
+    Timer1.Start();       // Start the timer
+}
+```
+
+**Timer1.Interval:** This sets how often the timer will trigger (every 15 milliseconds).
+
+**Timer1.Start():** This starts the timer, which will call the ```Timer1_Tick``` method repeatedly.
+
+### Updating Controller Data
+
+In the timer's tick event, we update the controller data.
+
+``` csharp
+private void Timer1_Tick(object sender, EventArgs e)
+{
+    UpdateControllerData();
+}
+```
+
+**UpdateControllerData():** This method checks the state of the controllers and updates the UI accordingly.
+
+### Getting Controller State
+
+Inside ```UpdateControllerData```, we retrieve the current state of each connected controller.
+
+``` csharp
+for (int controllerNumber = 0; controllerNumber <= 3; controllerNumber++)
+{
+    Connected[controllerNumber] = IsControllerConnected(controllerNumber);
+    if (Connected[controllerNumber])
+    {
+        UpdateControllerState(controllerNumber);
+    }
+}
+```
+
+**For loop:** This loop checks up to four controllers (0 to 3).
+
+**IsControllerConnected(controllerNumber):** This function checks if a controller is connected and returns true or false.
+
+**UpdateControllerState(controllerNumber):** If the controller is connected, this method retrieves its current state.
+
+
+### Updating Button States
+
+
+
+When we retrieve the controller state, we check which buttons are pressed.
+
+``` csharp
+private void UpdateButtonPosition(int CID)
+{
+    DPadUpPressed = (ControllerPosition.Gamepad.wButtons & DPadUp) != 0;
+    // Similar checks for other buttons...
+}
+```
+
+**wButtons:** This field contains the state of all buttons as a number.
+
+**Bitwise AND operator (```And```):** This checks if a specific button is pressed by comparing it to a constant (like ```DPadUp```).
+
+### Vibration Control
+
+
+To control the vibration of the controller, we have buttons in the UI.
+
+``` csharp
+private void ButtonVibrateLeft_Click(object sender, EventArgs e)
+{
+    VibrateLeft(NumControllerToVib.Value, TrackBarSpeed.Value);
+}
+```
+
+**ButtonVibrateLeft_Click:** This event runs when the "Vibrate Left" button is clicked.
+
+**VibrateLeft():** This method triggers vibration on the specified controller with the desired intensity.
+
+
+
+
+This application provides a hands-on way to interact with Xbox controllers using C#. By understanding each section of the code, you can see how the application retrieves controller states, manages input, and provides feedback through vibration.
+
+Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, don’t hesitate to ask.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Things to watch out for when converting from VB to C#
 
 Hi GitHub community! I’m thrilled to share my recent journey of porting my VB app, "XInput," into its new C# counterpart, "XInput CS." This experience has been both challenging and rewarding, and I’d love to share some insights that might help others considering a similar transition.
-
-
-
-
-## Things to watch out for when converting from VB to C#
 
 Here are some key syntax differences.
 
