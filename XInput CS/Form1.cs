@@ -1358,6 +1358,35 @@ namespace XInput_CS
 
             ToolTipConToVib.SetToolTip(NumControllerToVib, TipText);
 
+            ToolTip ToolTipVibSpeed = new()
+            {
+                AutoPopDelay = 10000,
+                InitialDelay = 1000,
+                ReshowDelay = 500
+            };
+
+            TipText = "Vibration Speed " + Environment.NewLine +
+                      "Enter a value between 1 and 65,535" + Environment.NewLine +
+                      "Higher speeds can create stronger feedback" + Environment.NewLine +
+                      "while lower speeds produce a more subtle effect";
+
+            ToolTipVibSpeed.SetToolTip(TrackBarSpeed, TipText);
+
+            ToolTip ToolTipRumbleGroup = new()
+            {
+                AutoPopDelay = 10000,
+                InitialDelay = 1000,
+                ReshowDelay = 500
+            };
+
+            TipText = "The vibration motors in controllers " + Environment.NewLine +
+                      "provide haptic feedback during gameplay" + Environment.NewLine +
+                      "enhancing the immersive experience" + Environment.NewLine + "     ";
+
+            ToolTipVibSpeed.SetToolTip(groupBox1 , TipText);
+
+
+
         }
 
         public Form1()
