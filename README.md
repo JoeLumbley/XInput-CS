@@ -3,7 +3,7 @@
 🎮 Welcome to XInput C#, your go-to solution for integrating Xbox controller support into your applications! This feature-rich application showcases the seamless integration of controllers, complete with vibration effects and real-time controller state monitoring.
 
 
-![027](https://github.com/user-attachments/assets/a9a7b0c9-4b60-4ce9-ab0d-d84fa624a6da)
+![029](https://github.com/user-attachments/assets/8dc5d057-b5ea-480a-bc6d-b342cb3ca31f)
 
 
 
