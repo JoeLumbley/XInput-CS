@@ -1332,6 +1332,32 @@ namespace XInput_CS
 
             //LabelBatteryType.Text = string.Empty;
 
+            ToolTip ToolTipTimeToVib = new()
+            {
+                AutoPopDelay = 8000,
+                InitialDelay = 1000,
+                ReshowDelay = 500
+            };
+
+            string TipText = "Time to Vibrate " + Environment.NewLine +
+                             "Enter a value between 1 and 5000 milliseconds" + Environment.NewLine +
+                             "1 second = 1000 milliseconds";
+
+            ToolTipTimeToVib.SetToolTip(NumericUpDownTimeToVib, TipText);
+
+            ToolTip ToolTipConToVib = new()
+            {
+                AutoPopDelay = 8000,
+                InitialDelay = 1000,
+                ReshowDelay = 500
+            };
+
+            TipText = "Controller to Vibrate " + Environment.NewLine +
+                      "Enter a value between 0 and 3" + Environment.NewLine +
+                      "Supports up to 4 controllers";
+
+            ToolTipConToVib.SetToolTip(NumControllerToVib, TipText);
+
         }
 
         public Form1()
