@@ -1381,10 +1381,9 @@ namespace XInput_CS
 
             TipText = "The vibration motors in controllers " + Environment.NewLine +
                       "provide haptic feedback during gameplay" + Environment.NewLine +
-                      "enhancing the immersive experience" + Environment.NewLine + "     ";
+                      "enhancing the immersive experience";
 
-            ToolTipVibSpeed.SetToolTip(groupBox1 , TipText);
-
+            ToolTipVibSpeed.SetToolTip(groupBox1, TipText);
 
 
         }
