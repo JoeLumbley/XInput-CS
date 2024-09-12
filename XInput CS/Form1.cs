@@ -1332,6 +1332,12 @@ namespace XInput_CS
 
             //LabelBatteryType.Text = string.Empty;
 
+            InitializeToolTips();
+
+        }
+
+        private void InitializeToolTips()
+        {
             ToolTip ToolTipTimeToVib = new()
             {
                 AutoPopDelay = 8000,
@@ -1339,9 +1345,7 @@ namespace XInput_CS
                 ReshowDelay = 500
             };
 
-            string TipText = "Time to Vibrate " + Environment.NewLine +
-                             "Enter a value between 1 and 5000 milliseconds" + Environment.NewLine +
-                             "1 second = 1000 milliseconds";
+            string TipText = $"Time to Vibrate {Environment.NewLine}Enter a value between 1 and 5000 milliseconds {Environment.NewLine}1 second = 1000 milliseconds";
 
             ToolTipTimeToVib.SetToolTip(NumericUpDownTimeToVib, TipText);
 
@@ -1352,9 +1356,7 @@ namespace XInput_CS
                 ReshowDelay = 500
             };
 
-            TipText = "Controller to Vibrate " + Environment.NewLine +
-                      "Enter a value between 0 and 3" + Environment.NewLine +
-                      "Supports up to 4 controllers";
+            TipText = $"Controller to Vibrate {Environment.NewLine}Enter a value between 0 and 3 {Environment.NewLine}Supports up to 4 controllers";
 
             ToolTipConToVib.SetToolTip(NumControllerToVib, TipText);
 
@@ -1365,10 +1367,7 @@ namespace XInput_CS
                 ReshowDelay = 500
             };
 
-            TipText = "Vibration Speed " + Environment.NewLine +
-                      "Enter a value between 1 and 65,535" + Environment.NewLine +
-                      "Higher speeds can create stronger feedback" + Environment.NewLine +
-                      "while lower speeds produce a more subtle effect";
+            TipText = $"Vibration Speed {Environment.NewLine}Enter a value between 1 and 65,535 {Environment.NewLine}Higher speeds can create stronger feedback {Environment.NewLine}while lower speeds produce a more subtle effect";
 
             ToolTipVibSpeed.SetToolTip(TrackBarSpeed, TipText);
 
@@ -1379,12 +1378,9 @@ namespace XInput_CS
                 ReshowDelay = 500
             };
 
-            TipText = "The vibration motors in controllers " + Environment.NewLine +
-                      "provide haptic feedback during gameplay" + Environment.NewLine +
-                      "enhancing the immersive experience";
+            TipText = $"The vibration motors in controllers {Environment.NewLine}provide haptic feedback during gameplay {Environment.NewLine}enhancing the immersive experience";
 
-            ToolTipVibSpeed.SetToolTip(groupBox1, TipText);
-
+            ToolTipRumbleGroup.SetToolTip(groupBox1, TipText);
 
         }
 
