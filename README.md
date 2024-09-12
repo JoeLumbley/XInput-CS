@@ -183,7 +183,7 @@ private void ButtonVibrateLeft_Click(object sender, EventArgs e)
 
 This application provides a hands-on way to interact with Xbox controllers using C#. By understanding each section of the code, you can see how the application retrieves controller states, manages input, and provides feedback through vibration.
 
-Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, don’t hesitate to ask.
+Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, please post on the **Q & A Discussion Forum**,  don’t hesitate to ask.
 
 
 
