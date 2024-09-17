@@ -640,7 +640,7 @@ namespace XInput_CS
 
             // What position is the right trigger in?
             if (ControllerPosition.Gamepad.bRightTrigger > TriggerThreshold)
-            {   // The right trigger is in the down position. Trigger Break. Bang!
+            {   // The right trigger is in the fire position. Trigger Break. Bang!
 
                 LabelRightTrigger.Text = $"Controller {controllerNumber} Right Trigger";
 
@@ -663,7 +663,7 @@ namespace XInput_CS
 
             // What position is the left trigger in?
             if (ControllerPosition.Gamepad.bLeftTrigger > TriggerThreshold)
-            {   // The left trigger is in the down position. Trigger Break. Bang!
+            {   // The left trigger is in the fire position. Trigger Break. Bang!
 
                 LabelLeftTrigger.Text = $"Controller {controllerNumber} Left Trigger";
 
