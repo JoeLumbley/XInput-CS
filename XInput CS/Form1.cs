@@ -92,7 +92,7 @@ namespace XInput_CS
         // Set the start of the thumbstick neutral zone to 1/2 over.
         private const short NeutralStart = -16384; // -16,384 = -32,768 / 2
         // The thumbstick position must be more than 1/2 over the neutral start to register as moved.
-        // A short is a signed 16-bit (2-byte) integer range -32,768 through 32,767. This gives us 65,536 values.
+        // A short is a signed 16-bit (2-byte) integer range -32,768 through 32,767. This gives us 65,535 values.
 
         // Set the end of the thumbstick neutral zone to 1/2 over.
         private const short NeutralEnd = 16384; // 16,383.5 = 32,767 / 2
