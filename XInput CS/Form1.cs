@@ -1211,28 +1211,6 @@ namespace XInput_CS
 
         }
 
-        //private void DoButtonLogic()
-        //{
-        //    for (int ControllerNumber = 0; ControllerNumber < 4; ControllerNumber++)
-        //    {
-        //        if (Controllers.Connected[ControllerNumber])
-        //        {
-        //            UpdateDPadLabel(ControllerNumber);
-
-        //            UpdateLetterButtonLabel(ControllerNumber);
-
-        //            UpdateStartBackLabels(ControllerNumber);
-
-        //            UpdateBumperLabels(ControllerNumber);
-
-        //            UpdateStickLabels(ControllerNumber);
-
-        //        }
-
-        //    }
-
-        //}
-
         private void UpdateDPadLabel(int controllerNumber)
         {
             string direction = GetDPadDirection(controllerNumber);
