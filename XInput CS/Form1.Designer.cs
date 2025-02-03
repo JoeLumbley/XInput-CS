@@ -223,7 +223,7 @@
             // 
             NumericUpDownTimeToVib.Increment = new decimal(new int[] { 25, 0, 0, 0 });
             NumericUpDownTimeToVib.Location = new Point(358, 32);
-            NumericUpDownTimeToVib.Maximum = new decimal(new int[] { 4000, 0, 0, 0 });
+            NumericUpDownTimeToVib.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             NumericUpDownTimeToVib.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NumericUpDownTimeToVib.Name = "NumericUpDownTimeToVib";
             NumericUpDownTimeToVib.Size = new Size(162, 30);
