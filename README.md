@@ -1457,8 +1457,7 @@ Here's an index with links to the corresponding sections in your README:
 
 7. **[A Funny Thing Happened on the Way to Porting My App](#a-funny-thing-happened-on-the-way-to-porting-my-app)**
 
-### Note
-Ensure that each section in your README file has a corresponding header with the same title as the links for them to work correctly.
+
 
 
 
