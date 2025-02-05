@@ -246,6 +246,8 @@ private const short NeutralEnd = 16384; // 16,383.5 = 32,767 / 2
 
 - **`private const short NeutralStart`** and **`private const short NeutralEnd`**: These constants define the range for the thumbstick's neutral zone. The thumbstick must move beyond these points to register as active input, which helps prevent unintentional actions.
 
+**[The Neutral Zone](#the-neutral-zone)**
+
 [Index](#index)
 
 ---
