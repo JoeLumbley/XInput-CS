@@ -272,6 +272,8 @@ private const byte TriggerThreshold = 64; // 64 = 256 / 4
 
 - **`private const byte TriggerThreshold`**: This constant sets the minimum value for the triggers to be considered pressed. It ensures that small, unintentional movements do not register as inputs.
 
+ **[The Trigger Threshold](#the-trigger-threshold)**
+
 [Index](#index)
 
 ---
