@@ -1393,10 +1393,6 @@ private void UpdateRumbleGroupUI()
 
 
 
-[Index](#index)
-
-
-Here's an index with links to the corresponding sections in your README:
 
 ### Index
 
