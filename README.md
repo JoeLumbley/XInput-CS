@@ -528,6 +528,21 @@ private void UpdateState(int controllerNumber)
 
 - **`catch (Exception ex)`**: This block handles any exceptions that may occur while trying to get the controller state, logging the error message.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
 ## Update Buttons Method
 
 ```csharp
@@ -551,6 +566,15 @@ private void UpdateButtons(int controllerNumber)
 
 - **`Buttons[controllerNumber] = State.Gamepad.wButtons;`**: This line stores the current button state in the `Buttons` array.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
 ## Update Thumbsticks Method
 
 ```csharp
@@ -565,6 +589,15 @@ private void UpdateThumbsticks(int controllerNumber)
 
 - It calls methods to update both the left and right thumbsticks.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
 ## Update Triggers Method
 
 ```csharp
@@ -578,6 +611,17 @@ private void UpdateTriggers(int controllerNumber)
 - **`private void UpdateTriggers(int controllerNumber)`**: This method updates the state of the triggers for the specified controller.
 
 - It calls methods to check the positions of both the left and right triggers.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ## Update D-Pad Buttons Method
 
@@ -595,6 +639,17 @@ private readonly void UpdateDPadButtons(int CID)
 
 - Each line uses a bitwise AND operation to check if a specific button is pressed, updating the corresponding boolean array.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
 ## Update Letter Buttons Method
 
 ```csharp
@@ -608,6 +663,17 @@ private readonly void UpdateLetterButtons(int CID)
 ```
 
 - **`private readonly void UpdateLetterButtons(int CID)`**: Similar to the D-Pad buttons, this method checks the state of the letter buttons (A, B, X, Y) for the specified controller.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ## Update Trigger Positions Methods
 
@@ -639,6 +705,22 @@ private void UpdateRightTriggerPosition(int controllerNumber)
 
 - **`private void UpdateLeftTriggerPosition(int controllerNumber)`** and **`private void UpdateRightTriggerPosition(int controllerNumber)`**: These methods check if the left or right trigger is pressed based on the defined threshold and update the corresponding boolean array.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Update Thumbstick Methods
 
 ```csharp
@@ -658,6 +740,13 @@ private void UpdateRightThumbstickPosition(int controllerNumber)
 - **`private void UpdateLeftThumbstick(int ControllerNumber)`**: This method updates both the X and Y axes of the left thumbstick.
 
 - **`private void UpdateRightThumbstickPosition(int controllerNumber)`**: This method updates both the X and Y axes of the right thumbstick.
+
+[Index](#index)
+
+---
+
+
+
 
 
 
@@ -707,6 +796,16 @@ private readonly void UpdateLeftThumbstickYaxis(int ControllerNumber)
 
 - **`LeftThumbstickDown[ControllerNumber] = true;`**: We set the `LeftThumbstickDown` state to `true`, indicating that the thumbstick is pressed down.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 ### Update Left Thumbstick X-Axis
 
 ```csharp
@@ -740,6 +839,19 @@ private readonly void UpdateLeftThumbstickXaxis(int ControllerNumber)
   - If it exceeds `NeutralEnd`, it is moved right.
   - Otherwise, it is in the neutral position.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
 ### Update Right Thumbstick Position
 
 ```csharp
@@ -751,6 +863,17 @@ private void UpdateRightThumbstickPosition(int controllerNumber)
 ```
 
 - **`private void UpdateRightThumbstickPosition(int controllerNumber)`**: This method updates the position of the right thumbstick by calling the respective methods for the X and Y axes.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ### Update Right Thumbstick Y-Axis
 
@@ -783,6 +906,17 @@ private readonly void UpdateRightThumbstickYaxis(int controllerNumber)
 - The logic follows the same pattern as the left thumbstick:
   - It determines if the thumbstick is pushed up, down, or in a neutral position.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
 ### Update Right Thumbstick X-Axis
 
 ```csharp
@@ -813,6 +947,18 @@ private readonly void UpdateRightThumbstickXaxis(int controllerNumber)
 
 - The logic mirrors that of the left thumbstick's X-axis, determining if the thumbstick is moved left, right, or in a neutral position.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
 ## Update Trigger Position Methods
 
 ### Update Left Trigger Position
@@ -835,6 +981,16 @@ private void UpdateLeftTriggerPosition(int controllerNumber)
 
 - If it is, the corresponding boolean for the left trigger is set to `true`; otherwise, it is set to `false`.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 ### Update Right Trigger Position
 
 ```csharp
@@ -852,6 +1008,17 @@ private void UpdateRightTriggerPosition(int controllerNumber)
 ```
 
 - **`private void UpdateRightTriggerPosition(int controllerNumber)`**: This method performs the same check for the right trigger, updating its state accordingly.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ## Update Neutral States Methods
 
@@ -878,6 +1045,15 @@ private void UpdateDPadNeutral(int controllerNumber)
 
 - If any button is pressed, the D-Pad is marked as not neutral; otherwise, it is set to neutral.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
 ### Update Letter Buttons Neutral State
 
 ```csharp
@@ -901,6 +1077,15 @@ private void UpdateLetterButtonsNeutral(int controllerNumber)
 
 - Similar to the D-Pad check, it updates the neutral state based on whether any buttons are active.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
 ## Checking Connection Status
 
 ```csharp
@@ -921,6 +1106,18 @@ public bool IsConnected(int controllerNumber)
 - **`public bool IsConnected(int controllerNumber)`**: This method checks if a specific controller is connected.
 
 - It returns `true` if the `XInputGetState` call returns `0`, indicating a successful connection. If an error occurs, it logs the error and returns `false`.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
 
 ## Test Initialization Method
 
@@ -972,6 +1169,15 @@ public void TestInitialization()
 
 - **`Debug.Assert(...)`**: These statements check various conditions, ensuring that the state of each controller is as expected after initialization. If any condition fails, it will throw an assertion error during debugging.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
 ## Vibration Methods
 
 ### Vibration Structure
@@ -996,6 +1202,16 @@ private XINPUT_VIBRATION Vibration;
 
 - **`private XINPUT_VIBRATION Vibration;`**: This variable will hold the current vibration settings.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 ### Vibrate Left Method
 
 ```csharp
@@ -1011,6 +1227,14 @@ public void VibrateLeft(int cid, ushort speed)
 
 - The current time is recorded to track how long the motor has been vibrating, and the `IsLeftVibrating` flag is set to `true`.
 
+[Index](#index)
+
+---
+
+
+
+
+
 ### Vibrate Right Method
 
 ```csharp
@@ -1023,6 +1247,17 @@ public void VibrateRight(int cid, ushort speed)
 ```
 
 - **`public void VibrateRight(int cid, ushort speed)`**: This method works similarly to `VibrateLeft`, but for the right motor.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ### Send Vibration Motor Command Method
 
@@ -1052,6 +1287,16 @@ private void SendVibrationMotorCommand(int controllerID)
 
 - If the command is successful (returns `0`), it indicates that the motor speed was set. If not, it logs an error message.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 ## Update Vibration Timers Method
 
 ```csharp
@@ -1063,6 +1308,17 @@ private void UpdateVibrateTimers()
 ```
 
 - **`private void UpdateVibrateTimers()`**: This method updates the timers for both the left and right vibration motors.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ### Update Left Vibrate Timer
 
@@ -1091,6 +1347,16 @@ private void UpdateLeftVibrateTimer()
 
 - If the elapsed time exceeds the set vibration time (`TimeToVibe`), it stops the vibration by setting the motor speed to zero.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 ### Update Right Vibrate Timer
 
 ```csharp
@@ -1116,7 +1382,9 @@ private void UpdateRightVibrateTimer()
 
 - **`private void UpdateRightVibrateTimer()`**: This method functions similarly to the left vibrate timer, checking the right motor's state and updating it accordingly.
 
+[Index](#index)
 
+---
 
 
 
