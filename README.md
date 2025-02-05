@@ -1503,7 +1503,9 @@ Enhances control sensitivity, allowing for more nuanced gameplay, especially in 
 Understanding the neutral zone is crucial for both developers and players to ensure that controller inputs are accurate and intentional.
 
 
+[Index](#index)
 
+---
 
 
 
@@ -1533,7 +1535,9 @@ Understanding the trigger threshold is essential for both developers and players
 ![063](https://github.com/user-attachments/assets/a8d75d93-acac-4071-9e8c-fb60a82f4636)
 
 
+[Index](#index)
 
+---
 
 
 Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, please post on the **Q & A Discussion Forum**,  don’t hesitate to ask.
