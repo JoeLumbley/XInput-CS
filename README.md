@@ -1231,7 +1231,6 @@ private void UpdateRumbleGroupUI()
 
 
 
-![063](https://github.com/user-attachments/assets/a8d75d93-acac-4071-9e8c-fb60a82f4636)
 
 
 
@@ -1290,6 +1289,7 @@ Understanding the trigger threshold is essential for both developers and players
 
 
 
+![063](https://github.com/user-attachments/assets/a8d75d93-acac-4071-9e8c-fb60a82f4636)
 
 
 
