@@ -1221,7 +1221,6 @@ private void UpdateRumbleGroupUI()
 
 ---
 
-Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, please post on the **Q & A Discussion Forum**,  don’t hesitate to ask.
 
 
 
@@ -1296,6 +1295,7 @@ Understanding the trigger threshold is essential for both developers and players
 
 
 
+Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, please post on the **Q & A Discussion Forum**,  don’t hesitate to ask.
 
 
 
@@ -1310,7 +1310,7 @@ Understanding the trigger threshold is essential for both developers and players
 
 
 
-
+---
 
 
 
