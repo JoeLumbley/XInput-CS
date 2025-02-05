@@ -29,10 +29,10 @@ With a clean and well-commented codebase, this project serves as an invaluable r
 
 
 
-# XInput C# Code Walkthrough
+# Code Walkthrough
 
 
-## 1. Using Directives
+## Using Directives
 
 ```csharp
 using System.Diagnostics;
@@ -43,7 +43,7 @@ using System.Runtime.InteropServices;
   
 - **`using System.Runtime.InteropServices;`**: This directive is crucial for working with unmanaged code and allows the use of attributes like `DllImport`, which is essential for calling functions from external libraries like the XInput DLL.
 
-## 2. Namespace Declaration
+## Namespace Declaration
 
 ```csharp
 namespace XInput_CS
@@ -52,7 +52,7 @@ namespace XInput_CS
 
 - **`namespace XInput_CS`**: This defines a namespace called `XInput_CS`. Namespaces are used to organize code and avoid naming conflicts.
 
-## 3. Struct Declaration
+## Struct Declaration
 
 ```csharp
 public struct XboxControllers
@@ -61,7 +61,7 @@ public struct XboxControllers
 
 - **`public struct XboxControllers`**: This declares a public structure named `XboxControllers`. Structures are used to group related variables together. In this case, it represents the state and functionality of Xbox controllers.
 
-## 4. Importing XInput Function
+## Importing XInput Function
 
 ```csharp
 [DllImport("XInput1_4.dll")]
@@ -73,7 +73,7 @@ private static extern int XInputGetState(int dwUserIndex,
   
 - **`private static extern int XInputGetState(...)`**: This defines the external function `XInputGetState`, which retrieves the state of a specified Xbox controller. It takes the user index (controller number) and a reference to an `XINPUT_STATE` structure to fill with the controller's current state.
 
-## 5. XINPUT_STATE Structure
+## XINPUT_STATE Structure
 
 ```csharp
 [StructLayout(LayoutKind.Explicit)]
@@ -92,7 +92,7 @@ public struct XINPUT_STATE
 
 - **`public XINPUT_GAMEPAD Gamepad;`**: This field contains an instance of the `XINPUT_GAMEPAD` structure, which holds detailed information about the gamepad's state.
 
-## 6. XINPUT_GAMEPAD Structure
+## XINPUT_GAMEPAD Structure
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -116,7 +116,7 @@ public struct XINPUT_GAMEPAD
 
 - **`public short sThumbLX;`, `public short sThumbLY;`, `public short sThumbRX;`, `public short sThumbRY;`**: These fields represent the positions of the left and right thumbsticks on the X and Y axes, using signed short integers.
 
-## 7. State Variable
+## State Variable
 
 ```csharp
 private XINPUT_STATE State;
@@ -124,7 +124,7 @@ private XINPUT_STATE State;
 
 - **`private XINPUT_STATE State;`**: This variable holds the current state of the Xbox controller, which is filled by the `XInputGetState` function.
 
-## 8. Enum for Button Mapping
+## Enum for Button Mapping
 
 ```csharp
 enum Button
@@ -148,7 +148,7 @@ enum Button
 
 - **`enum Button`**: This enumeration defines constants for each button on the Xbox controller. Each button is assigned a unique bit value, making it easy to check the state using bitwise operations.
 
-## 9. Neutral Zone Constants
+## Neutral Zone Constants
 
 ```csharp
 private const short NeutralStart = -16384; // -16,384 = -32,768 / 2
@@ -157,7 +157,7 @@ private const short NeutralEnd = 16384; // 16,383.5 = 32,767 / 2
 
 - **`private const short NeutralStart`** and **`private const short NeutralEnd`**: These constants define the range for the thumbstick's neutral zone. The thumbstick must move beyond these points to register as active input, which helps prevent unintentional actions.
 
-## 10. Trigger Threshold Constant
+## Trigger Threshold Constant
 
 ```csharp
 private const byte TriggerThreshold = 64; // 64 = 256 / 4
@@ -165,7 +165,7 @@ private const byte TriggerThreshold = 64; // 64 = 256 / 4
 
 - **`private const byte TriggerThreshold`**: This constant sets the minimum value for the triggers to be considered pressed. It ensures that small, unintentional movements do not register as inputs.
 
-## 11. Controller State Arrays
+## Controller State Arrays
 
 ```csharp
 public bool[] Connected;
@@ -179,7 +179,7 @@ public ushort[] Buttons;
 
 - **`public ushort[] Buttons;`**: This array stores the state of the controller buttons for each connected controller.
 
-## 12. Additional State Arrays
+## Additional State Arrays
 
 ```csharp
 public bool[] LeftThumbstickXaxisNeutral;
@@ -190,7 +190,7 @@ public bool[] RightThumbstickYaxisNeutral;
 
 - These arrays track whether the thumbsticks are in a neutral position. If the thumbstick is moved outside of the neutral zone, the corresponding array will be set to `false`.
 
-## 13. Initialization Method
+## Initialization Method
 
 ```csharp
 public void Initialize()
@@ -293,7 +293,7 @@ public void Initialize()
 
 - **`TestInitialization();`**: This method is called at the end of the initialization to verify that all controllers are set up correctly.
 
-## 14. Update Method
+## Update Method
 
 ```csharp
 public void Update()
@@ -329,7 +329,7 @@ public void Update()
 
 - **`UpdateState(controllerNumber);`**: This method is called for each connected controller to update its state.
 
-## 15. Update State Method
+## Update State Method
 
 ```csharp
 private void UpdateState(int controllerNumber)
@@ -354,7 +354,7 @@ private void UpdateState(int controllerNumber)
 
 - **`catch (Exception ex)`**: This block handles any exceptions that may occur while trying to get the controller state, logging the error message.
 
-## 16. Update Buttons Method
+## Update Buttons Method
 
 ```csharp
 private void UpdateButtons(int controllerNumber)
@@ -377,7 +377,7 @@ private void UpdateButtons(int controllerNumber)
 
 - **`Buttons[controllerNumber] = State.Gamepad.wButtons;`**: This line stores the current button state in the `Buttons` array.
 
-## 17. Update Thumbsticks Method
+## Update Thumbsticks Method
 
 ```csharp
 private void UpdateThumbsticks(int controllerNumber)
@@ -391,7 +391,7 @@ private void UpdateThumbsticks(int controllerNumber)
 
 - It calls methods to update both the left and right thumbsticks.
 
-## 18. Update Triggers Method
+## Update Triggers Method
 
 ```csharp
 private void UpdateTriggers(int controllerNumber)
@@ -405,7 +405,7 @@ private void UpdateTriggers(int controllerNumber)
 
 - It calls methods to check the positions of both the left and right triggers.
 
-## 19. Update D-Pad Buttons Method
+## Update D-Pad Buttons Method
 
 ```csharp
 private readonly void UpdateDPadButtons(int CID)
@@ -421,7 +421,7 @@ private readonly void UpdateDPadButtons(int CID)
 
 - Each line uses a bitwise AND operation to check if a specific button is pressed, updating the corresponding boolean array.
 
-## 20. Update Letter Buttons Method
+## Update Letter Buttons Method
 
 ```csharp
 private readonly void UpdateLetterButtons(int CID)
@@ -435,7 +435,7 @@ private readonly void UpdateLetterButtons(int CID)
 
 - **`private readonly void UpdateLetterButtons(int CID)`**: Similar to the D-Pad buttons, this method checks the state of the letter buttons (A, B, X, Y) for the specified controller.
 
-## 21. Update Trigger Positions Methods
+## Update Trigger Positions Methods
 
 ```csharp
 private void UpdateLeftTriggerPosition(int controllerNumber)
@@ -465,7 +465,7 @@ private void UpdateRightTriggerPosition(int controllerNumber)
 
 - **`private void UpdateLeftTriggerPosition(int controllerNumber)`** and **`private void UpdateRightTriggerPosition(int controllerNumber)`**: These methods check if the left or right trigger is pressed based on the defined threshold and update the corresponding boolean array.
 
-## 22. Update Thumbstick Methods
+## Update Thumbstick Methods
 
 ```csharp
 private void UpdateLeftThumbstick(int ControllerNumber)
@@ -488,7 +488,7 @@ private void UpdateRightThumbstickPosition(int controllerNumber)
 
 
 
-## 23. Update Thumbstick Axis Methods
+## Update Thumbstick Axis Methods
 
 ### Update Left Thumbstick Y-Axis
 
@@ -639,7 +639,7 @@ private readonly void UpdateRightThumbstickXaxis(int controllerNumber)
 
 - The logic mirrors that of the left thumbstick's X-axis, determining if the thumbstick is moved left, right, or in a neutral position.
 
-## 24. Update Trigger Position Methods
+## Update Trigger Position Methods
 
 ### Update Left Trigger Position
 
@@ -679,7 +679,7 @@ private void UpdateRightTriggerPosition(int controllerNumber)
 
 - **`private void UpdateRightTriggerPosition(int controllerNumber)`**: This method performs the same check for the right trigger, updating its state accordingly.
 
-## 25. Update Neutral States Methods
+## Update Neutral States Methods
 
 ### Update D-Pad Neutral State
 
@@ -727,7 +727,7 @@ private void UpdateLetterButtonsNeutral(int controllerNumber)
 
 - Similar to the D-Pad check, it updates the neutral state based on whether any buttons are active.
 
-## 26. Checking Connection Status
+## Checking Connection Status
 
 ```csharp
 public bool IsConnected(int controllerNumber)
@@ -748,7 +748,7 @@ public bool IsConnected(int controllerNumber)
 
 - It returns `true` if the `XInputGetState` call returns `0`, indicating a successful connection. If an error occurs, it logs the error and returns `false`.
 
-## 27. Test Initialization Method
+## Test Initialization Method
 
 ```csharp
 public void TestInitialization()
@@ -798,7 +798,7 @@ public void TestInitialization()
 
 - **`Debug.Assert(...)`**: These statements check various conditions, ensuring that the state of each controller is as expected after initialization. If any condition fails, it will throw an assertion error during debugging.
 
-## 28. Vibration Methods
+## Vibration Methods
 
 ### Vibration Structure
 
@@ -878,7 +878,7 @@ private void SendVibrationMotorCommand(int controllerID)
 
 - If the command is successful (returns `0`), it indicates that the motor speed was set. If not, it logs an error message.
 
-## 29. Update Vibration Timers Method
+## Update Vibration Timers Method
 
 ```csharp
 private void UpdateVibrateTimers()
@@ -971,7 +971,7 @@ The `Form1` class serves as the main user interface for the application. It hand
 3. **UI Update Methods**: Functions that refresh the UI to reflect the current state of the controllers.
 4. **Initialization Methods**: Functions that set up the application and its components.
 
-### 1. Constructor
+### Constructor
 
 ```csharp
 public Form1()
@@ -982,7 +982,7 @@ public Form1()
 
 - **`InitializeComponent()`**: This method is automatically generated by the Windows Forms designer and initializes the UI components defined in the form.
 
-### 2. Form Load Event
+### Form Load Event
 
 ```csharp
 private void Form1_Load(object sender, EventArgs e)
@@ -994,7 +994,7 @@ private void Form1_Load(object sender, EventArgs e)
 
 - **`Form1_Load`**: This event is triggered when the form loads. It calls `InitializeApp()` to set up the application and initializes the controllers.
 
-### 3. Timer Tick Event
+### Timer Tick Event
 
 ```csharp
 private void timer1_Tick(object sender, EventArgs e)
@@ -1007,7 +1007,7 @@ private void timer1_Tick(object sender, EventArgs e)
 
 - **`timer1_Tick`**: This method is called at regular intervals defined by the timer. It updates the state of the controllers, refreshes the UI labels, and manages the vibration group UI.
 
-### 4. Button Click Events
+### Button Click Events
 
 #### Vibrate Left Button
 
@@ -1037,7 +1037,7 @@ private void ButtonVibrateRight_Click(object sender, EventArgs e)
 
 - Similar to the left vibration, it checks connection status before triggering the right vibration.
 
-### 5. TrackBar and NumericUpDown Events
+### TrackBar and NumericUpDown Events
 
 #### TrackBar Scroll
 
@@ -1061,7 +1061,7 @@ private void NumericUpDownTimeToVib_ValueChanged(object sender, EventArgs e)
 
 - Updates the time to vibrate based on user input in the numeric up-down control.
 
-### 6. Updating Labels
+### Updating Labels
 
 #### Update Labels Method
 
@@ -1087,7 +1087,7 @@ private void UpdateLabels()
 
 - This method iterates through all controllers, updating their status and UI elements based on their current state.
 
-### 7. Updating Specific Labels
+### Updating Specific Labels
 
 #### Trigger Labels
 
@@ -1113,7 +1113,7 @@ private void UpdateThumbstickLabels(int controllerNumber)
 
 - Updates the labels for both the left and right thumbsticks.
 
-### 8. Clearing Labels
+### Clearing Labels
 
 Each label clearing method checks if all controllers are in a neutral state for a specific control and clears the corresponding label if they are.
 
@@ -1138,11 +1138,11 @@ private void ClearRightTriggerLabel()
 }
 ```
 
-### 9. D-Pad and Button Text Retrieval
+### D-Pad and Button Text Retrieval
 
 Methods like `GetDPadDirection` and `GetButtonText` determine the current state of the D-Pad and button presses, respectively, returning the appropriate strings to display.
 
-### 10. Initialization Methods
+### Initialization Methods
 
 #### Initialize App
 
@@ -1171,7 +1171,7 @@ private void InitializeToolTips()
 
 - Configures tooltips for various UI elements to provide helpful information to the user.
 
-### 11. Rumble Group UI Update
+### Rumble Group UI Update
 
 ```csharp
 private void UpdateRumbleGroupUI()
