@@ -43,6 +43,8 @@ using System.Runtime.InteropServices;
   
 - **`using System.Runtime.InteropServices;`**: This directive is crucial for working with unmanaged code and allows the use of attributes like `DllImport`, which is essential for calling functions from external libraries like the XInput DLL.
 
+[Index](#index)
+
 ## Namespace Declaration
 
 ```csharp
@@ -1223,7 +1225,7 @@ private void UpdateRumbleGroupUI()
 
 
 
-
+[Index](#index)
 
 
 Here's an index with links to the corresponding sections in your README:
