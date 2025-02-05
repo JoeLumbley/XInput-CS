@@ -507,9 +507,484 @@ private readonly void UpdateLeftThumbstickYaxis(int ControllerNumber)
     {
         LeftThumbstickUp[ControllerNumber] = false;
 
+```
 
+Certainly! Let's continue with the detailed walkthrough of the XInput C# code.
 
+## 23. Update Thumbstick Axis Methods (continued)
 
+### Update Left Thumbstick Y-Axis
+
+```csharp
+        LeftThumbstickDown[ControllerNumber] = false;
+        LeftThumbstickYaxisNeutral[ControllerNumber] = true;
+    }
+}
+```
+
+- **`if (State.Gamepad.sThumbLY <= NeutralStart)`**: This condition checks if the left thumbstick's Y-axis position is less than or equal to the `NeutralStart` value, indicating that the thumbstick is pushed down.
+
+- **`LeftThumbstickUp[ControllerNumber] = false;`**: If the thumbstick is down, we set the `LeftThumbstickUp` state to `false`.
+
+- **`LeftThumbstickYaxisNeutral[ControllerNumber] = false;`**: This indicates that the thumbstick is not in the neutral position.
+
+- **`LeftThumbstickDown[ControllerNumber] = true;`**: We set the `LeftThumbstickDown` state to `true`, indicating that the thumbstick is pressed down.
+
+### Update Left Thumbstick X-Axis
+
+```csharp
+private readonly void UpdateLeftThumbstickXaxis(int ControllerNumber)
+{
+    if (State.Gamepad.sThumbLX <= NeutralStart)
+    {
+        LeftThumbstickRight[ControllerNumber] = false;
+        LeftThumbstickXaxisNeutral[ControllerNumber] = false;
+        LeftThumbstickLeft[ControllerNumber] = true;
+    }
+    else if (State.Gamepad.sThumbLX >= NeutralEnd)
+    {
+        LeftThumbstickLeft[ControllerNumber] = false;
+        LeftThumbstickXaxisNeutral[ControllerNumber] = false;
+        LeftThumbstickRight[ControllerNumber] = true;
+    }
+    else
+    {
+        LeftThumbstickLeft[ControllerNumber] = false;
+        LeftThumbstickRight[ControllerNumber] = false;
+        LeftThumbstickXaxisNeutral[ControllerNumber] = true;
+    }
+}
+```
+
+- **`private readonly void UpdateLeftThumbstickXaxis(int ControllerNumber)`**: This method updates the X-axis position of the left thumbstick.
+
+- The logic is similar to the Y-axis update:
+  - If the thumbstick's X position is less than or equal to `NeutralStart`, it is moved left.
+  - If it exceeds `NeutralEnd`, it is moved right.
+  - Otherwise, it is in the neutral position.
+
+### Update Right Thumbstick Position
+
+```csharp
+private void UpdateRightThumbstickPosition(int controllerNumber)
+{
+    UpdateRightThumbstickXaxis(controllerNumber);
+    UpdateRightThumbstickYaxis(controllerNumber);
+}
+```
+
+- **`private void UpdateRightThumbstickPosition(int controllerNumber)`**: This method updates the position of the right thumbstick by calling the respective methods for the X and Y axes.
+
+### Update Right Thumbstick Y-Axis
+
+```csharp
+private readonly void UpdateRightThumbstickYaxis(int controllerNumber)
+{
+    if (State.Gamepad.sThumbRY <= NeutralStart)
+    {
+        RightThumbstickDown[controllerNumber] = false;
+        RightThumbstickYaxisNeutral[controllerNumber] = false;
+        RightThumbstickUp[controllerNumber] = true;
+    }
+    else if (State.Gamepad.sThumbRY >= NeutralEnd)
+    {
+        RightThumbstickUp[controllerNumber] = false;
+        RightThumbstickYaxisNeutral[controllerNumber] = false;
+        RightThumbstickDown[controllerNumber] = true;
+    }
+    else
+    {
+        RightThumbstickUp[controllerNumber] = false;
+        RightThumbstickDown[controllerNumber] = false;
+        RightThumbstickYaxisNeutral[controllerNumber] = true;
+    }
+}
+```
+
+- **`private readonly void UpdateRightThumbstickYaxis(int controllerNumber)`**: This method checks the Y-axis position of the right thumbstick.
+
+- The logic follows the same pattern as the left thumbstick:
+  - It determines if the thumbstick is pushed up, down, or in a neutral position.
+
+### Update Right Thumbstick X-Axis
+
+```csharp
+private readonly void UpdateRightThumbstickXaxis(int controllerNumber)
+{
+    if (State.Gamepad.sThumbRX <= NeutralStart)
+    {
+        RightThumbstickRight[controllerNumber] = false;
+        RightThumbstickXaxisNeutral[controllerNumber] = false;
+        RightThumbstickLeft[controllerNumber] = true;
+    }
+    else if (State.Gamepad.sThumbRX >= NeutralEnd)
+    {
+        RightThumbstickLeft[controllerNumber] = false;
+        RightThumbstickXaxisNeutral[controllerNumber] = false;
+        RightThumbstickRight[controllerNumber] = true;
+    }
+    else
+    {
+        RightThumbstickLeft[controllerNumber] = false;
+        RightThumbstickRight[controllerNumber] = false;
+        RightThumbstickXaxisNeutral[controllerNumber] = true;
+    }
+}
+```
+
+- **`private readonly void UpdateRightThumbstickXaxis(int controllerNumber)`**: This method updates the X-axis position of the right thumbstick.
+
+- The logic mirrors that of the left thumbstick's X-axis, determining if the thumbstick is moved left, right, or in a neutral position.
+
+## 24. Update Trigger Position Methods
+
+### Update Left Trigger Position
+
+```csharp
+private void UpdateLeftTriggerPosition(int controllerNumber)
+{
+    if (State.Gamepad.bLeftTrigger > TriggerThreshold)
+    {
+        LeftTrigger[controllerNumber] = true;
+    }
+    else
+    {
+        LeftTrigger[controllerNumber] = false;
+    }
+}
+```
+
+- **`private void UpdateLeftTriggerPosition(int controllerNumber)`**: This method checks if the left trigger is pressed beyond the defined threshold.
+
+- If it is, the corresponding boolean for the left trigger is set to `true`; otherwise, it is set to `false`.
+
+### Update Right Trigger Position
+
+```csharp
+private void UpdateRightTriggerPosition(int controllerNumber)
+{
+    if (State.Gamepad.bRightTrigger > TriggerThreshold)
+    {
+        RightTrigger[controllerNumber] = true;
+    }
+    else
+    {
+        RightTrigger[controllerNumber] = false;
+    }
+}
+```
+
+- **`private void UpdateRightTriggerPosition(int controllerNumber)`**: This method performs the same check for the right trigger, updating its state accordingly.
+
+## 25. Update Neutral States Methods
+
+### Update D-Pad Neutral State
+
+```csharp
+private void UpdateDPadNeutral(int controllerNumber)
+{
+    if (DPadDown[controllerNumber] ||
+        DPadLeft[controllerNumber] ||
+        DPadRight[controllerNumber] ||
+        DPadUp[controllerNumber])
+    {
+        DPadNeutral[controllerNumber] = false;
+    }
+    else
+    {
+        DPadNeutral[controllerNumber] = true;
+    }
+}
+```
+
+- **`private void UpdateDPadNeutral(int controllerNumber)`**: This method checks if any D-Pad button is pressed.
+
+- If any button is pressed, the D-Pad is marked as not neutral; otherwise, it is set to neutral.
+
+### Update Letter Buttons Neutral State
+
+```csharp
+private void UpdateLetterButtonsNeutral(int controllerNumber)
+{
+    if (A[controllerNumber] ||
+        B[controllerNumber] ||
+        X[controllerNumber] ||
+        Y[controllerNumber])
+    {
+        LetterButtonsNeutral[controllerNumber] = false;
+    }
+    else
+    {
+        LetterButtonsNeutral[controllerNumber] = true;
+    }
+}
+```
+
+- **`private void UpdateLetterButtonsNeutral(int controllerNumber)`**: This method checks if any letter buttons (A, B, X, Y) are pressed.
+
+- Similar to the D-Pad check, it updates the neutral state based on whether any buttons are active.
+
+## 26. Checking Connection Status
+
+```csharp
+public bool IsConnected(int controllerNumber)
+{
+    try
+    {
+        return XInputGetState(controllerNumber, ref State) == 0;
+    }
+    catch (Exception ex)
+    {
+        Debug.Print($"Error getting XInput state: {controllerNumber} | {ex.Message}");
+        return false;
+    }
+}
+```
+
+- **`public bool IsConnected(int controllerNumber)`**: This method checks if a specific controller is connected.
+
+- It returns `true` if the `XInputGetState` call returns `0`, indicating a successful connection. If an error occurs, it logs the error and returns `false`.
+
+## 27. Test Initialization Method
+
+```csharp
+public void TestInitialization()
+{
+    Debug.Assert(Buttons != null, "Buttons should not be null.");
+
+    for (int i = 0; i < 4; i++)
+    {
+        Debug.Assert(!Connected[i], $"Controller {i} should not be connected after initialization.");
+        Debug.Assert(LeftThumbstickXaxisNeutral[i], $"Left Thumbstick X-axis for Controller {i} should be neutral.");
+        Debug.Assert(LeftThumbstickYaxisNeutral[i], $"Left Thumbstick Y-axis for Controller {i} should be neutral.");
+        Debug.Assert(RightThumbstickXaxisNeutral[i], $"Right Thumbstick X-axis for Controller {i} should be neutral.");
+        Debug.Assert(RightThumbstickYaxisNeutral[i], $"Right Thumbstick Y-axis for Controller {i} should be neutral.");
+        Debug.Assert(DPadNeutral[i], $"DPad for Controller {i} should be neutral.");
+        Debug.Assert(LetterButtonsNeutral[i], $"Letter Buttons for Controller {i} should be neutral.");
+        Debug.Assert(!RightThumbstickLeft[i], $"Right Thumbstick Left for Controller {i} should not be true.");
+        Debug.Assert(!RightThumbstickRight[i], $"Right Thumbstick Right for Controller {i} should not be true.");
+        Debug.Assert(!RightThumbstickDown[i], $"Right Thumbstick Down for Controller {i} should not be true.");
+        Debug.Assert(!RightThumbstickUp[i], $"Right Thumbstick Up for Controller {i} should not be true.");
+        Debug.Assert(!LeftThumbstickLeft[i], $"Left Thumbstick Left for Controller {i} should not be true.");
+        Debug.Assert(!LeftThumbstickRight[i], $"Left Thumbstick Right for Controller {i} should not be true.");
+        Debug.Assert(!LeftThumbstickDown[i], $"Left Thumbstick Down for Controller {i} should not be true.");
+        Debug.Assert(!LeftThumbstickUp[i], $"Left Thumbstick Up for Controller {i} should not be true.");
+        Debug.Assert(!LeftTrigger[i], $"Left Trigger for Controller {i} should not be true.");
+        Debug.Assert(!RightTrigger[i], $"Right Trigger for Controller {i} should not be true.");
+        Debug.Assert(!A[i], $"A for Controller {i} should not be true.");
+        Debug.Assert(!B[i], $"B for Controller {i} should not be true.");
+        Debug.Assert(!X[i], $"X for Controller {i} should not be true.");
+        Debug.Assert(!Y[i], $"Y for Controller {i} should not be true.");
+        Debug.Assert(!LeftBumper[i], $"Left Bumper for Controller {i} should not be true.");
+        Debug.Assert(!RightBumper[i], $"Right Bumper for Controller {i} should not be true.");
+        Debug.Assert(!DPadUp[i], $"D-Pad Up for Controller {i} should not be true.");
+        Debug.Assert(!DPadDown[i], $"D-Pad Down for Controller {i} should not be true.");
+        Debug.Assert(!DPadLeft[i], $"D-Pad Left for Controller {i} should not be true.");
+        Debug.Assert(!DPadRight[i], $"D-Pad Right for Controller {i} should not be true.");
+        Debug.Assert(!Start[i], $"Start Button for Controller {i} should not be true.");
+        Debug.Assert(!Back[i], $"Back Button for Controller {i} should not be true.");
+        Debug.Assert(!LeftStick[i], $"Left Stick for Controller {i} should not be true.");
+        Debug.Assert(!RightStick[i], $"Right Stick for Controller {i} should not be true.");
+        Debug.Assert(!IsLeftVibrating[i], $"Is Left Vibrating for Controller {i} should not be true.");
+        Debug.Assert(!IsRightVibrating[i], $"Is Right Vibrating for Controller {i} should not be true.");
+    }
+}
+```
+
+- **`public void TestInitialization()`**: This method verifies that the initialization of the controllers was successful.
+
+- **`Debug.Assert(...)`**: These statements check various conditions, ensuring that the state of each controller is as expected after initialization. If any condition fails, it will throw an assertion error during debugging.
+
+## 28. Vibration Methods
+
+### Vibration Structure
+
+```csharp
+[DllImport("XInput1_4.dll")]
+private static extern int XInputSetState(int playerIndex, 
+                                         ref XINPUT_VIBRATION vibration);
+
+public struct XINPUT_VIBRATION
+{
+    public ushort wLeftMotorSpeed;
+    public ushort wRightMotorSpeed;
+}
+
+private XINPUT_VIBRATION Vibration;
+```
+
+- **`[DllImport("XInput1_4.dll")]`**: This imports the function to set the vibration state of the controller.
+
+- **`public struct XINPUT_VIBRATION`**: This structure holds the speed settings for the left and right motors of the controller.
+
+- **`private XINPUT_VIBRATION Vibration;`**: This variable will hold the current vibration settings.
+
+### Vibrate Left Method
+
+```csharp
+public void VibrateLeft(int cid, ushort speed)
+{
+    Vibration.wLeftMotorSpeed = speed;
+    LeftVibrateStart[cid] = DateTime.Now;
+    IsLeftVibrating[cid] = true;
+}
+```
+
+- **`public void VibrateLeft(int cid, ushort speed)`**: This method sets the speed of the left motor for the specified controller.
+
+- The current time is recorded to track how long the motor has been vibrating, and the `IsLeftVibrating` flag is set to `true`.
+
+### Vibrate Right Method
+
+```csharp
+public void VibrateRight(int cid, ushort speed)
+{
+    Vibration.wRightMotorSpeed = speed;
+    RightVibrateStart[cid] = DateTime.Now;
+    IsRightVibrating[cid] = true;
+}
+```
+
+- **`public void VibrateRight(int cid, ushort speed)`**: This method works similarly to `VibrateLeft`, but for the right motor.
+
+### Send Vibration Motor Command Method
+
+```csharp
+private void SendVibrationMotorCommand(int controllerID)
+{
+    try
+    {
+        if (XInputSetState(controllerID, ref Vibration) == 0)
+        {
+            // The motor speed was set. Success.
+        }
+        else
+        {
+            Debug.Print($"{controllerID} did not vibrate.  {Vibration.wLeftMotorSpeed} |  {Vibration.wRightMotorSpeed} ");
+        }
+    }
+    catch (Exception ex)
+    {
+        Debug.Print($"Error sending vibration motor command: {controllerID} | {Vibration.wLeftMotorSpeed} |  {Vibration.wRightMotorSpeed} | {ex.Message}");
+        return; // Exit the method.
+    }
+}
+```
+
+- **`private void SendVibrationMotorCommand(int controllerID)`**: This method sends the vibration command to the specified controller.
+
+- If the command is successful (returns `0`), it indicates that the motor speed was set. If not, it logs an error message.
+
+## 29. Update Vibration Timers Method
+
+```csharp
+private void UpdateVibrateTimers()
+{
+    UpdateLeftVibrateTimer();
+    UpdateRightVibrateTimer();
+}
+```
+
+- **`private void UpdateVibrateTimers()`**: This method updates the timers for both the left and right vibration motors.
+
+### Update Left Vibrate Timer
+
+```csharp
+private void UpdateLeftVibrateTimer()
+{
+    for (int ControllerNumber = 0; ControllerNumber < 4; ControllerNumber++)
+    {
+        if (IsLeftVibrating[ControllerNumber])
+        {
+            TimeSpan ElapsedTime = DateTime.Now - LeftVibrateStart[ControllerNumber];
+
+            if (ElapsedTime.TotalMilliseconds >= TimeToVibe)
+            {
+                IsLeftVibrating[ControllerNumber] = false;
+                Vibration.wLeftMotorSpeed = 0;
+            }
+
+            SendVibrationMotorCommand(ControllerNumber);
+        }
+    }
+}
+```
+
+- **`private void UpdateLeftVibrateTimer()`**: This method checks if the left motor is vibrating and calculates how long it has been vibrating.
+
+- If the elapsed time exceeds the set vibration time (`TimeToVibe`), it stops the vibration by setting the motor speed to zero.
+
+### Update Right Vibrate Timer
+
+```csharp
+private void UpdateRightVibrateTimer()
+{
+    for (int ControllerNumber = 0; ControllerNumber < 4; ControllerNumber++)
+    {
+        if (IsRightVibrating[ControllerNumber])
+        {
+            TimeSpan ElapsedTime = DateTime.Now - RightVibrateStart[ControllerNumber];
+
+            if (ElapsedTime.TotalMilliseconds >= TimeToVibe)
+            {
+                IsRightVibrating[ControllerNumber] = false;
+                Vibration.wRightMotorSpeed = 0;
+            }
+
+            SendVibrationMotorCommand(ControllerNumber);
+        }
+    }
+}
+```
+
+- **`private void UpdateRightVibrateTimer()`**: This method functions similarly to the left vibrate timer, checking the right motor's state and updating it accordingly.
+
+## 30. Form1 Class Declaration
+
+```csharp
+public partial class Form1 : Form
+{
+    private XboxControllers Controllers;
+```
+
+- **`public partial class Form1 : Form`**: This declares a partial class named `Form1`, which inherits from `Form`. This class represents the main window of the application.
+
+- **`private XboxControllers Controllers;`**: This variable holds an instance of the `XboxControllers` structure, allowing access to its methods and properties.
+
+## 31. Form Load Event
+
+```csharp
+private void Form1_Load(object sender, EventArgs e)
+{
+    InitializeApp();
+    Controllers.Initialize();
+}
+```
+
+- **`private void Form1_Load(object sender, EventArgs e)`**: This event handler is called when the form loads.
+
+- **`InitializeApp();`**: This method sets up the application, including UI elements and other initial configurations.
+
+- **`Controllers.Initialize();`**: This initializes the Xbox controller settings.
+
+## 32. Timer Tick Event
+
+```csharp
+private void timer1_Tick(object sender, EventArgs e)
+{
+    Controllers.Update();
+    UpdateLabels();
+    UpdateRumbleGroupUI();
+}
+```
+
+- **`private void timer1_Tick(object sender, EventArgs e)`**: This event is triggered by a timer tick event.
+
+- **`Controllers.Update();`**: This updates the state of the controllers.
+
+- **`UpdateLabels();`**: This method updates the UI labels to reflect the current state of the controllers.
+
+- **`UpdateRumbleGroupUI();
 
 
 
