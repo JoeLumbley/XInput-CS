@@ -183,6 +183,23 @@ private XINPUT_STATE State;
 
 - **`private XINPUT_STATE State;`**: This variable holds the current state of the Xbox controller, which is filled by the `XInputGetState` function.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Enum for Button Mapping
 
 ```csharp
