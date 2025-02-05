@@ -1226,7 +1226,79 @@ private void UpdateRumbleGroupUI()
 
 
 
+Here's an index with links to the corresponding sections in your README:
 
+### Index
+
+1. **[XInput C# 🎮](#xinput-c-)**
+   - Welcome and Overview
+   - Project Features
+
+2. **[Code Walkthrough](#code-walkthrough)**
+   - [Using Directives](#using-directives)
+   - [Namespace Declaration](#namespace-declaration)
+   - [Struct Declaration](#struct-declaration)
+   - [Importing XInput Function](#importing-xinput-function)
+   - [XINPUT_STATE Structure](#xinput_state-structure)
+   - [XINPUT_GAMEPAD Structure](#xinput_gamepad-structure)
+   - [State Variable](#state-variable)
+   - [Enum for Button Mapping](#enum-for-button-mapping)
+   - [Neutral Zone Constants](#neutral-zone-constants)
+   - [Trigger Threshold Constant](#trigger-threshold-constant)
+   - [Controller State Arrays](#controller-state-arrays)
+   - [Additional State Arrays](#additional-state-arrays)
+   - [Initialization Method](#initialization-method)
+   - [Update Method](#update-method)
+   - [Update State Method](#update-state-method)
+   - [Update Buttons Method](#update-buttons-method)
+   - [Update Thumbsticks Method](#update-thumbsticks-method)
+   - [Update Triggers Method](#update-triggers-method)
+   - [Update D-Pad Buttons Method](#update-d-pad-buttons-method)
+   - [Update Letter Buttons Method](#update-letter-buttons-method)
+   - [Update Trigger Positions Methods](#update-trigger-positions-methods)
+   - [Update Thumbstick Methods](#update-thumbstick-methods)
+   - [Update Neutral States Methods](#update-neutral-states-methods)
+   - [Checking Connection Status](#checking-connection-status)
+   - [Test Initialization Method](#test-initialization-method)
+   - [Vibration Methods](#vibration-methods)
+   - [Update Vibration Timers Method](#update-vibration-timers-method)
+
+3. **[Overview of the Form1 Class](#overview-of-the-form1-class)**
+   - Key Components
+   - Constructor
+   - Form Load Event
+   - Timer Tick Event
+   - Button Click Events
+   - TrackBar and NumericUpDown Events
+   - Updating Labels
+   - Clearing Labels
+   - D-Pad and Button Text Retrieval
+   - Initialization Methods
+   - Rumble Group UI Update
+
+4. **[The Neutral Zone](#the-neutral-zone)**
+   - Importance and Functionality
+
+5. **[The Trigger Threshold](#the-trigger-threshold)**
+   - Importance and Functionality
+
+6. **[Things to Watch Out for When Converting from VB to C#](#things-to-watch-out-for-when-converting-from-vb-to-c)**
+   - Key Syntax Differences
+
+7. **[A Funny Thing Happened on the Way to Porting My App](#a-funny-thing-happened-on-the-way-to-porting-my-app)**
+
+### Note
+Ensure that each section in your README file has a corresponding header with the same title as the links for them to work correctly.
+
+
+
+
+
+
+
+
+
+---
 
 
 
