@@ -45,6 +45,11 @@ using System.Runtime.InteropServices;
 
 [Index](#index)
 
+---
+
+
+
+
 ## Namespace Declaration
 
 ```csharp
@@ -54,6 +59,16 @@ namespace XInput_CS
 
 - **`namespace XInput_CS`**: This defines a namespace called `XInput_CS`. Namespaces are used to organize code and avoid naming conflicts.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 ## Struct Declaration
 
 ```csharp
@@ -62,6 +77,15 @@ public struct XboxControllers
 ```
 
 - **`public struct XboxControllers`**: This declares a public structure named `XboxControllers`. Structures are used to group related variables together. In this case, it represents the state and functionality of Xbox controllers.
+
+[Index](#index)
+
+---
+
+
+
+
+
 
 ## Importing XInput Function
 
@@ -74,6 +98,19 @@ private static extern int XInputGetState(int dwUserIndex,
 - **`[DllImport("XInput1_4.dll")]`**: This attribute indicates that we are importing a function from the `XInput1_4.dll` library, which is used for Xbox controller interaction.
   
 - **`private static extern int XInputGetState(...)`**: This defines the external function `XInputGetState`, which retrieves the state of a specified Xbox controller. It takes the user index (controller number) and a reference to an `XINPUT_STATE` structure to fill with the controller's current state.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
 
 ## XINPUT_STATE Structure
 
@@ -93,6 +130,17 @@ public struct XINPUT_STATE
 - **`public uint dwPacketNumber;`**: This field holds the packet number, which helps track the state changes of the controller. It is an unsigned integer with a large range.
 
 - **`public XINPUT_GAMEPAD Gamepad;`**: This field contains an instance of the `XINPUT_GAMEPAD` structure, which holds detailed information about the gamepad's state.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
 
 ## XINPUT_GAMEPAD Structure
 
@@ -117,6 +165,15 @@ public struct XINPUT_GAMEPAD
 - **`public byte bLeftTrigger;`** and **`public byte bRightTrigger;`**: These fields represent the values of the left and right triggers, respectively, as unsigned bytes.
 
 - **`public short sThumbLX;`, `public short sThumbLY;`, `public short sThumbRX;`, `public short sThumbRY;`**: These fields represent the positions of the left and right thumbsticks on the X and Y axes, using signed short integers.
+
+[Index](#index)
+
+---
+
+
+
+
+
 
 ## State Variable
 
@@ -150,6 +207,19 @@ enum Button
 
 - **`enum Button`**: This enumeration defines constants for each button on the Xbox controller. Each button is assigned a unique bit value, making it easy to check the state using bitwise operations.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
 ## Neutral Zone Constants
 
 ```csharp
@@ -159,6 +229,22 @@ private const short NeutralEnd = 16384; // 16,383.5 = 32,767 / 2
 
 - **`private const short NeutralStart`** and **`private const short NeutralEnd`**: These constants define the range for the thumbstick's neutral zone. The thumbstick must move beyond these points to register as active input, which helps prevent unintentional actions.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Trigger Threshold Constant
 
 ```csharp
@@ -166,6 +252,22 @@ private const byte TriggerThreshold = 64; // 64 = 256 / 4
 ```
 
 - **`private const byte TriggerThreshold`**: This constant sets the minimum value for the triggers to be considered pressed. It ensures that small, unintentional movements do not register as inputs.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Controller State Arrays
 
@@ -181,6 +283,19 @@ public ushort[] Buttons;
 
 - **`public ushort[] Buttons;`**: This array stores the state of the controller buttons for each connected controller.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
 ## Additional State Arrays
 
 ```csharp
@@ -191,6 +306,14 @@ public bool[] RightThumbstickYaxisNeutral;
 ```
 
 - These arrays track whether the thumbsticks are in a neutral position. If the thumbstick is moved outside of the neutral zone, the corresponding array will be set to `false`.
+
+[Index](#index)
+
+---
+
+
+
+
 
 ## Initialization Method
 
@@ -295,6 +418,24 @@ public void Initialize()
 
 - **`TestInitialization();`**: This method is called at the end of the initialization to verify that all controllers are set up correctly.
 
+[Index](#index)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Update Method
 
 ```csharp
@@ -330,6 +471,16 @@ public void Update()
 - **`if (ElapsedTime.TotalSeconds >= 1)`**: This condition checks if at least one second has passed since the last connection check.
 
 - **`UpdateState(controllerNumber);`**: This method is called for each connected controller to update its state.
+
+[Index](#index)
+
+---
+
+
+
+
+
+
 
 ## Update State Method
 
