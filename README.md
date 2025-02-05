@@ -486,7 +486,12 @@ private void UpdateRightThumbstickPosition(int controllerNumber)
 
 - **`private void UpdateRightThumbstickPosition(int controllerNumber)`**: This method updates both the X and Y axes of the right thumbstick.
 
+
+
+
 ## 23. Update Thumbstick Axis Methods
+
+### Update Left Thumbstick Y-Axis
 
 ```csharp
 private readonly void UpdateLeftThumbstickYaxis(int ControllerNumber)
@@ -494,32 +499,31 @@ private readonly void UpdateLeftThumbstickYaxis(int ControllerNumber)
     if (State.Gamepad.sThumbLY <= NeutralStart)
     {
         LeftThumbstickUp[ControllerNumber] = false;
+
         LeftThumbstickYaxisNeutral[ControllerNumber] = false;
+
         LeftThumbstickDown[ControllerNumber] = true;
     }
     else if (State.Gamepad.sThumbLY >= NeutralEnd)
     {
         LeftThumbstickDown[ControllerNumber] = false;
+
         LeftThumbstickYaxisNeutral[ControllerNumber] = false;
+
         LeftThumbstickUp[ControllerNumber] = true;
     }
     else
     {
         LeftThumbstickUp[ControllerNumber] = false;
 
-```
-
-Certainly! Let's continue with the detailed walkthrough of the XInput C# code.
-
-## 23. Update Thumbstick Axis Methods (continued)
-
-### Update Left Thumbstick Y-Axis
-
-```csharp
         LeftThumbstickDown[ControllerNumber] = false;
+
         LeftThumbstickYaxisNeutral[ControllerNumber] = true;
+
     }
+
 }
+
 ```
 
 - **`if (State.Gamepad.sThumbLY <= NeutralStart)`**: This condition checks if the left thumbstick's Y-axis position is less than or equal to the `NeutralStart` value, indicating that the thumbstick is pushed down.
