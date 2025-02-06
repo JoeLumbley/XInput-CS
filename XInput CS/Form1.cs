@@ -1774,13 +1774,13 @@ namespace XInput_CS
         }
 
         private void ClearRightThumbstickButtonLabel()
-        {   // Clears the right thumbstick button label when all controllers'right
+        {   // Clears the right thumbstick button label when all controllers' right
             // thumbstick buttons are not active.
 
             // Assume all controllers' right thumbstick buttons are not active initially.
             bool NotActive = true;
 
-            // Search for a active right thumbstick buttons.
+            // Search for a active right thumbstick button.
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.RightStick[i])
