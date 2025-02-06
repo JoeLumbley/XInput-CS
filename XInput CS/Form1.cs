@@ -1337,8 +1337,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && !Controllers.LetterButtonsNeutral[i])
-                {
-                    // A non-neutral letter button was found.
+                {   // A non-neutral letter button was found.
 
                     Neutral = false; // Report the non-neutral letter button.
 
@@ -1369,8 +1368,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && !Controllers.LeftThumbstickYaxisNeutral[i])
-                {
-                    // A non-neutral thumbstick was found.
+                {   // A non-neutral thumbstick was found.
 
                     Neutral = false; // Report the non-neutral thumbstick.
 
@@ -1403,8 +1401,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && !Controllers.LeftThumbstickXaxisNeutral[i])
-                {
-                    // A non-neutral thumbstick was found.
+                {   // A non-neutral thumbstick was found.
 
                     Neutral = false; // Report the non-neutral thumbstick.
 
@@ -1437,8 +1434,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && !Controllers.RightThumbstickXaxisNeutral[i])
-                {
-                    // A non-neutral thumbstick was found.
+                {   // A non-neutral thumbstick was found.
 
                     Neutral = false; // Report the non-neutral thumbstick.
 
@@ -1471,8 +1467,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && !Controllers.RightThumbstickYaxisNeutral[i])
-                {
-                    // A non-neutral thumbstick was found.
+                {   // A non-neutral thumbstick was found.
 
                     Neutral = false; // Report the non-neutral thumbstick.
 
@@ -1505,8 +1500,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.RightTrigger[i])
-                {
-                    // A active right trigger was found.
+                {   // A active right trigger was found.
 
                     NotActive = false; // Report the non-neutral right trigger.
 
@@ -1537,8 +1531,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.LeftTrigger[i])
-                {
-                    // A active left trigger was found.
+                {   // A active left trigger was found.
 
                     NotActive = false; // Report the active left trigger.
 
@@ -1594,8 +1587,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && !Controllers.DPadNeutral[i])
-                {
-                    // A non-neutral DPad was found.
+                {   // A non-neutral DPad was found.
 
                     Neutral = false; // Report the non-neutral DPad.
 
@@ -1625,8 +1617,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.Start[i])
-                {
-                    // A active start buttons was found.
+                {   // A active start buttons was found.
 
                     NotActive = false; // Report the active start buttons.
 
@@ -1656,8 +1647,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.Back[i])
-                {
-                    // A active back buttons was found.
+                {   // A active back buttons was found.
 
                     NotActive = false; // Report the active back button.
 
@@ -1688,8 +1678,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.LeftBumper[i])
-                {
-                    // A active left bumper was found.
+                {   // A active left bumper was found.
 
                     NotActive = false; // Report the active left bumper.
 
@@ -1720,8 +1709,8 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.RightBumper[i])
-                {
-                    // A active right bumper was found.
+                {   // A active right bumper was found.
+
 
                     NotActive = false; // Report the active right bumper.
 
@@ -1752,8 +1741,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.LeftStick[i])
-                {
-                    // A active left thumbstick button was found.
+                {   // A active left thumbstick button was found.
 
                     NotActive = false; // Report the active left thumbstick button.
 
@@ -1784,8 +1772,7 @@ namespace XInput_CS
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.RightStick[i])
-                {
-                    // A active right thumbstick button was found.
+                {   // A active right thumbstick button was found.
 
                     NotActive = false; // Report the active right thumbstick button.
 
