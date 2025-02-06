@@ -1859,10 +1859,6 @@ Bitwise operations allow you to check if a specific button is pressed by using t
 - **Example**: Checking if the `A` button is pressed.
 
 ```csharp
-//         Input               Button.A               Result
-//         4096        And       4096          =       4096
-// 0001 0000 0000 0000  &  0001 0000 0000 0000 = 0001 0000 0000 0000
-//    ^                       ^                     ^
 
   if ((State.Gamepad.wButtons & (ushort)Button.A) != 0)
   {
@@ -1871,6 +1867,17 @@ Bitwise operations allow you to check if a specific button is pressed by using t
   Debug.Print($"A button is pressed");
 
   }
+
+// State.Gamepad.wButtons             Button.A                   Result
+//         4096            And          4096           =          4096
+//  0001 0000 0000 0000     &    0001 0000 0000 0000   =   0001 0000 0000 0000
+//     ^                            ^ 
+
+
+//         8192            And          4096           =            0
+//  0010 0000 0000 0000     &    0001 0000 0000 0000   =   0000 0000 0000 0000
+//     ^                            ^ 
+
 
 ```
 
