@@ -1869,8 +1869,8 @@ Bitwise operations allow you to check if a specific button is pressed by using t
   }
 
 // State.Gamepad.wButtons             Button.A                   Result
-//         4096            And          4096           =          4096
-//  0001 0000 0000 0000     &    0001 0000 0000 0000   =   0001 0000 0000 0000
+//         4096            And          4096           =          4096         Decimal
+//  0001 0000 0000 0000     &    0001 0000 0000 0000   =   0001 0000 0000 0000 Binary
 //     ^                            ^ 
 
 
