@@ -99,7 +99,8 @@ namespace XInput_CS
 
         public bool[] Connected;
 
-        private DateTime ConnectionStart;
+        private DateTime TimeSinceLastConnectionCheck;
+        private DateTime ExpectedTimeSinceLastConnectionCheck;
 
         public ushort[] Buttons;
 
@@ -161,7 +162,8 @@ namespace XInput_CS
             Connected = new bool[4];
 
             // Record the current date and time when initialization starts.
-            ConnectionStart = DateTime.Now;
+            ExpectedTimeSinceLastConnectionCheck = DateTime.Now;
+            TimeSinceLastConnectionCheck = DateTime.Now;
 
             // Initialize the Buttons array to store the state of controller buttons.
             Buttons = new ushort[4];
@@ -254,7 +256,7 @@ namespace XInput_CS
 
         public void Update()
         {
-            TimeSpan ElapsedTime = DateTime.Now - ConnectionStart;
+            TimeSpan ElapsedTime = DateTime.Now - TimeSinceLastConnectionCheck;
 
             // Every second check for connected controllers.
             if (ElapsedTime.TotalSeconds >= 1)
@@ -265,7 +267,7 @@ namespace XInput_CS
 
                 }
 
-                ConnectionStart = DateTime.Now;
+                TimeSinceLastConnectionCheck = DateTime.Now;
 
             }
 
@@ -638,6 +640,25 @@ namespace XInput_CS
             //// Check that ConnectionStart is not null (initialization was successful)
             //Debug.Assert(ConnectionStart != null,
             //             "Connection Start should not be null.");
+
+
+
+            // Allow a small tolerance for any slight delay between recording the expected time and setting the variable
+            TimeSpan tolerance = TimeSpan.FromMilliseconds(100);
+
+            // Calculate the difference between the expected time and the actual time
+            TimeSpan difference = ExpectedTimeSinceLastConnectionCheck - TimeSinceLastConnectionCheck;
+
+            // Assert that the timeSinceLastConnectionCheck time is within the tolerance of the expected time
+            Debug.Assert(difference.Duration() <= tolerance, $"Difference {difference} exceeds tolerance {tolerance}");
+
+
+
+
+
+
+
+
 
             // Check that Buttons array is initialized
             Debug.Assert(Buttons != null,
