@@ -1578,9 +1578,9 @@ namespace XInput_CS
         }
 
         private void ClearDPadLabel()
-        {   // Clears the DPad label when all controllers' DPad are neutral.
+        {   // Clears the DPad label when all controllers' DPads are neutral.
 
-            // Assume all controllers' DPad are neutral initially.
+            // Assume all controllers' DPads are neutral initially.
             bool Neutral = true; 
 
             // Search for a non-neutral DPad.
@@ -1597,9 +1597,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' DPad in the neutral position?
+            // Are all controllers' DPads in neutral?
             if (Neutral)
-            {   // Yes, all controllers' DPad are in the neutral position.
+            {   // Yes, all controllers' DPads are in neutral.
 
                 LabelDPad.Text = string.Empty; // Clear label.
 
