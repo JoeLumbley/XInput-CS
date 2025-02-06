@@ -224,7 +224,7 @@ enum Button
 
 - **`enum Button`**: This enumeration defines constants for each button on the Xbox controller. Each button is assigned a unique bit value, making it easy to check the state using bitwise operations.
 
-[Bitwise Operations](#bitwise-operations)
+**[Bitwise Operations](#bitwise-operations)**
 
 [Index](#index)
 
