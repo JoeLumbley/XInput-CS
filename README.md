@@ -1911,6 +1911,8 @@ You can also check for multiple buttons at once. For instance, to see if either 
 
 Using bitwise operations with the `Button` enumeration provides a powerful and efficient way to manage Xbox controller inputs, making it easier to develop responsive and interactive applications.
 
+[Enum for Button Mapping](#enum-for-button-mapping)
+
 [Index](#index)
 
 ---
