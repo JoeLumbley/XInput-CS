@@ -1710,10 +1710,10 @@ namespace XInput_CS
         }
 
         private void ClearRightBumperLabel()
-        {   // Clears the right bumper label when all controllers' right bumper are
+        {   // Clears the right bumper label when all controllers' right bumpers are
             // not active.
 
-            // Assume all controllers' right bumper are not active initially.
+            // Assume all controllers' right bumpers are not active initially.
             bool NotActive = true;
 
             // Search for a active right bumper.
@@ -1731,9 +1731,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' right bumper in the not active position?
+            // Are all controllers' right bumpers in the not active position?
             if (NotActive)
-            {   // Yes, all controllers' right bumper are in the not active position.
+            {   // Yes, all controllers' right bumpers are in the not active position.
 
                 LabelRightBumper.Text = string.Empty; // Clear label.
 
@@ -1748,7 +1748,7 @@ namespace XInput_CS
             // Assume all controllers' left thumbstick buttons are not active initially.
             bool NotActive = true;
 
-            // Search for a active left thumbstick buttons.
+            // Search for a active left thumbstick button.
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.LeftStick[i])
