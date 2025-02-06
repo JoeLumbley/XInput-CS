@@ -60,7 +60,7 @@ namespace XInput_CS
 
         private XINPUT_STATE State;
 
-        enum Button
+        public enum Button : ushort
         {
             DPadUp = 1,
             DPadDown = 2,
