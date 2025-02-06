@@ -1681,17 +1681,17 @@ namespace XInput_CS
         {   // Clears the left bumper label when all controllers' left bumper are
             // not active.
 
-            // Assume all controllers' left bumper are neutral initially.
-            bool NotActive = true; 
+            // Assume all controllers' left bumper are not active initially.
+            bool NotActive = true;
 
-            // Search for a non-neutral left bumper.
+            // Search for a active left bumper.
             for (int i = 0; i < 4; i++)
             {
                 if (Controllers.Connected[i] && Controllers.LeftBumper[i])
                 {
-                    // A non-neutral left bumper was found.
+                    // A active left bumper was found.
 
-                    NotActive = false; // Report the non-neutral left bumper.
+                    NotActive = false; // Report the active left bumper.
 
                     break; // No need to search further, so stop the search.
 
@@ -1699,9 +1699,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' left bumper in the neutral position?
+            // Are all controllers' left bumpers not active?
             if (NotActive)
-            {   // Yes, all controllers' left bumper are in the neutral position.
+            {   // Yes, all controllers' left bumpers are not active.
 
                 LabelLeftBumper.Text = string.Empty; // Clear label.
 
@@ -1731,9 +1731,9 @@ namespace XInput_CS
 
             }
 
-            // Are all controllers' right bumpers in the not active position?
+            // Are all controllers' right bumpers not active?
             if (NotActive)
-            {   // Yes, all controllers' right bumpers are in the not active position.
+            {   // Yes, all controllers' right bumpers are not active.
 
                 LabelRightBumper.Text = string.Empty; // Clear label.
 
