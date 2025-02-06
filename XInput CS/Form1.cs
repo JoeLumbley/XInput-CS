@@ -1785,9 +1785,9 @@ namespace XInput_CS
             {
                 if (Controllers.Connected[i] && Controllers.RightStick[i])
                 {
-                    // A active right thumbstick buttons was found.
+                    // A active right thumbstick button was found.
 
-                    NotActive = false; // Report the active right thumbstick buttons.
+                    NotActive = false; // Report the active right thumbstick button.
 
                     break; // No need to search further, so stop the search.
 
@@ -1926,7 +1926,6 @@ namespace XInput_CS
             ToolTipRumbleGroup.SetToolTip(RumbleGroupBox, TipText);
 
         }
-
 
 
         public Form1()
