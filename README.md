@@ -1887,9 +1887,8 @@ Bitwise operations allow you to check if a specific button is pressed by using t
 ```
 
 - In this example:
-  - `GetButtonState()` returns an integer representing the current state of all buttons.
-  - The expression `(buttonState & Button.A)` performs a bitwise AND between the current state and the `A` button's value.
-  - If the result is not zero, it indicates that the `A` button is currently pressed.
+  - The expression `(State.Gamepad.wButtons & (ushort)Button.A)` performs a bitwise AND between the current state and the `A` button's value.
+  - If the result is not zero `!= 0` , it indicates that the `A` button is currently pressed.
 
 ### Advantages of Bitwise Operations
 1. **Performance**: Checking multiple buttons in a single operation is faster than checking each button individually.
