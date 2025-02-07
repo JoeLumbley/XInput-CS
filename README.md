@@ -1821,7 +1821,6 @@ Understanding the trigger threshold is essential for both developers and players
 
 
 
-[Bitwise Operations](#bitwise-operations)
 
 
 ## **Bitwise Operations**
@@ -1916,7 +1915,7 @@ You can also check for multiple buttons at once. For instance, to see if either 
 
 - Here, `Button.A | Button.B` combines the states of both buttons using the bitwise OR operator (`|`), allowing you to check if either button is pressed in one operation.
 
-![002](https://github.com/user-attachments/assets/f03aebcf-1128-482e-8259-73f92e2ff270)
+![003](https://github.com/user-attachments/assets/c5f867ac-43f1-478a-9324-5051ec1a4a25)
 
 
 Using bitwise operations with the `Button` enumeration provides a powerful and efficient way to manage Xbox controller inputs, making it easier to develop responsive and interactive applications.
@@ -1934,15 +1933,6 @@ Using bitwise operations with the `Button` enumeration provides a powerful and e
 
 
 
-
-
-
-
-
-
-
-
----
 
 Feel free to experiment with the code, modify it, and add new features as you learn more about programming! If you have any questions, please post on the **Q & A Discussion Forum**,  don’t hesitate to ask.
 
