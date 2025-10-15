@@ -1875,7 +1875,7 @@ Bitwise operations allow you to check if a specific button is pressed by using t
 //  1111 0000 0000 0000     &    0001 0000 0000 0000   =   0001 0000 0000 0000
 //     ^                            ^                          A is pressed
 //         65535           And          4096           =          4096 
-//  1111 1111 1111 1111     &    0001 0000 0000 0000   =   0000 0000 0000 0000
+//  1111 1111 1111 1111     &    0001 0000 0000 0000   =   0001 0000 0000 0000
 //     ^                            ^                          A is pressed
 
 //         8192            And          4096           =            0
