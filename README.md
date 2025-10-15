@@ -1916,7 +1916,8 @@ You can also check for multiple buttons at once. For instance, to see if either 
 - Here, `Button.A | Button.B` combines the states of both buttons using the bitwise OR operator (`|`), allowing you to check if either button is pressed in one operation.
 
 
-<img width="1920" height="1080" alt="006" src="https://github.com/user-attachments/assets/686977df-6802-4e65-bc12-6b8f8166958d" />
+<img width="1920" height="1080" alt="007" src="https://github.com/user-attachments/assets/70077386-3b5d-4441-a603-c8ec5c8b309b" />
+
 
 
 Using bitwise operations with the `Button` enumeration provides a powerful and efficient way to manage Xbox controller inputs, making it easier to develop responsive and interactive applications.
